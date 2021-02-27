@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/archivosProyecto/CSS/Registro.css">
+
+</head>
+
+<body>
+    <form class="formR" name="Registro" id="Registro">
+        <h3>Registro</h3>
+        <div class="group">
+            <label>Nombre</label>
+            <input class="controls" type="text" name="name" id="name" placeholder="Fulanito" required
+                autocomplete="off">
+
+        </div>
+
+        <div class="group">
+            <label>Contraseña</label>
+            <input class="controls" type="text" name="Ap" id="Ap" placeholder="Gomez" required autocomplete="off">
+
+        </div>
+
+        <div class="group">
+            <label>Email</label>
+            <input class="controls" type="text" name="email" id="email" placeholder="MiCorreo@correo.com.mx" required
+                autocomplete="off">
+
+        </div>
+
+        <div class="group" required>
+            <label>Contraseña </label>
+            <input class="controls" type="password" name="password" id="password" placeholder=" PastelDeLimon47"
+                required minlength="8" required autocomplete="off">
+        </div>
+
+        <div class="group" required>
+            <label for="image">Imagen de perfil</label>
+            <input class="controls" class="form-error" type="file" name="image" id="image"
+                placeholder="Seleccione una imagen">
+
+        </div>
+
+        <div class="group">
+            <input class="ER" type="submit" value="Registrar">
+        </div>
+
+    </form>
+
+</body>
+
+</html>
