@@ -1,7 +1,25 @@
-
 #busqueda{
     width: 50%;
 }
 #categorias{
     background-color: rgb(130, 147, 161);
 }
+#imgAvatarUsuario{
+    border-radius: 50%;
+}
+#elementosNav {
+    float: right;
+    display: flex;
+    transform: translate(0%, 0%);
+  }
+#iniciaSes{
+    margin-top: 7px;
+  }
+  
+#btnBus{
+    box-sizing: content-box;
+    padding: 1%;
+    transform: translate(0%, -20%);
+    background: url(/archivosProyecto/imagenesDef/lupa.jpg);
+    background-size: 20px;
+  }
