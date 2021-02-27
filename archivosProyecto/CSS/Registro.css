@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(/archivosProyecto/ImagenesaCambiar/116841401_2711043955807463_2128975406817825709_n.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+}
+
+.formR{
+    background-color: rgba(165, 42, 42, 0.555);
+    width: 50%;
+    padding: 3%;
+    margin: auto;
+    margin-top: 25%;
+    border-radius: 10px;
+    box-shadow:7px 13px 37px chartreuse;
+}
+
+.controls{
+    width: 100%;
+    background-color: cyan;
+    padding: .5%;
+    border-radius: 2px;
+    margin-bottom: 1%;
+    border: 10px soid rgb(160, 235, 23);
+}
+
+.ER{
+    width: 90%;
+    margin-left: 5%;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+
+
+@media screen and (max-width: 949px){
+    h3{
+        text-align: center;
+        font-size: 150%;
+        
+    }
+}
+
+@media screen and (min-width: 950px){
+    h3{
+        text-align: center;
+        font-size: 260%;
+        
+    }
+}
