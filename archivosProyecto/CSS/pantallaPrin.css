@@ -2,7 +2,10 @@
     width: 50%;
 }
 #categorias{
-    background-color: rgb(130, 147, 161);
+    color: rgb(32, 33, 34);
+    background-color: rgb(188, 208, 224);
+    margin-left: 3%;
+    background-size: 10px;
 }
 #imgAvatarUsuario{
     border-radius: 50%;
@@ -10,11 +13,11 @@
 #elementosNav {
     float: right;
     display: flex;
-    transform: translate(0%, 0%);
+    transform: translate(475%, 0%);
   }
 #iniciaSes{
     margin-top: 7px;
-  }
+}
   
 #btnBus{
     box-sizing: content-box;
