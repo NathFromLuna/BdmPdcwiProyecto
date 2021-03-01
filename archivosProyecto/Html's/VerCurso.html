@@ -27,9 +27,9 @@
 
         <div class="datos">
 
-            <h2>Nombre del profesor</h2>
-            <h3>Descripcion del curso</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, pellentesque maecenas netus facilisi
+            <h2 class="NombreProfesor">Nombre del profesor</h2>
+            <h3 class="Descripcion">Descripcion del curso</h3>
+            <p class="ContenidoDescripcion">Lorem ipsum dolor sit amet consectetur adipiscing elit, pellentesque maecenas netus facilisi
                 ullamcorper
                 tempus nunc quisque, duis sapien sociis est lectus phasellus. Feugiat pretium dui velit condimentum
                 lacus cursus sollicitudin aliquam, per potenti pulvinar lacinia mauris ligula facilisis leo, porta
@@ -73,36 +73,43 @@
     </div>
 
     <div id="footer">
-        <h2 class="Titulo2">Comentarios</h2>
+        <div class="contenido">
+            <h2 class="Titulo2">Comentarios</h2>
+            <!--Crear un comentario-->
+
+            <div class="group">
+                <label class="Nombre">Nombre</label>
+                <input class="controls" type="text" name="name" id="name" placeholder="Unknown" required
+                    autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label class="comentario">Escribir un comentario</label>
+                <textarea class="form-control" name="commentary" id="commentary" rows="2"></textarea>
+            </div>
 
 
-        <div class="group">
-            <label class="text">Nombre</label>
-            <input class="controls" type="text" name="name" id="name" placeholder="Unknown" required autocomplete="off">
+            <div class="form-group">
+                <input class="btn btn-dark" name="Enviar" type="submit" value="Comentar">
+            </div>
+
+
+            <!--Ver comentarios-->
+
+            <div class="media">
+                <img src="https://i.pinimg.com/originals/5d/3d/10/5d3d1003688a50afee49b8ab1526322a.jpg"
+                    class="ImagenPerfil" name="ImagenPerfil" alt="...">
+
+                <div class="media-body">
+
+                    <h5 class="Comentario" name="NombreComentario">Sara Lin</h5>
+                    <p class="text-com"> Me encantan los webtoon. Son tan graciosos y romanticos </p>
+
+                </div>
+
+            </div>
+
         </div>
-
-        
-        <div class="form-group">
-            <label class="comentario">Escribir un comentario</label>
-            <textarea class="form-control" name="commentary" id="commentary" rows="2"></textarea>
-        </div>
-
-        <div >
-            <input class="btn btn-dark" name="Enviar" type="submit" value="Comentar">
-        </div>
-
-
-
-        <div class="media">
-            <img src="https://i.pinimg.com/originals/5d/3d/10/5d3d1003688a50afee49b8ab1526322a.jpg" class="mr-3"
-            name="ImagenPerfil" alt="...">
-            
-
-
-        </div>
-
-
-
 
 
     </div>
