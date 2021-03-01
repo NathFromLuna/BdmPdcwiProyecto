@@ -6,14 +6,13 @@ body {
 
 .login {
     width: 30%;
-    height: 40%;    
+    height: 40%;
     position: absolute;
-    transform: translate(100%, 40%);  
+    transform: translate(100%, 40%);
     padding: 50px 30px;
     background-color: rgba(240, 248, 255, 0.384);
     border-radius: 15px;
-    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
-    15px 15px 15px rgba(0,0,0,1);    
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2), 15px 15px 15px rgba(0, 0, 0, 1);
 }
 
 label {
@@ -21,34 +20,29 @@ label {
     padding: 0;
     font-weight: bold;
     display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 120%;
+    text-align: center;
 }
 
-input{
+input {
     width: 100%;
     padding: 1%;
     border-radius: 9px;
     margin-bottom: 5%;
     border: 2px solid rgb(255, 3, 3);
-    font-size: 14px;
+    font-size: 80%;
+    font-family: 'Roboto Slab', serif;
 }
 
-.ER{
-   border: 2px solid red;
-   padding: 2%;
-   margin-top: 5%;
-}
-
-.r{
-    margin-top: 1%;
-    border-top: 2px solid black;
-}
-.Reg{
+.Reg {
     border: 2px solid red;
     padding: 2%;
     margin-top: 5%;
     margin-bottom: 2%;
 }
-@media screen and (max-width: 949px){
+
+@media screen and (max-width: 949px) {
     .avatar {
         position: absolute;
         border-radius: 50%;
@@ -56,10 +50,23 @@ input{
         height: 120px;
         top: -20%;
         left: 30%;
-      }
+    }
+    .ER {
+        border: 2px solid red;
+        padding: 2%;
+        margin-top: 5%;
+        font-family: 'Roboto Slab', serif;
+        font-size: 80%;
+    }
+    .r {
+        margin-top: 1%;
+        border-top: 2px solid black;
+        font-family: 'Roboto Slab', serif;
+        font-size: 100%;
+    }
 }
 
-@media screen and (min-width: 950px){
+@media screen and (min-width: 950px) {
     .avatar {
         position: absolute;
         border-radius: 50%;
@@ -67,7 +74,14 @@ input{
         height: 200px;
         top: -30%;
         left: 35%;
-      }
+    }
+    .ER {
+        font-size: 120%;
+    }
+    .r {
+        margin-top: 1%;
+        border-top: 2px solid black;
+        font-family: 'Roboto Slab', serif;
+        font-size: 130%;
+    }
 }
-
-

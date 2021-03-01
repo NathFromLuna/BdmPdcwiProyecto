@@ -1,0 +1,32 @@
+.combo{
+    width: 25%;
+    float: left;
+    margin: 0%;
+}
+
+.espacio{
+    margin-left: 30%;
+    margin-top: 2%;
+    display: block;
+}
+
+.titulo{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.tarjetas{
+    display: block;
+    margin-top: 10%;
+}
+
+.card{
+    margin-left: 1%;
+   margin-top: 2%;
+}
+
+.card-img{
+    max-height: 100%;
+    max-width: 80%;
+    margin-left: 5%;
+}

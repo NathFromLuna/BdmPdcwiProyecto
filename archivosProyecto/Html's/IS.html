@@ -8,24 +8,33 @@
     <title>Iniciar Sesion</title>
     <link rel="stylesheet" href="/archivosProyecto/CSS/IS.css">
 
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
     <div class="login">
-        <img class="avatar" src="ImagenesaCambiar/IMG-20181012-WA0015.jpg" alt="Logo">
+        <img class="avatar" src="/archivosProyecto/ImagenesaCambiar/IMG-20181012-WA0015.jpg" alt="Logo">
 
         <form action="">
-           
+
             <label>Correo</label>
-            <input type="text" name="Correo" id="Correo" placeholder="MiCorreo@Crash_ea.mx">
+            <input type="text" name="Correo" id="Correo" placeholder="MiCorreo@Crash_ea.mx" required>
 
             <label>Contraseña</label>
-            <input type="password" name="Contraseña" id="Contraseña" placeholder="P4st31_D3_L1m0n">
+            <input type="password" name="Contraseña" id="Contraseña" placeholder="P4st31_D3_L1m0n" required>
 
             <input class="ER" name="Entrar" id="Entrar" type="submit" value="Entrar">
 
             <div class="r">
-                <input class="Reg" name="Registrarse" id="Registrarse" type="submit" value="Registrarse">
+                <input class="Reg" name="Registrarse" id="Registrarse" type="button" value="Registrarse">
 
             </div>
 
