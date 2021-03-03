@@ -1,6 +1,9 @@
 #busqueda{
     width: 50%;
 }
+#barraBusqueda{
+    margin-bottom: 2%;
+}
 #categorias{
     color: rgb(32, 33, 34);
     background-color: rgb(188, 208, 224);
@@ -31,9 +34,7 @@ table{
     border-collapse: collapse;
 }
 td, th {
-   
     margin:3% ;
-    margin-left: 7%;
     padding: 10px;
 }
 .cursos{
@@ -45,7 +46,11 @@ td, th {
 }
 .categorias{
     margin: 2%;
+    margin-left: 0%;
 }
 .contenedorCursos{
-    margin-left: 2%;
+    margin-left: 0;
+}
+.niveles{
+    text-align: right;
 }
