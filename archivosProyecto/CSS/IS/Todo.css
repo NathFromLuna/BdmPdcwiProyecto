@@ -38,4 +38,12 @@ input {
     padding: 2%;
     margin-top: 5%;
     margin-bottom: 2%;
+    margin-top: 1%;
+    padding: 2%;
+    font-family: 'Rubik', sans-serif;
+}
+
+.linea{
+    
+    border: 2px solid rgb(100, 100, 100);
 }
