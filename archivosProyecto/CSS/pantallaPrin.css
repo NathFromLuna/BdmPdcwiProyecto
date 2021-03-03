@@ -26,10 +26,20 @@
     background: url(/archivosProyecto/imagenesDef/lupa.jpg);
     background-size: 20px;
   }
-.cursos{
-      margin: 10px;
-  }
-#cursos{
+
+table{
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid #dddddd;
     margin:3% ;
     margin-left: 7%;
+    padding: 10px;
+}
+.cursos{
+    margin: 10px;
+    padding: 10px;
+}
+#contCen{
+    display: flex;
 }

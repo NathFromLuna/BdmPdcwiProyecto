@@ -44,7 +44,6 @@
     </div>
   </nav>
   <div id="contenidoCentral">
-
     <!--aqui quiero empezar la barra de busqueda-->
     <div>
       <form>
@@ -58,27 +57,41 @@
       </form>
     </div>
     <!--categorias a la izqu-->
-    <div id="categorias">
-      <!--los hijos de estas categorias, deben de tener otro color de letra,
-      quizá sea mejor volverla una clase-->
-      <button href="#">Categoria X</button>
-      <br>
-      <button href="#">Categoria Y</button>
+    <div id="contCen">
+      <table class="categorias">
+        <tr>
+          <th>
+              <!--los hijos de estas categorias, deben de tener otro color de letra,
+          quizá sea mejor volverla una clase-->
+              <button href="#">Categoria X</button>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <button href="#">Categoria Y</button>
+          </th>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th id="cursos">
+            <div class="cursos">
+              <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+              <br>
+              <a class="titCursos" href="#">Titulo del curso</a>
+            </div>
+          </th>
+          <th>
+            <!--aqui quiero poner los cuadritos de los cursos-->
+            <div class="cursos">
+              <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+              <br>
+              <a class="titCursos" href="#">Titulo del curso</a>
+            </div>
+          </th>
+        </tr>
+      </table>
     </div>
-
-    <div id="cursos">
-      <!--aqui quiero poner los cuadritos de los cursos-->
-      <img class="cursos" src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150"
-        width="200">
-      <img class="cursos" src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150"
-        width="200">
-      <br>
-      <a class="titCursos" href="#">Titulo del curso</a>
-      <a class="titCursos" href="#">Titulo del curso</a>
-    </div>
-
-
-
   </div>
 </body>
 
