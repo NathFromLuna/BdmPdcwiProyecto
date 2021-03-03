@@ -17,6 +17,12 @@
     .Reg {
         font-size: 100%;
     }
+    label {
+        font-size: 100%;
+    }
+    input {
+        font-size: 100%;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -37,5 +43,11 @@
     }
     .Reg {
         font-size: 150%;
+    }
+    label {
+        font-size: 160%;
+    }
+    input {
+        font-size: 130%;
     }
 }

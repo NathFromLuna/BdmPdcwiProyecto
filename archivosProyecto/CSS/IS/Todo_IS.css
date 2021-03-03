@@ -21,13 +21,14 @@ label {
     font-weight: bold;
     display: block;
     font-family: 'IBM Plex Serif', serif;
-    text-align: center;
+    
 }
 
 input {
     width: 100%;
     padding: 1%;
     border-radius: 9px;
+    margin-top: 1%;
     margin-bottom: 5%;
     border: 2px solid rgb(255, 3, 3);
     font-family: 'Rubik', sans-serif;
