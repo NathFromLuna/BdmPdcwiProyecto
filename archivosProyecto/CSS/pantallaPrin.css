@@ -31,7 +31,7 @@ table{
     border-collapse: collapse;
 }
 td, th {
-    border: 1px solid #dddddd;
+   
     margin:3% ;
     margin-left: 7%;
     padding: 10px;
@@ -42,4 +42,10 @@ td, th {
 }
 #contCen{
     display: flex;
+}
+.categorias{
+    margin: 2%;
+}
+.contenedorCursos{
+    margin-left: 2%;
 }
