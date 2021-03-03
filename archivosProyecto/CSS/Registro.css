@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Jost', sans-serif;
+    font-family: 'IBM Plex Serif', serif;
 }
 
 body {
-    background: url(/archivosProyecto/ImagenesaCambiar/116841401_2711043955807463_2128975406817825709_n.jpg) no-repeat center top;
+    background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
     background-size: cover;
     height: 100vh;
 }
@@ -16,7 +16,7 @@ body {
     width: 50%;
     padding: 3%;
     margin: auto;
-    margin-top: 25%;
+    margin-top: 5%;
     border-radius: 10px;
     box-shadow: 7px 13px 37px rgba(11, 107, 14, 0.938);
 }
@@ -28,7 +28,7 @@ body {
     border-radius: 6px;
     margin-bottom: 1%;
     border: 10px soid rgb(160, 235, 23);
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .ER {
@@ -36,7 +36,7 @@ body {
     margin-left: 5%;
     padding: 2%;
     margin-top: 5%;
-    font-size: 100%;
+
     border-radius: 20px;
 }
 
@@ -51,6 +51,9 @@ body {
     .controls{
         font-size: 70%;
     }
+    .ER{
+        font-size: 100%;
+    }
 }
 
 @media screen and (min-width: 950px) {
@@ -62,6 +65,10 @@ body {
         font-size: 180%;
     }
     .controls{
-        font-size: 100%;
+        font-size: 130%;
+    }
+
+    .ER{
+        font-size: 120%;
     }
 }

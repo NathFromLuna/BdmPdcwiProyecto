@@ -5,6 +5,11 @@
     padding-top: 2%;
 }
 
+body {
+    background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
+    background-size: cover;
+}
+
 .datos {
     width: 50%;
     float: left;
@@ -16,22 +21,13 @@
     margin-left: 5%;
 }
 
-h1 {
-    text-align: center;
+.Descripcion {
+    margin-bottom: 3%;
+    margin-top: 2%;
 }
 
-.NombreProfesor{
-    text-align: center;
-    margin-bottom: 2%;
-}
-.Descripcion{
-    text-align: center;
-    margin-bottom: 2%;
-}
-
-.ContenidoDescripcion{
+.ContenidoDescripcion {
     text-align: justify;
-    font-size: 170%;
     margin-right: 3%;
 }
 
@@ -39,7 +35,6 @@ h1 {
     display: block;
     margin-left: 3%;
     margin-top: 30%;
-
 }
 
 /*Lo que se usa para los combobox*/
@@ -56,10 +51,8 @@ select {
     -ms-appearance: none;
     appearance: none;
     outline: 0;
-    
     border: 0!important;
     background-color: rgba(23, 23, 180, 0.329);
-    
     flex: 1;
     padding: 0 .5em;
     color: rgb(0, 0, 0);
@@ -113,10 +106,11 @@ select::-ms-expand {
     margin-top: 2%;
     background-color: #d9b8b8;
     width: 100%;
+    height: 100%;
     display: inline-block;
-
 }
-.contenido{
+
+.contenido {
     margin-top: 50px;
     margin-left: 5%;
     margin-right: 5%;
@@ -124,8 +118,9 @@ select::-ms-expand {
     border-style: dashed;
     border-color: #745a5a;
     padding-top: 2%;
-    margin-bottom: 2%;
+
 }
+
 .Titulo2 {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -183,13 +178,13 @@ select::-ms-expand {
     margin-left: 4%;
 }
 
-.text-com{
+.text-com {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
     margin-left: 5%;
 }
 
-.media{
+.media {
     border-width: 3%;
     border-style: dashed;
     border-color: #745a5a;
@@ -199,4 +194,53 @@ select::-ms-expand {
     padding-bottom: 1%;
     margin-bottom: 2%;
     max-height: 20%;
+}
+
+/*Tamaños y tipos de letras*/
+
+/**********************************************************************/
+
+/**********************************************************************/
+
+#titulo, #titulo2, #titulo3 {
+    font-family: 'IBM Plex Serif', serif;
+    
+}
+#titulo, #titulo3{
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+@media screen and (max-width: 1362px) {
+    #titulo {
+        font-size: 300%;
+        
+    }
+    #titulo2 {
+        font-size: 200%;
+    }
+    #titulo3 {
+        font-size: 180%;
+    }
+    .ContenidoDescripcion {
+        font-size: 100%;
+    }
+
+}
+
+@media screen and (min-width: 1363px) {
+    #titulo {
+        font-size: 450%;
+    }
+    #titulo2 {
+        font-size: 200%;
+    }
+    #titulo3 {
+        font-size: 250%;
+    }
+    .ContenidoDescripcion {
+        font-size: 180%;
+    }
+
 }

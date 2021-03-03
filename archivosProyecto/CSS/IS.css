@@ -1,12 +1,12 @@
 body {
-    background: url(/archivosProyecto/ImagenesaCambiar/116841401_2711043955807463_2128975406817825709_n.jpg) no-repeat center top;
+    background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
     background-size: cover;
     height: 100vh;
 }
 
 .login {
     width: 30%;
-    height: 40%;
+    height: max-content;
     position: absolute;
     transform: translate(100%, 40%);
     padding: 50px 30px;
@@ -20,8 +20,8 @@ label {
     padding: 0;
     font-weight: bold;
     display: block;
-    font-family: 'Jost', sans-serif;
-    font-size: 120%;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 150%;
     text-align: center;
 }
 
@@ -31,8 +31,8 @@ input {
     border-radius: 9px;
     margin-bottom: 5%;
     border: 2px solid rgb(255, 3, 3);
-    font-size: 80%;
-    font-family: 'Roboto Slab', serif;
+    font-size:120%;
+    font-family: 'Rubik', sans-serif;
 }
 
 .Reg {
@@ -51,17 +51,17 @@ input {
         top: -20%;
         left: 30%;
     }
-    .ER {
+    #ER {
         border: 2px solid red;
         padding: 2%;
         margin-top: 5%;
-        font-family: 'Roboto Slab', serif;
-        font-size: 80%;
+        font-family: 'Rubik', sans-serif;
+        font-size: 120%;
     }
     .r {
         margin-top: 1%;
         border-top: 2px solid black;
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Rubik', sans-serif;
         font-size: 100%;
     }
 }
@@ -75,13 +75,13 @@ input {
         top: -30%;
         left: 35%;
     }
-    .ER {
-        font-size: 120%;
+    #ER {
+        font-size: 160%;
     }
     .r {
         margin-top: 1%;
         border-top: 2px solid black;
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Rubik', sans-serif;
         font-size: 130%;
     }
 }

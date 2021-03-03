@@ -1,32 +1,97 @@
-.combo{
-    width: 25%;
-    float: left;
-    margin: 0%;
+body {
+    background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
+    background-size: cover;
 }
 
-.espacio{
+.combo {
+    width: 24%;
+    float: left;
+    margin: 0%;
+    padding: 0%;
+}
+
+.espacio {
     margin-left: 30%;
     margin-top: 2%;
     display: block;
 }
 
-.titulo{
+.titulo {
     text-align: center;
     margin-top: 2%;
 }
 
-.tarjetas{
+.tarjetas {
     display: block;
-    margin-top: 10%;
 }
 
-.card{
+.card {
     margin-left: 1%;
-   margin-top: 2%;
+    margin-top: 2%;
 }
 
-.card-img{
-    max-height: 100%;
-    max-width: 80%;
+.card-img {
+    max-height: 40ex;
+    max-width: 50%;
     margin-left: 5%;
+}
+
+p, .OrdenarPor, #OrdenarPor {
+    font-family: 'Rubik', sans-serif;
+}
+
+.card-title, .Ventas {
+    font-family: 'IBM Plex Serif', serif;
+}
+
+.general{
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+@media screen and (max-width: 1362px) {
+    p {
+        font-size: 150%;
+    }
+    .card-title {
+        font-size: 200%;
+    }
+    .Ventas {
+        font-size: 400%;
+    }
+    .OrdenarPor {
+        font-size: 150%;
+    }
+
+    #OrdenarPor{
+        font-size: 120%;
+    }
+    .tarjetas {
+        
+        margin-top: 15%;
+    }
+
+}
+
+@media screen and (min-width: 1363px) {
+    p {
+        font-size: 160%;
+    }
+    .card-title {
+        font-size: 250%;
+    }
+    .Ventas {
+        font-size: 650%;
+    }
+    .OrdenarPor {
+        font-size: 200%;
+    }
+    #OrdenarPor{
+        font-size: 150%;
+    }
+    .tarjetas {
+        
+        margin-top: 8%;
+    }
 }
