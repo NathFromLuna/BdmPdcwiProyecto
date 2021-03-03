@@ -1,0 +1,17 @@
+@media screen and (max-width: 1279px) {
+    label {font-size: 90%;}
+    h3 {font-size: 100%;}
+    .controls {font-size: 70%;}
+    .ER {font-size: 80%;}
+}
+
+
+
+@media screen and (min-width: 1280px) {
+    label {
+        font-size: 180%;
+    }
+    h3 {font-size: 200%;}
+    .controls {font-size: 110%;}
+    .ER {font-size: 150%;}
+}
