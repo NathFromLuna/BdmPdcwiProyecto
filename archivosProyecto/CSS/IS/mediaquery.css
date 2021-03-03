@@ -1,0 +1,49 @@
+@media screen and (min-width: 640px) {
+    .avatar {
+        position: absolute;
+        border-radius: 50%;
+        width: 45%;
+        height: 40%;
+        top: -30%;
+        left: 30%;
+    }
+    #ER {
+        border: 2px solid red;
+        padding: 2%;
+        margin-top: 5%;
+        font-family: 'Rubik', sans-serif;
+        font-size: 100%;
+    }
+    .r {
+        margin-top: 1%;
+        padding: 2%;
+        border-top: 2px solid black;
+        font-family: 'Rubik', sans-serif;
+        font-size: 100%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .avatar {
+        position: absolute;
+        border-radius: 50%;
+        width: 40%;
+        height: 45%;
+        top: -35%;
+        left: 33%;
+    }
+    #ER {
+        border: 2px solid red;
+        padding: 2%;
+        margin-top: 5%;
+        font-family: 'Rubik', sans-serif;
+        font-size: 100%;
+    }
+    .r {
+        margin-top: 1%;
+        padding: 2%;
+        border-top: 2px solid black;
+        font-family: 'Rubik', sans-serif;
+        font-size: 100%;
+    }
+}
