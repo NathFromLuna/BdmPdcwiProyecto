@@ -46,6 +46,7 @@ td, th {
 }
 .categorias{
     margin: 2%;
+    margin-left: 0%;
 }
 .contenedorCursos{
     margin-left: 0;
