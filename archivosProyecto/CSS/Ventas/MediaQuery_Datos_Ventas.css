@@ -2,23 +2,32 @@
     #titulo {font-size: 180%;}
     #titulo2 {font-size: 140%;}
     #titulo3 {font-size: 120%;}
-    #titulo4 {}
+    #titulo4 {font-size: 140%;}
     p{font-size: 80%;}
+    body{
+        padding: 5%;
+    }
 }
 
 @media screen and (min-width: 1280px) {
     .datos {
         width: 49%;
         float: left;
-        margin-top: 1%;
+ 
     }
-    #titulo {font-size: 180%;}
-    #titulo2 {font-size: 140%;}
-    #titulo3 {font-size: 120%;}
-    #titulo4 {font-size: 100%;}
+    #titulo {font-size: 200%;}
+    #titulo2 {font-size: 160%;
+    margin-bottom: 2%;}
+    #titulo3 {font-size: 140%;}
+    #titulo4 {font-size: 180%;}
     p{
-        margin-top: 5%;
-        font-size: 100%;
+        font-size: 150%;
+    }
+
+    body{
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 2%;
     }
 
 }
