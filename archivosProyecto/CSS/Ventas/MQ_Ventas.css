@@ -1,0 +1,38 @@
+@media screen and (max-width: 1279px) {
+    p {
+        font-size: 100%;
+    }
+    .card-title {
+        font-size: 150%;
+    }
+    .Ventas {
+        font-size: 300%;
+    }
+    .OrdenarPor {
+        font-size: 110%;
+    }
+
+    #OrdenarPor{
+        font-size: 110%;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+    p {
+        font-size: 140%;
+    }
+    .card-title {
+        font-size: 200%;
+    }
+    .Ventas {
+        font-size: 500%;
+    }
+    .OrdenarPor {
+        font-size: 200%;
+    }
+    #OrdenarPor{
+        font-size: 150%;
+    }
+
+}

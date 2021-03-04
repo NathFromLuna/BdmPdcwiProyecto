@@ -1,0 +1,53 @@
+body {
+    background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+.general {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.espacio {
+    margin-left: 1%;
+    margin-top: 2%;
+    display: block;
+}
+
+.combo {
+    width: max-content;
+    display: inline-block;
+    margin: 0%;
+    padding: 0%;
+}
+
+.tarjetas {
+    display: block;
+}
+
+.card {
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.titulo{
+    margin-top: 2%;
+}
+
+.card-img {
+    max-height: 40ex;
+    max-width: 50%;
+    margin-left: 5%;
+}
+
+p, .OrdenarPor, #OrdenarPor {
+    font-family: 'Rubik', sans-serif;
+   
+}
+#OrdenarPor{
+    width: 300%;
+    margin-left: 3%;
+}
+.card-title, .Ventas {
+    font-family: 'IBM Plex Serif', serif;
+}
