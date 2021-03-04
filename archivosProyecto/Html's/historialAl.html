@@ -1,40 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/archivosProyecto/CSS/navBar.css">
+    <link rel="stylesheet" href="/archivosProyecto/CSS/historialAl.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="/archivosProyecto/ImagenesaCambiar/referenciaCampoFloresProyATAH.png" width="30" height="30"
-            class="d-inline-block align-top" alt="">
-          Crashea
+            <img src="/archivosProyecto/ImagenesaCambiar/referenciaCampoFloresProyATAH.png" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            Crashea
         </a>
         <div id="elementosNav">
-          <!--dropDownBar-->
-          <div class="dropdown">
-            <img id="imgAvatarUsuario" src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="avatarUs" width="50"
-              height="50">
-            <class class="dropdown-content">
-              <a href="#">Perfil</a>
-              <a href="#">Cursos</a>
-              <a href="#">Mensajes</a>
-              <hr>
-              <a href="#">Ventas</a>
-            </class>
-          </div>
-          <div>
-            <form class="form-inline my-2 my-lg-0">
-              <button id="iniciaSes">Inicia sesión</button>
-            </form>
-          </div>
-    
+            <!--dropDownBar-->
+            <div class="dropdown">
+                <img id="imgAvatarUsuario" src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="avatarUs"
+                    width="50" height="50">
+                <class class="dropdown-content">
+                    <a href="#">Perfil</a>
+                    <a href="#">Cursos</a>
+                    <a href="#">Mensajes</a>
+                    <hr>
+                    <a href="#">Ventas</a>
+                </class>
+            </div>
+            <div>
+                <form class="form-inline my-2 my-lg-0">
+                    <button id="iniciaSes">Inicia sesión</button>
+                </form>
+            </div>
+
         </div>
-      </nav>
+    </nav>
+    <div id="contenidoCentral">
+        <h3>Historial</h3>
+        <div id="busqueda">
+            Buscar por:
+            <select name="busquedaTipos" id="busquedaTipos">
+                <option value="todos">Todos</option>
+                <option value="categorias">Categorias</option>
+                <option value="precio">Precio</option>
+                <option value="calAlta">Mejor calificados</option>
+            </select>
+        </div>
+        <table id="historialCur">
+            <tr>
+                <th>
+                    <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="200" width="300">
+                </th>
+                <th id="titulos">
+                    <a class="titCursos" href="#">Titulo del curso</a>
+                    <br>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="200" width="300">
+                </th>
+                <th>
+                    <a class="titCursos" href="#">Titulo del curso</a>
+                    <br>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                </th>
+            </tr>
+        </table>
+    </div>
 </body>
+
 </html>

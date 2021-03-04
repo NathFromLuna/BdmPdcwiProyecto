@@ -1,0 +1,35 @@
+#contenidoCentral{
+    margin: 3%;
+}
+h3{ 
+    margin: 3%;
+    margin-left: 10%;
+    font-size: xx-large;
+}
+#busqueda{
+    font-size: large;
+    margin-left: 60%;
+}
+table{
+    border-collapse: collapse;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+td, th {
+    /*border: 1px solid #dddddd;*/
+    margin:3% ;
+    padding: 10px;
+    text-align: left;
+}
+.titCursos{
+    margin-top: 0%;
+    font-size: large;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+}
+#titulos{
+    margin-top: 0%;
+    text-align: left;
+}

@@ -10,17 +10,6 @@
     margin-left: 3%;
     background-size: 10px;
 }
-#imgAvatarUsuario{
-    border-radius: 50%;
-}
-#elementosNav {
-    float: right;
-    display: flex;
-    transform: translate(475%, 0%);
-  }
-#iniciaSes{
-    margin-top: 7px;
-}
   
 #btnBus{
     box-sizing: content-box;
@@ -53,4 +42,8 @@ td, th {
 }
 .niveles{
     text-align: right;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
 }
