@@ -1,4 +1,15 @@
 
+#imgAvatarUsuario{
+  border-radius: 50%;
+}
+.navbar-brand{
+  font-size:x-large;
+}
+#elementosNav {
+  float: right;
+  display: flex;
+  transform: translate(445%, 0%);
+}
 .dropbtn {
   background-color: #4CAF50;
   color: white;
@@ -6,6 +17,9 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+}
+#iniciaSes{
+  margin-top: 7px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -44,4 +58,8 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+body{
+  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Nunito', sans-serif;*/
 }
