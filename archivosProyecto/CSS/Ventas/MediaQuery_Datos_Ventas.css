@@ -1,10 +1,23 @@
 @media screen and (max-width: 1279px) {
-    #titulo {font-size: 180%;}
-    #titulo2 {font-size: 140%;}
-    #titulo3 {font-size: 120%;}
-    #titulo4 {font-size: 140%;}
-    p{font-size: 80%;}
-    body{
+    #titulo {
+        font-size: 180%;
+    }
+    #titulo2 {
+        font-size: 140%;
+        margin-left: 3%;
+    }
+    #titulo3 {
+        font-size: 120%;
+    }
+    #titulo4 {
+        font-size: 140%;
+    }
+    p {
+        font-size: 80%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    body {
         padding: 5%;
     }
 }
@@ -13,21 +26,28 @@
     .datos {
         width: 49%;
         float: left;
- 
     }
-    #titulo {font-size: 250%;}
-    #titulo2 {font-size: 220%;
-    margin-bottom: 2%;}
-    #titulo3 {font-size: 200%;}
-    #titulo4 {font-size: 200%;}
-    p{
+    #titulo {
+        font-size: 250%;
+    }
+    #titulo2 {
+        font-size: 220%;
+        margin-bottom: 2%;
+    }
+    #titulo3 {
+        font-size: 200%;
+    }
+    #titulo4 {
+        font-size: 200%;
+    }
+    p {
         font-size: 150%;
+        margin-left: 2%;
+        margin-right: 2%;
     }
-
-    body{
+    body {
         padding-left: 5%;
         padding-right: 5%;
         padding-top: 2%;
     }
-
 }
