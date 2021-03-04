@@ -19,6 +19,8 @@ td, th {
     background-color:darkgray;
     width: 74.9%;
     height: 100%;
+}
+#mensajesActuales{
     margin-top: 400px;
 }
 #barraMensaje{
