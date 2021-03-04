@@ -2,3 +2,41 @@ body{
     font-family: 'Raleway', sans-serif;
     /*font-family: 'Nunito', sans-serif;*/
 }
+h3{ 
+    margin: 3%;
+    margin-left: 15%;
+    font-size: xx-large;
+}
+#categorias{
+    color: rgb(32, 33, 34);
+    background-color: rgb(188, 208, 224);
+    margin-left: 3%;
+    background-size: 10px;
+}
+
+table{
+    border-collapse: collapse;
+}
+td, th {
+    /*border: 1px solid #dddddd;*/
+    margin:3% ;
+    padding: 10px;
+    font-size: large;
+}
+.cursos{
+    margin: 3px;
+    padding: 0px;
+}
+#contenidoCentral{
+    display: flex;
+}
+.categorias{
+    margin: 2%;
+    margin-left: 0%;
+}
+.contenedorCursos{
+    margin-left: 0;
+}
+.niveles{
+    text-align: right;
+}
