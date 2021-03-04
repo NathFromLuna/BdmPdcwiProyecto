@@ -5,7 +5,7 @@
 
 body {
     background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
-    background-size: cover;
+    background-size:cover;
 }
 
 #general {
@@ -20,16 +20,14 @@ body {
     margin-top: 1%;
 }
 #prim{
-    margin-left: 10%;
+    margin-left: 10%
 }
+
 #sega{
     margin-left: 2%;
 }
 p {
     text-align: justify;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
     font-family: 'Rubik', sans-serif;
 }
 
