@@ -1,5 +1,6 @@
 body{
     font-family: 'Raleway', sans-serif;
+    height: 100%;
     /*font-family: 'Nunito', sans-serif;*/
 }
 table{
@@ -16,10 +17,12 @@ td, th {
 
 #chatAct{
     background-color:darkgray;
-    width: 73%;
+    width: 74.9%;
     height: 100%;
+    margin-top: 400px;
 }
 #barraMensaje{
+    
     width: 95%;
 }
 #barraAbajo{
@@ -27,7 +30,6 @@ td, th {
 }
 #mensajesGen{
     background-color: darkolivegreen;
-    height: 100%;
     display: flex;
 }
 #mensajesP2{
@@ -35,7 +37,7 @@ td, th {
     text-align: right;
 }
 #habloCon{
- background-color: aliceblue;   
+    background-color: aliceblue;   
 }
 #mensajesP1{
     background-color: turquoise;
