@@ -3,22 +3,22 @@ body {
     background-size: cover;
 }
 
-.combo {
-    width: 24%;
-    float: left;
-    margin: 0%;
-    padding: 0%;
+.general {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .espacio {
-    margin-left: 30%;
+    margin-left: 1%;
     margin-top: 2%;
     display: block;
 }
 
-.titulo {
-    text-align: center;
-    margin-top: 2%;
+.combo {
+    width: max-content;
+    display: inline-block;
+    margin: 0%;
+    padding: 0%;
 }
 
 .tarjetas {
@@ -30,6 +30,10 @@ body {
     margin-top: 2%;
 }
 
+.titulo{
+    margin-top: 2%;
+}
+
 .card-img {
     max-height: 40ex;
     max-width: 50%;
@@ -38,10 +42,15 @@ body {
 
 p, .OrdenarPor, #OrdenarPor {
     font-family: 'Rubik', sans-serif;
+   
 }
-
+#OrdenarPor{
+    width: 300%;
+    margin-left: 3%;
+}
 .card-title, .Ventas {
     font-family: 'IBM Plex Serif', serif;
+<<<<<<< HEAD:archivosProyecto/CSS/Ventas.css
 }
 
 .general{
@@ -94,4 +103,6 @@ p, .OrdenarPor, #OrdenarPor {
         
         margin-top: 8%;
     }
+=======
+>>>>>>> Default:archivosProyecto/CSS/Ventas/General_Ventas.css
 }
