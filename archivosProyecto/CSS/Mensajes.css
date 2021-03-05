@@ -3,17 +3,6 @@ body{
     height: 100%;
     /*font-family: 'Nunito', sans-serif;*/
 }
-table{
-    border-collapse: collapse;
-    width: 37%;
-}
-td, th {
-    /**/border: 1px solid #dddddd;
-    margin:3% ;
-    padding: 10px;
-    font-size: large;
-   
-}
 
 #chatAct{
     background-color:darkgray;
