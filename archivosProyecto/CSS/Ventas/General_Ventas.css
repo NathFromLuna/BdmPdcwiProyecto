@@ -1,11 +1,9 @@
-body {
-    background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
-    background-size: cover;
+*{
+    background-color: rgb(2, 115, 51);
 }
-
 .general {
-    margin-left: 5%;
-    margin-right: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .espacio {
@@ -50,59 +48,25 @@ p, .OrdenarPor, #OrdenarPor {
 }
 .card-title, .Ventas {
     font-family: 'IBM Plex Serif', serif;
-<<<<<<< HEAD:archivosProyecto/CSS/Ventas.css
+    
 }
 
-.general{
-    margin-left: 5%;
-    margin-right: 5%;
-
+.col-md-4{
+    background-color: rgb(51, 2, 115);
 }
 
-@media screen and (max-width: 1362px) {
-    p {
-        font-size: 170%;
-    }
-    .card-title {
-        font-size: 200%;
-    }
-    .Ventas {
-        font-size: 400%;
-    }
-    .OrdenarPor {
-        font-size: 150%;
-    }
-
-    #OrdenarPor{
-        font-size: 120%;
-    }
-    .tarjetas {
-        
-        margin-top: 15%;
-    }
-
+.card-body{
+    background-color: rgb(164, 11, 224);
 }
 
-@media screen and (min-width: 1363px) {
-    p {
-        font-size: 160%;
-    }
-    .card-title {
-        font-size: 250%;
-    }
-    .Ventas {
-        font-size: 650%;
-    }
-    .OrdenarPor {
-        font-size: 200%;
-    }
-    #OrdenarPor{
-        font-size: 150%;
-    }
-    .tarjetas {
-        
-        margin-top: 8%;
-    }
-=======
->>>>>>> Default:archivosProyecto/CSS/Ventas/General_Ventas.css
+.card-title{
+    background-color: rgb(224, 11, 11);
+}
+
+.card-text{
+    background-color: rgb(210, 224, 11);
+}
+
+.text-muted{
+    background-color: rgb(14, 227, 255);
 }

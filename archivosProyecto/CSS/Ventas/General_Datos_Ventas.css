@@ -1,17 +1,14 @@
 * {
     margin: 0%;
     padding: 0%;
-}
-
-body {
-    background: url(/archivosProyecto/ImagenesaCambiar/Crashea.jpg) no-repeat center top;
-    background-size:cover;
+    background-color: #027333;
 }
 
 #general {
     width: 100%;
     height: 100%;
     overflow: hidden;
+
 }
 
 .ven {
@@ -19,13 +16,15 @@ body {
     display: inline-block;
     margin-top: 1%;
 }
-#prim{
+
+#prim {
     margin-left: 10%
 }
 
-#sega{
+#sega {
     margin-left: 2%;
 }
+
 p {
     text-align: justify;
     font-family: 'Rubik', sans-serif;
@@ -52,9 +51,17 @@ p {
     font-family: 'IBM Plex Serif', serif;
 }
 
-#titulo {margin-left: 10%;}
-#titulo2 {margin-left: 2%;}
-#titulo4 {margin-left: 2%;}
+#titulo {
+    margin-left: 10%;
+}
+
+#titulo2 {
+    margin-left: 2%;
+}
+
+#titulo4 {
+    margin-left: 2%;
+}
 
 .tabla {
     font-family: 'Rubik', sans-serif;
