@@ -1,0 +1,74 @@
+@media screen and (max-width: 1362px) {
+    #titulo {
+        font-size: 200%;
+    }
+    #titulo2 {
+        font-size: 200%;
+    }
+    #titulo3 {
+        font-size: 180%;
+    }
+    .ContenidoDescripcion {
+        font-size: 100%;
+    }
+    .form-group {
+        font-size: 180%;
+    }
+    #btn {
+        font-size: 60%;
+    }
+    .Titulo2 {
+        font-size: 160%;
+    }
+    .comentario {
+        font-size: 70%;
+    }
+    .Comentario {
+        font-size: 160%;
+    }
+    .text-com {
+        font-size: 130%;
+    }
+
+    .comprar{
+        font-size: 150%;
+    }
+}
+
+@media screen and (min-width: 1363px) {
+    #titulo {
+        font-size: 400%;
+    }
+    #titulo2 {
+        font-size: 200%;
+    }
+    #titulo3 {
+        font-size: 250%;
+    }
+    .ContenidoDescripcion {
+        font-size: 180%;
+    }
+    .form-group {
+        font-size: 200%;
+    }
+    #btn {
+        font-size: 90%;
+    }
+
+    .Titulo2 {
+        font-size: 300%;
+    }
+    .comentario {
+        font-size: 100%;
+    }
+    .Comentario {
+        font-size: 300%;
+    }
+    .text-com {
+        font-size: 170%;
+    }
+
+    .comprar{
+        font-size: 200%;
+    }
+}
