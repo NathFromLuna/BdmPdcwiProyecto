@@ -10,7 +10,8 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="/archivosProyecto/CSS/pantallaPrin.css">
   <link rel="stylesheet" href="/archivosProyecto/CSS/navBar.css">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -21,7 +22,6 @@
         class="d-inline-block align-top" alt="">
       Crashea
     </a>
-
     <div id="elementosNav">
       <!--dropDownBar-->
       <div class="dropdown">
@@ -44,108 +44,104 @@
     </div>
   </nav>
   <div id="contenidoCentral">
-    <!--aqui quiero empezar la barra de busqueda-->
-    <div>
-      <form>
-        <br>
-        <center>
-          <div id="barraBusqueda">
-            <input type="text" id="busqueda" placeholder="Busca algo...">
-            <button id="btnBus"></button>
-          </div>
-        </center>
-      </form>
-    </div>
-    <!--categorias a la izqu-->
     <div id="contCen">
-      <table class="categorias">
-        <tr>
-          <th>
-            <!--los hijos de estas categorias, 
-              deben de tener otro color de letra,
-          quizá sea mejor volverla una clase-->
-            <button class="categoria" href="#">Categoria X</button>
-            <br>
-            <button class="categoria" href="#">Categoria Y</button>
-          </th>
-        </tr>
-      </table>
-      <div class="contenedorCursos">
-        <table>
-          <tr>
-            <th>
-              Categoria curso
-            </th>
-          </tr>
-          <tr>
-            <th id="cursos">
-              <div class="cursos">
-                <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
-                <br>
-                <a class="titCursos" href="#">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
-                <br>
-                <a class="titCursos" href="#">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
-                <br>
-                <a class="titCursos" href="#">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-          </tr>
-          <tr rowspan="2">
-            <th>
-              Categoria curso
-            </th>
-          </tr>
-          <tr>
-            <th id="cursos">
-              <div class="cursos">
-                <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
-                <br>
-                <a class="titCursos" href="#">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
-                <br>
-                <a class="titCursos" href="#">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
-                <br>
-                <a class="titCursos" href="#">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-          </tr>
-        </table>
+      <div class="categorias">
+        <!--categorias a la izqu-->
+        <button class="btnCategoria" href="#">Categoria X</button>
+        <br>
+        <button class="btnCategoria" href="#">Categoria Y</button>
       </div>
+      <div id="cursosBarraBus">
+        <div id="barraBus">
+          <form>
+            <br>
+            <!--aqui quiero empezar la barra de busqueda-->
+            <center>
+              <div id="barraBusqueda">
+                <input type="text" id="busqueda" placeholder="Busca algo...">
+                <button id="btnBus"></button>
+              </div>
+            </center>
+          </form>
+        </div>
+        <div class="contenedorCursos">
+          <table>
+            <tr>
+              <th>
+                Categoria curso
+              </th>
+            </tr>
+            <tr>
+              <th id="cursos">
+                <div class="cursos">
+                  <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+                  <br>
+                  <a class="titCursos" href="#">Titulo del curso</a>
+                  <br>
+                  <p class="niveles">Lvls: 4</p>
+                </div>
+              </th>
+              <th>
+                <!--aqui quiero poner los cuadritos de los cursos-->
+                <div class="cursos">
+                  <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+                  <br>
+                  <a class="titCursos" href="#">Titulo del curso</a>
+                  <br>
+                  <p class="niveles">Lvls: 4</p>
+                </div>
+              </th>
+              <th>
+                <!--aqui quiero poner los cuadritos de los cursos-->
+                <div class="cursos">
+                  <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+                  <br>
+                  <a class="titCursos" href="#">Titulo del curso</a>
+                  <br>
+                  <p class="niveles">Lvls: 4</p>
+                </div>
+              </th>
+            </tr>
+            <tr rowspan="2">
+              <th>
+                Categoria curso
+              </th>
+            </tr>
+            <tr>
+              <th id="cursos">
+                <div class="cursos">
+                  <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+                  <br>
+                  <a class="titCursos" href="#">Titulo del curso</a>
+                  <br>
+                  <p class="niveles">Lvls: 4</p>
+                </div>
+              </th>
+              <th>
+                <!--aqui quiero poner los cuadritos de los cursos-->
+                <div class="cursos">
+                  <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+                  <br>
+                  <a class="titCursos" href="#">Titulo del curso</a>
+                  <br>
+                  <p class="niveles">Lvls: 4</p>
+                </div>
+              </th>
+              <th>
+                <!--aqui quiero poner los cuadritos de los cursos-->
+                <div class="cursos">
+                  <img src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="150" width="200">
+                  <br>
+                  <a class="titCursos" href="#">Titulo del curso</a>
+                  <br>
+                  <p class="niveles">Lvls: 4</p>
+                </div>
+              </th>
+            </tr>
+          </table>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>
