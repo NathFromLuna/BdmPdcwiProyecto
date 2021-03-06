@@ -3,6 +3,8 @@
 }
 #busqueda{
     width: 80%;
+    border-radius: 3px;
+    background-color: rgb(238, 235, 245);
 }
 #barraBusqueda{
     margin-bottom: 2%;
@@ -10,11 +12,12 @@
 }
 #btnBus{
     box-sizing: content-box;
-    padding: 1.45%;
+    padding: 1.37%;
     transform: translate(0%, -20%);
     background: url(/archivosProyecto/imagenesDef/lupa.jpg);
-    background-size: 20px;
+    background-size: 22px;
 }
+
 
 .categorias{
     margin: 2%;
@@ -22,6 +25,12 @@
 }
 .btnCategoria{
     width: 115%;
+}
+.Catcur, .niveles, .titCursos:hover{
+    color:rgb(214, 203, 240); 
+}
+.titCursos{
+    color:rgb(214, 203, 240); 
 }
 
 table{
@@ -34,7 +43,10 @@ td, th {
 }
 .cursos{
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
+    background-color: rgb(74, 107, 82);
+    border-radius: 4px;
+    padding-bottom: 7px;
 }
 
 .contenedorCursos{
@@ -42,11 +54,10 @@ td, th {
 }
 .niveles{
     text-align: right;
+    margin-bottom: 0%;
 }
 body{
     font-family: 'Raleway', sans-serif;
     /*font-family: 'Nunito', sans-serif;*/
-}
-nav{
-   color: rgb(50, 119, 61);
+    background: url(/archivosProyecto/imagenesDef/Crashea.jpg);
 }
