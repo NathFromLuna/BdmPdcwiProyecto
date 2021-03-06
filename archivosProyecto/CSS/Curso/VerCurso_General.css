@@ -30,6 +30,7 @@ body{
 .ContenidoDescripcion {
     text-align: justify;
     margin-right: 3%;
+    color:rgb(214, 203, 240); 
 }
 
 .opciones {
@@ -42,15 +43,15 @@ body{
 #titulo {
     margin-bottom: 0%;
     padding-left: 3%;
+    color:rgb(214, 203, 240);  
+    font-weight: bold;
 }
 
 #titulo, #titulo2, #titulo3 {
-    font-family: 'IBM Plex Serif', serif;
+    color:rgb(214, 203, 240); 
 }
 
-#titulo, #titulo3 {
-    font-weight: bolder;
-}
+
 
 /*Iconos/
 
@@ -80,6 +81,7 @@ body{
     margin-top: 6%;
     margin-right: 2%;
     width: max-content;
+    color:rgb(214, 203, 240); 
 }
 
 .imagenes2{
@@ -102,10 +104,10 @@ select {
     appearance: none;
     outline: 0;
     border: 0px;
-    background-color: rgba(23, 23, 180, 0.329);
+    background-color: rgb(238, 235, 245);
     flex: 1;
     padding: 0 .5em;
-    color: rgb(0, 0, 0);
+    color:rgb(44, 38, 59);
     cursor: pointer;
 }
 
@@ -115,13 +117,13 @@ select {
     width: 80%;
     height: 60%;
     line-height: 3;
-    background: rgba(255, 0, 0, 0);
+    background-color: rgb(238, 235, 245);
     overflow: hidden;
     border-radius: 10px;
     margin-top: .5%;
     margin-left: 5%;
     font-size: 150%;
-    font-family: 'Times New Roman', Times, serif;
+    color:rgb(44, 38, 59);
 }
 
 .Box::after {
@@ -136,9 +138,6 @@ select {
     transition: .25s all ease;
 }
 
-.Box:hover::after {
-    color: rgb(0, 255, 149)
-}
 
 /*Comentarios*/
 
@@ -149,7 +148,6 @@ select {
 /**********************************************************************/
 
 #footer {
-    background-color: #d9b8b8;
     width: 100%;
     height: 100%;
     display: inline-block;
@@ -161,17 +159,17 @@ select {
     margin-right: 5%;
     border-width: 3%;
     border-style: dashed;
-    border-color: #745a5a;
+    border-color: rgba(214, 203, 240, 0.473);
     padding-top: 2%;
-    background-color: #d9b8b8;
+    background-color:rgba(59, 55, 71, 0.788);
 }
 
 .Titulo2 {
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #745a5a;
+    font-weight: bold;
+    color:rgb(214, 203, 240); 
     margin-bottom: 2%;
-    background-color: #d9b8b8;
+    background-color:rgba(59, 55, 71, 0.534);
 }
 
 .form-group {
@@ -179,8 +177,7 @@ select {
     margin-top: 1%;
     font-weight: bold;
     font-family: 'Jost', sans-serif;
-    background-color: #d9b8b8;
-    text-align: center;
+    background-color:rgba(59, 55, 71, 0.788);
 }
 
 #commentary {
@@ -188,15 +185,22 @@ select {
     margin-right: 10%;
     width: 90%;
     font-size: 80%;
-    font-family: 'Roboto Slab', serif;
+    background-color: rgb(238, 235, 245);
 }
 
 .comentario {
-    background-color: #d9b8b8;
+    color:rgb(214, 203, 240); 
+    background-color:rgba(59, 55, 71, 0.123);
+    margin-left: 4.5%;
 }
 
 .btn {
     width: 25%;
+    border-radius: 3px;
+    background-color:rgb(214, 203, 240); 
+    font-weight: bold;
+    color:rgb(44, 38, 59);
+    margin-left: 75%;
 }
 
 /****************************/
@@ -204,14 +208,14 @@ select {
 .media {
     border-width: 3%;
     border-style: dashed;
-    border-color: #745a5a;
+    border-color: rgba(214, 203, 240, 0.473);
     margin-left: 2%;
     margin-right: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
     margin-bottom: 2%;
     max-height: 20%;
-    background-color: #d9b8b8;
+    background-color:rgba(59, 55, 71, 0.123);
 }
 
 .ImagenPerfil {
@@ -220,19 +224,20 @@ select {
 }
 
 .media-body {
-    background-color: #d9b8b8;
+    background-color:rgba(59, 55, 71, 0.788);
 }
 
 .Comentario {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 300%;
     padding-left: 4%;
-    background-color: #d9b8b8;
+    background-color:rgba(59, 55, 71, 0.788);
+    color:rgb(214, 203, 240); 
 }
 
 .text-com {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
     padding-left: 5%;
-    background-color: #d9b8b8;
+    background-color:rgba(59, 55, 71, 0.788);
+    color:rgb(214, 203, 240); 
 }

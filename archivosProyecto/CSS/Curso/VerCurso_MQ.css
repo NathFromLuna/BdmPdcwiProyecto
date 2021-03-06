@@ -1,4 +1,7 @@
 @media screen and (max-width: 1362px) {
+    #contenidoGen{
+        margin: 4%;
+    }
     #titulo {
         font-size: 200%;
     }
