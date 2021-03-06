@@ -76,15 +76,14 @@
     display: inline-block;
     margin-left: 6%;
     margin-top: 6%;
+    margin-right: 2%;
     width: max-content;
 }
 
 .imagenes2{
     margin-left: 5%;
 }
-.S1{
-    max-width: 20px;
-}
+
 
 /*Lo que se usa para los combobox*/
 
