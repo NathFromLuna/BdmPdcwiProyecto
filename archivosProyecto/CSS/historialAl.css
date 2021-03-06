@@ -23,10 +23,12 @@ td, th {
     /*border: 1px solid #dddddd;*/
     margin:3% ;
     padding: 10px;
+    padding-bottom: 15px;
     text-align: left;
     font-size: large;
     color:rgb(214, 203, 240); 
 }
+
 .titCursos{
     margin-top: 0%;
     font-size: large;
