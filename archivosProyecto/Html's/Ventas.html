@@ -13,10 +13,13 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
     rel="stylesheet">
-  <!--Tipografia-->
+  <link rel="stylesheet" href="/archivosProyecto/CSS/navBar.css">
 
+  <!--Tipografia-->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet">
 
@@ -26,31 +29,48 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg" style="background-color:rgb(73, 62, 102);">
+    <a class="navbar-brand" href="#">
+      <img src="/archivosProyecto/ImagenesaCambiar/referenciaCampoFloresProyATAH.png" width="30" height="30"
+        class="d-inline-block align-top" alt="">
+      Crashea
+    </a>
+    <div id="elementosNav">
+      <!--dropDownBar-->
+      <div class="dropdown">
+        <img id="imgAvatarUsuario" src="/archivosProyecto/ImagenesaCambiar/EthanYax.png" alt="avatarUs" width="50"
+          height="50">
+        <class class="dropdown-content">
+          <a href="#">Perfil</a>
+          <a href="#">Mis cursos</a>
+          <a href="#">Mensajes</a>
+          <hr>
+          <a href="#">Ventas</a>
+        </class>
+      </div>
+      <div>
+        <form class="form-inline my-2 my-lg-0">
+          <button id="iniciaSes">Inicia sesión</button>
+        </form>
+      </div>
 
+    </div>
+  </nav>
 
   <div class="general">
 
     <div class="titulo">
       <h1 class="Ventas">Ventas</h1>
     </div>
-
-
     <div class="espacio">
-
-      <div class="combo">
-        <label class="OrdenarPor">Ordenar por</label>
-      </div>
-
-
-      <div class="combo">
-
-        <select class="form-control" name="OrdenarPor" id="OrdenarPor">
+      Ordenar por:
+      <div id="combo">
+        <select name="busquedaTipos" id="OrdenarPor">
           <option value="-1">Seleccionar</option>
           <option>Nombre</option>
           <option>Fecha</option>
           <option>Más vendidos</option>
         </select>
-
       </div>
 
     </div>
@@ -69,7 +89,7 @@
               <h5 class="card-title">Como ser un Idol</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit nibh, lobortis tellus inceptos
                 lacinia justo montes fringilla quisque integer, sociis etiam aliquet rhoncus mollis diam ad. </p>
-              <p class="card-text"><small class="text-muted">3 años</small></p>
+              <p class="card-text"><small class="text-muted" style="color: rgb(44, 38, 59);">3 años</small></p>
             </div>
           </div>
         </div>
@@ -87,7 +107,7 @@
               <h5 class="card-title">Cómo hacer un sandwich</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit nibh, lobortis tellus inceptos
                 lacinia justo montes fringilla quisque integer, sociis etiam aliquet rhoncus mollis diam ad. </p>
-              <p class="card-text"><small class="text-muted">3 semanas</small></p>
+              <p class="card-text"><small class="text-muted" style="color: rgb(44, 38, 59);">3 semanas</small></p>
             </div>
           </div>
         </div>
@@ -105,7 +125,7 @@
               <h5 class="card-title">Como decirle que no soy Rika</h5>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit nibh, lobortis tellus inceptos
                 lacinia justo montes fringilla quisque integer, sociis etiam aliquet rhoncus mollis diam ad. </p>
-              <p class="card-text"><small class="text-muted">2 minutos</small></p>
+              <p class="card-text"><small class="text-muted" style="color: rgb(44, 38, 59);">2 minutos</small></p>
             </div>
           </div>
         </div>

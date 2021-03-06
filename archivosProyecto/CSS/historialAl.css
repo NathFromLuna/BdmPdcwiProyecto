@@ -10,6 +10,10 @@ h3{
 #busqueda{
     font-size: large;
     margin-left: 60%;
+    color:rgb(214, 203, 240); 
+}
+#busquedaTipos{
+    border-radius: 3px;
 }
 select{
     background-color: rgb(238, 235, 245);

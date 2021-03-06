@@ -1,8 +1,8 @@
 @media screen and (max-width: 1279px) {
-    label {font-size: 90%;}
-    h3 {font-size: 100%;}
+    label {font-size: large;}
+    h3 {font-size: larger;}
     .controls {font-size: 70%;}
-    .ER {font-size: 80%;}
+    .ER {font-size: medium;}
 }
 
 

@@ -2,12 +2,14 @@
 @media screen and (max-width: 1279px) {
     p {
         font-size: 100%;
+        color:rgb(44, 38, 59);
     }
     .card-title {
         font-size: 150%;
     }
     .Ventas {
         font-size: 300%;
+        color:rgb(214, 203, 240); 
     }
     .OrdenarPor {
         font-size: 110%;
@@ -22,12 +24,14 @@
 @media screen and (min-width: 1280px) {
     p {
         font-size: 140%;
+        color:rgb(44, 38, 59);
     }
     .card-title {
         font-size: 200%;
     }
     .Ventas {
         font-size: 500%;
+        color:rgb(214, 203, 240); 
     }
     .OrdenarPor {
         font-size: 200%;

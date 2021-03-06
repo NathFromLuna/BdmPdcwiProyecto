@@ -11,14 +11,16 @@ body{
 .espacio {
     margin-left: 1%;
     margin-top: 2%;
-    display: block;
+    display: flex;
+    color:rgb(214, 203, 240); 
 }
 
 .combo {
-    width: max-content;
+    width: 5%;
     display: inline-block;
     margin: 0%;
     padding: 0%;
+    color:rgb(44, 38, 59);
 }
 
 .tarjetas {
@@ -42,34 +44,22 @@ body{
 }
 
 p, .OrdenarPor, #OrdenarPor {
-    font-family: 'Rubik', sans-serif;
-   
+    color:rgb(44, 38, 59);
 }
 #OrdenarPor{
     width: 300%;
     margin-left: 3%;
 }
 .card-title, .Ventas {
-    font-family: 'IBM Plex Serif', serif;
-    
+   font-weight: bold;
+   color:rgb(44, 38, 59);
 }
 
 .col-md-4{
-    background-color: rgb(51, 2, 115);
+    background-color:rgb(96, 90, 114);
 }
 
 .card-body{
-    background-color: rgb(164, 11, 224);
+    background-color:rgb(96, 90, 114);
 }
 
-.card-title{
-    background-color: rgb(224, 11, 11);
-}
-
-.card-text{
-    background-color: rgb(210, 224, 11);
-}
-
-.text-muted{
-    background-color: rgb(14, 227, 255);
-}
