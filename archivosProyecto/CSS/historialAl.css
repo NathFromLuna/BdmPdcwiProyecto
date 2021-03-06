@@ -5,10 +5,14 @@ h3{
     margin: 3%;
     margin-left: 10%;
     font-size: xx-large;
+    color:rgb(214, 203, 240); 
 }
 #busqueda{
     font-size: large;
     margin-left: 60%;
+}
+select{
+    background-color: rgb(238, 235, 245);
 }
 table{
     border-collapse: collapse;
@@ -21,16 +25,21 @@ td, th {
     padding: 10px;
     text-align: left;
     font-size: large;
+    color:rgb(214, 203, 240); 
 }
 .titCursos{
     margin-top: 0%;
     font-size: large;
+    color:rgb(214, 203, 240); 
+    font-weight: bold;
 }
 body{
     font-family: 'Raleway', sans-serif;
     /*font-family: 'Nunito', sans-serif;*/
+    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
 }
 #titulos{
     margin-top: 0%;
     text-align: left;
+    color:rgb(214, 203, 240); 
 }

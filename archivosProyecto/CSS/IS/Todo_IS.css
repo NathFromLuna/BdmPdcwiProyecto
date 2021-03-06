@@ -1,5 +1,7 @@
-body {
-  background-color: #027333;
+body{
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
 }
 
 .login {
@@ -8,9 +10,9 @@ body {
     position: absolute;
     transform: translate(100%, 40%);
     padding: 50px 30px;
-    background-color: rgba(2, 86, 40, 0.493);
+    background-color:rgba(96, 90, 114, 0.541);
     border-radius: 15px;
-    box-shadow: -15px -15px 15px rgba(23, 191, 96, 0.164), 15px 15px 15px rgba(23, 191, 96, 0.274);
+    
 }
 
 label {
@@ -18,8 +20,7 @@ label {
     padding: 0;
     font-weight: bold;
     display: block;
-    font-family: 'IBM Plex Serif', serif;
-    
+    color:rgb(214, 203, 240); 
 }
 
 input {
@@ -28,21 +29,20 @@ input {
     border-radius: 9px;
     margin-top: 1%;
     margin-bottom: 5%;
-    border: 2px solid rgb(255, 3, 3);
-    font-family: 'Rubik', sans-serif;
+    background-color: rgb(238, 235, 245);
 }
 
 .Reg {
-    border: 2px solid red;
+
     padding: 2%;
     margin-top: 5%;
     margin-bottom: 2%;
     margin-top: 1%;
     padding: 2%;
-    font-family: 'Rubik', sans-serif;
+   
 }
 
 .linea{
     
-    border: 2px solid rgb(100, 100, 100);
+    border: 2px solid rgba(214, 203, 240, 0.568);
 }

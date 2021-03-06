@@ -1,5 +1,7 @@
-*{
-    background-color: rgb(2, 115, 51);
+body{
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
 }
 .general {
     padding-left: 5%;
@@ -30,6 +32,7 @@
 
 .titulo{
     margin-top: 2%;
+    color:rgb(214, 203, 240); 
 }
 
 .card-img {

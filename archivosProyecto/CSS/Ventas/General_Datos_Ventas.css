@@ -1,7 +1,6 @@
 * {
     margin: 0%;
     padding: 0%;
-    background-color: #027333;
 }
 
 #general {
@@ -27,7 +26,7 @@
 
 p {
     text-align: justify;
-    font-family: 'Rubik', sans-serif;
+    color:rgb(214, 203, 240); 
 }
 
 .cantidad {
@@ -39,8 +38,11 @@ p {
     margin-top: 2%;
     margin-left: 2%;
     margin-right: 2%;
+    color:rgb(214, 203, 240); 
 }
-
+tr,table{
+    color:rgb(214, 203, 240); 
+}
 .avatar {
     width: 80%;
     margin-left: 10%;
@@ -48,21 +50,26 @@ p {
 }
 
 #titulo, #titulo2, #titulo3, #titulo4 {
-    font-family: 'IBM Plex Serif', serif;
+    color:rgb(214, 203, 240); 
 }
 
 #titulo {
     margin-left: 10%;
+    color:rgb(214, 203, 240); 
 }
 
 #titulo2 {
     margin-left: 2%;
+    color:rgb(214, 203, 240); 
 }
 
 #titulo4 {
     margin-left: 2%;
+    color:rgb(214, 203, 240); 
 }
 
-.tabla {
-    font-family: 'Rubik', sans-serif;
+body{
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
 }
