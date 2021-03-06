@@ -17,6 +17,7 @@ h3{
 }
 select{
     background-color: rgb(238, 235, 245);
+    color:rgb(44, 38, 59);
 }
 table{
     border-collapse: collapse;
@@ -48,4 +49,7 @@ body{
     margin-top: 0%;
     text-align: left;
     color:rgb(214, 203, 240); 
+}
+#barraAbajo{
+    background-color: rgb(238, 235, 245);
 }
