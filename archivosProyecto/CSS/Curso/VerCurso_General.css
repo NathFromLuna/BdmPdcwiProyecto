@@ -193,6 +193,11 @@ select {
     margin-left: 4.5%;
 }
 
+#btnComentario{
+    text-align: right; 
+    margin-right: 3%;
+}
+
 .btn {
     width: 25%;
     border-radius: 3px;
