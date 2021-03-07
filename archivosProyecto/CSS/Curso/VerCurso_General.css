@@ -176,7 +176,6 @@ select {
     display: block;
     margin-top: 1%;
     font-weight: bold;
-    font-family: 'Jost', sans-serif;
     background-color:rgba(59, 55, 71, 0.788);
 }
 
@@ -235,7 +234,6 @@ select {
 }
 
 .text-com {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
     padding-left: 5%;
     background-color:rgba(59, 55, 71, 0.788);
