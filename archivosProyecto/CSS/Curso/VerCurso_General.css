@@ -1,4 +1,4 @@
-body{
+body {
     font-family: 'Raleway', sans-serif;
     /*font-family: 'Nunito', sans-serif;*/
     background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
@@ -31,7 +31,7 @@ body{
 .ContenidoDescripcion {
     text-align: justify;
     margin-right: 3%;
-    color:rgb(214, 203, 240); 
+    color: rgb(214, 203, 240);
 }
 
 .opciones {
@@ -44,15 +44,13 @@ body{
 #titulo {
     margin-bottom: 0%;
     padding-left: 3%;
-    color:rgb(214, 203, 240);  
+    color: rgb(214, 203, 240);
     font-weight: bold;
 }
 
 #titulo, #titulo2, #titulo3 {
-    color:rgb(214, 203, 240); 
+    color: rgb(214, 203, 240);
 }
-
-
 
 /*Iconos/
 
@@ -61,20 +59,27 @@ body{
 /**********************************************************************/
 
 /**********************************************************************/
+.Datos{
+    color: rgb(214, 203, 240);
+}
 
+.DatosDiv{
+    margin-left: 10%;
+    margin-top: 2%;
+}
 .imagenes {
-    width: max-content;
     display: block;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 5%;
 }
 
 .ComprarCurso {
-    width: 30%;
+    width: 10%;
     display: inline-block;
     border: 0px;
     margin: 0px;
 }
+
 
 .comprar {
     display: inline-block;
@@ -82,13 +87,12 @@ body{
     margin-top: 6%;
     margin-right: 2%;
     width: max-content;
-    color:rgb(214, 203, 240); 
+    color: rgb(214, 203, 240);
 }
 
-.imagenes2{
+.imagenes2 {
     margin-left: 5%;
 }
-
 
 /*Lo que se usa para los combobox*/
 
@@ -108,7 +112,7 @@ select {
     background-color: rgb(238, 235, 245);
     flex: 1;
     padding: 0 .5em;
-    color:rgb(44, 38, 59);
+    color: rgb(44, 38, 59);
     cursor: pointer;
 }
 
@@ -124,7 +128,7 @@ select {
     margin-top: .5%;
     margin-left: 5%;
     font-size: 150%;
-    color:rgba(44, 38, 59, 0.356);
+    color: rgba(44, 38, 59, 0.356);
 }
 
 .Box::after {
@@ -138,7 +142,6 @@ select {
     pointer-events: none;
     transition: .25s all ease;
 }
-
 
 /*Comentarios*/
 
@@ -162,22 +165,22 @@ select {
     border-style: dashed;
     border-color: rgba(214, 203, 240, 0.473);
     padding-top: 2%;
-    background-color:rgba(59, 55, 71, 0.788);
+    background-color: rgba(59, 55, 71, 0.788);
 }
 
 .Titulo2 {
     text-align: center;
     font-weight: bold;
-    color:rgb(214, 203, 240); 
+    color: rgb(214, 203, 240);
     margin-bottom: 2%;
-    background-color:rgba(59, 55, 71, 0.534);
+    background-color: rgba(59, 55, 71, 0.534);
 }
 
 .form-group {
     display: block;
     margin-top: 1%;
     font-weight: bold;
-    background-color:rgba(59, 55, 71, 0.788);
+    background-color: rgba(59, 55, 71, 0.788);
 }
 
 #commentary {
@@ -189,22 +192,22 @@ select {
 }
 
 .comentario {
-    color:rgb(214, 203, 240); 
-    background-color:rgba(59, 55, 71, 0.123);
+    color: rgb(214, 203, 240);
+    background-color: rgba(59, 55, 71, 0.123);
     margin-left: 4.5%;
 }
 
-#btnComentario{
-    text-align: right; 
+#btnComentario {
+    text-align: right;
     margin-right: 5%;
 }
 
 .btn {
     width: 25%;
     border-radius: 3px;
-    background-color:rgb(214, 203, 240); 
+    background-color: rgb(214, 203, 240);
     font-weight: bold;
-    color:rgb(44, 38, 59);
+    color: rgb(44, 38, 59);
 }
 
 /****************************/
@@ -219,7 +222,7 @@ select {
     padding-bottom: 1%;
     margin-bottom: 2%;
     max-height: 20%;
-    background-color:rgba(59, 55, 71, 0.123);
+    background-color: rgba(59, 55, 71, 0.123);
 }
 
 .ImagenPerfil {
@@ -228,19 +231,19 @@ select {
 }
 
 .media-body {
-    background-color:rgba(59, 55, 71, 0.788);
+    background-color: rgba(59, 55, 71, 0.788);
 }
 
 .Comentario {
     font-size: 300%;
     padding-left: 4%;
-    background-color:rgba(59, 55, 71, 0.788);
-    color:rgb(214, 203, 240); 
+    background-color: rgba(59, 55, 71, 0.788);
+    color: rgb(214, 203, 240);
 }
 
 .text-com {
     font-size: 150%;
     padding-left: 5%;
-    background-color:rgba(59, 55, 71, 0.788);
-    color:rgb(214, 203, 240); 
+    background-color: rgba(59, 55, 71, 0.788);
+    color: rgb(214, 203, 240);
 }
