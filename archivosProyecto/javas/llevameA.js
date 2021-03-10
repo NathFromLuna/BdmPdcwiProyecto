@@ -1,7 +1,7 @@
 function llevameAInSes() {
     //window.open("/archivosProyecto/Html's/IS.html",_self);
-    window.location.href = "/archivosProyecto/Html's/.html";
-   
+    window.location.href='IS.html';
+
 }
 function llevamePerfil() {
     //window.open("/archivosProyecto/Html's/perfil.html",false);
