@@ -3,6 +3,9 @@
     h3 {font-size: larger;}
     .controls {font-size: 70%;}
     .ER {font-size: medium;}
+    body{
+        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
+    }
 }
 
 
@@ -14,4 +17,8 @@
     h3 {font-size: 220%;}
     .controls {font-size: 110%;}
     .ER {font-size: 150%;}
+    body{
+        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
+        background-size: cover;
+    }
 }

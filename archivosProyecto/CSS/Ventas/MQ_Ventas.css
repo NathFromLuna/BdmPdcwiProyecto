@@ -1,5 +1,8 @@
 
 @media screen and (max-width: 1279px) {
+    body{
+        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
+    }
     p {
         font-size: 100%;
         color:rgb(44, 38, 59);
@@ -18,10 +21,19 @@
     #OrdenarPor{
         font-size: 110%;
     }
+    .ord{
+        font-size: 100%;
+        color:rgb(214, 203, 240); 
+    }
+
 
 }
 
 @media screen and (min-width: 1280px) {
+    body{
+        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
+        background-size: cover;
+    }
     p {
         font-size: 140%;
         color:rgb(44, 38, 59);
@@ -38,6 +50,10 @@
     }
     #OrdenarPor{
         font-size: 150%;
+    }
+    .ord{
+        font-size: 150%;
+        color:rgb(214, 203, 240); 
     }
 
 }
