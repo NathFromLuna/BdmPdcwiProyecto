@@ -47,6 +47,9 @@
     .S3{
         max-width: 14%;
     }
+    .Datos{
+        font-size: 120%;
+    }
     
 }
 
@@ -82,7 +85,6 @@
     .text-com {
         font-size: 170%;
     }
-
     .comprar{
         font-size: 200%;
     }
@@ -97,4 +99,12 @@
     .S3{
         max-width: 11%;
     }
+.Datos{
+    font-size: 200%;
+}
+#contenidoGen{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 }
