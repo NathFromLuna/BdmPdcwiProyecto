@@ -7,3 +7,10 @@ function llevamePerfil() {
 function llevameRegistrarme() {
     window.location.href = "Registro.htm";
 }
+function llevamePanP() {
+    window.location.href = "pantallaPrin.html";
+}
+function llevameAmisCursos() {
+    window.location.href = "misCursos.html";
+}
+

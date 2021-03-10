@@ -7,7 +7,7 @@ function Registrar(form) {
     if (p.length >= 8) {
 
         for (var i = 0; i < p.length; i++) {
-            var ch = p.charAt(i); 
+            var ch = p.charAt(i);
             window.alert(ch);
             if (ch >= "0" || ch <= "9")
                 num = true;
@@ -17,13 +17,14 @@ function Registrar(form) {
             }
 
         }
-        if (num == true && carac == true)
-        window.alert("Contraseña guardada");
-        else{
-        window.alert("La contraseña debe tener al menos un numero y un caracter especial")
+        if (num == true && carac == true) {
+            window.alert("Contraseña guardada");
+            llevamePanP();
+        }else {
+            window.alert("La contraseña debe tener al menos un numero y un caracter especial")
         }
     }
     else
         window.alert("La contraseña debe tener 8 caracteres")
-   
+
 }
