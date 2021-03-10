@@ -18,10 +18,11 @@ body {
     float: left;
 }
 
-
-.Video{
+.ImCurso {
+    width: 90%;
     margin-left: 5%;
 }
+
 .Descripcion {
     margin-bottom: 3%;
     margin-top: 2%;
