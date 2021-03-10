@@ -1,5 +1,5 @@
 @media screen and (max-width: 1362px) {
-    #contenidoGen{
+    #contenidoGen {
         margin: 4%;
     }
     #titulo {
@@ -32,25 +32,23 @@
     .text-com {
         font-size: 130%;
     }
-
-    .comprar{
+    .comprar {
         font-size: 150%;
     }
-    .S, .S2{
+    .S, .S2 {
         margin-top: 5%;
         margin-bottom: 5%;
         max-width: 10%;
     }
-    .S1{
+    .S1 {
         max-width: 13%;
     }
-    .S3{
+    .S3 {
         max-width: 14%;
     }
-    .Datos{
+    .Datos {
         font-size: 120%;
     }
-    
 }
 
 @media screen and (min-width: 1363px) {
@@ -72,7 +70,6 @@
     #btn {
         font-size: 90%;
     }
-
     .Titulo2 {
         font-size: 300%;
     }
@@ -85,26 +82,25 @@
     .text-com {
         font-size: 170%;
     }
-    .comprar{
+    .comprar {
         font-size: 200%;
     }
-    .S, .S2{
+    .S, .S2 {
         margin-top: 5%;
         margin-bottom: 5%;
         max-width: 8%;
     }
-    .S1{
+    .S1 {
         max-width: 10%;
     }
-    .S3{
+    .S3 {
         max-width: 11%;
     }
-.Datos{
-    font-size: 200%;
-}
-#contenidoGen{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
+    .Datos {
+        font-size: 200%;
+    }
+    #contenidoGen {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
