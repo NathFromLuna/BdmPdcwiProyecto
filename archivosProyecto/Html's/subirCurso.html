@@ -11,8 +11,20 @@
     <link rel="stylesheet" href="../CSS/navBar.css">
     <link rel="stylesheet" href="../CSS/subirCurso.css">
     <script type="text/javascript" src="../JAVA/llevameA.js"></script>
+    <script type="text/javascript" src="../JAVA/jquery-3.5.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
         rel="stylesheet">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#añadeLvl").click(function () {
+                var nombre = $("#nameLvl").val();
+                $("#listaNiveles").append("<li >" + nombre + "<br> <button class='nuevoLvl'>Eliminar</li>");
+            });
+            $("ul").on("click", ".nuevoLvl", function () {
+                $(this).parent().remove();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -61,15 +73,22 @@
                     Costo curso<br>
                     <input id="costoCur" class="inputs" type="text"><br>
                     <div id="nivelesCur">
-                        <button id="añadeLvl">Añadir nivel</button>
+                        Niveles: <input id="nameLvl" class="inputs" type="text" placeholder="Nombre nivel">
+                        <ul id="listaNiveles">
+
+                        </ul>
+                        <button id="añadeLvl" class="btn">Añadir nivel</button>
                     </div>
                 </div>
             </div>
-            <div id="trailer">
-                <video class="Video_Curso" src="../ImagenesaCambiar/OP_-_Bungo_Stray_Dogs.mp4" width=100% height=70%
-                    controls poster="vistaprevia.jpg"></video>
-                    <button id="subirCurso" onclick="llevameAmisCursos()">Subir curso</button>
+            <div id="videoAgregarCurso">
+                <div id="trailer">
+                    <video class="Video_Curso" src="../ImagenesaCambiar/OP_-_Bungo_Stray_Dogs.mp4" width=100% height=50%
+                        controls poster="vistaprevia.jpg"></video>
+                </div>
+                <button id="subirCurso" class="btn" onclick="llevameAmisCursos()">Subir curso</button>
             </div>
+
         </div>
     </div>
 </body>

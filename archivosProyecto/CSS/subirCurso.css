@@ -23,6 +23,19 @@ body{
     margin: 2%;
     border-radius: 4px;
 }
+.btn{
+    background-color: rgb(238, 235, 245);
+    border-radius: 4px;
+    padding: 1%;
+    color:rgb(44, 38, 59);
+}
 #trailer{
+    text-align: left;
+}
+#subirCurso{
+    margin: 2%;
+}
+#videoAgregarCurso{
     margin: 4%;
+    text-align: right;
 }
