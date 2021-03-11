@@ -1,5 +1,47 @@
-body{
-    font-family: 'Raleway', sans-serif;
-    /*font-family: 'Nunito', sans-serif;*/
-    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
+body {
+  font-family: 'Raleway', sans-serif;
+  background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
+  font-family: 'Raleway', sans-serif;
 }
+
+#principal {
+  margin: 0px;
+  display: block;
+  width: 100%;
+}
+
+.video {
+  margin: 0px;
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  min-height: 93vh;
+}
+
+.Video_Clase {
+  width: 100%;
+  margin-top: 5%;
+}
+
+.barra {
+  float: right;
+  margin: 0%;
+  background-color: rgba(141, 1, 255, 0.308);
+  min-height: 93vh;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.num_nivel, .num_nivel {
+  width: max-content;
+  height: max-content;
+  color: rgb(214, 203, 240);
+  margin-left: 5%;
+}
+
+#btnDescargar {
+  background-color: rgb(238, 235, 245);
+  border-radius: 6px;
+  padding: 2%;
+  color: rgb(44, 38, 59);
+}
+
