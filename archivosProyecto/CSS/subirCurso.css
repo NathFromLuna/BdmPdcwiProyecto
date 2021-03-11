@@ -3,3 +3,26 @@ body{
     /*font-family: 'Nunito', sans-serif;*/
     background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
 }
+#contenidoCentral{
+    margin: 4%;
+    margin-left: 12%;
+}
+#cosasCurso{
+    display: flex;
+}
+#detallesCurso{
+    color:rgb(214, 203, 240); 
+    font-size: large;
+}
+#catCur{
+    padding-top: 1%;
+    padding-left: 3%;
+}
+.inputs{
+    background-color: rgb(238, 235, 245);
+    margin: 2%;
+    border-radius: 4px;
+}
+#trailer{
+    margin: 4%;
+}
