@@ -1,6 +1,5 @@
 function Registrar(form) {
     var p = document.getElementById("password").value;
-    window.alert(p);
     var num = false;
     var carac = false;
 
@@ -8,7 +7,6 @@ function Registrar(form) {
 
         for (var i = 0; i < p.length; i++) {
             var ch = p.charAt(i);
-            window.alert(ch);
             if (ch >= "0" || ch <= "9")
                 num = true;
             if (ch == "/" || ch == "*" || ch == "¡" || ch == "”" || ch == "#" || ch == "$" || ch == "%" || ch == "&" || ch == "=" || ch == "’" || ch == "?" || ch == "¡" || ch == "¿" || ch == ":" || ch == ";" || ch == "," || ch == "."
