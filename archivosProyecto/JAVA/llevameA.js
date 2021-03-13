@@ -13,4 +13,7 @@ function llevamePanP() {
 function llevameAmisCursos() {
     window.location.href = "misCursos.html";
 }
+function llevameAverCursos() {
+    window.location.href = "VerCurso.html";
+}
 
