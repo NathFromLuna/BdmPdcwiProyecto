@@ -1,0 +1,29 @@
+@media screen and (max-width: 1362px) {
+    .video {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 4%;
+    }
+    .Video_Clase {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1363px) {
+    .video {
+        width: 70%;
+        margin-left: 3%;
+        margin-top: 3%;
+        display: inline-block;
+    }
+    .Video_Clase {
+        width: 100%;
+    }
+    .barra{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+  
+    }
+}
