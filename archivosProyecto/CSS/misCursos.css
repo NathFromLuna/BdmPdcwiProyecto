@@ -32,27 +32,9 @@ td, th {
 }
 #contenidoCentral{
     display: flex;
+    margin: 8%;
 }
-.categorias{
-    margin: 2%;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 7px;
-    padding: 25px;
-    padding-left: 1.5%;
-    padding-right: 4%;
-    padding-top: 5px;
-    background-color:rgba(59, 55, 71, 0.788);
-}
-.btnCategoria{
-    width: 125%;
-    height: 35px;
-    background:rgba(59, 55, 71, 0.096);
-    border:none;
-    font-size: large;
-    margin: 4%;
-    color:rgb(214, 203, 240); 
-}
+
 .contenedorCursos{
     margin-left: 0;
 }
