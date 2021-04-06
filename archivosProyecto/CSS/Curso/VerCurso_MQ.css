@@ -1,5 +1,5 @@
 @media screen and (max-width: 1362px) {
-    #contenidoGen{
+    #contenidoGen {
         margin: 4%;
     }
     #titulo {
@@ -32,79 +32,80 @@
     .text-com {
         font-size: 130%;
     }
-
-    .comprar{
+    .comprar {
         font-size: 150%;
     }
-    .S, .S2{
+    .S, .S2 {
         margin-top: 5%;
         margin-bottom: 5%;
         max-width: 10%;
     }
-    .S1{
+    .S1 {
         max-width: 13%;
     }
-    .S3{
+    .S3 {
         max-width: 14%;
     }
-    .Datos{
+    .Datos {
         font-size: 120%;
     }
-    
 }
 
 @media screen and (min-width: 1363px) {
     #titulo {
-        font-size: 400%;
+        font-size: 4vh;
     }
     #titulo2 {
-        font-size: 200%;
+        font-size: 3vh;
     }
     #titulo3 {
-        font-size: 250%;
+        font-size: 3vh;
     }
     .ContenidoDescripcion {
-        font-size: 180%;
+        font-size: 2vh;
     }
     .form-group {
         font-size: 200%;
     }
     #btn {
-        font-size: 90%;
+        font-size: 60%;
     }
-
     .Titulo2 {
-        font-size: 300%;
+        font-size: 5vh;
     }
     .comentario {
-        font-size: 100%;
+        font-size: 3vh;
     }
     .Comentario {
-        font-size: 300%;
+        font-size: 3vh;
     }
     .text-com {
-        font-size: 170%;
+        font-size: 2.5vh;
+    }
+    #btnComprar {
+        font-size: 2.5vh;
     }
     .comprar{
-        font-size: 200%;
+        font-size: 3vh;
     }
-    .S, .S2{
-        margin-top: 5%;
+    .S, .S2 {
+        margin-top: 3%;
         margin-bottom: 5%;
         max-width: 8%;
     }
-    .S1{
+    .S1 {
         max-width: 10%;
+        margin-top: -1%;
     }
-    .S3{
+    .S3 {
         max-width: 11%;
+        margin-top: -2%;
     }
-.Datos{
-    font-size: 200%;
-}
-#contenidoGen{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
+    .Datos {
+        font-size: 2.5vh;
+    }
+    #contenidoGen {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
