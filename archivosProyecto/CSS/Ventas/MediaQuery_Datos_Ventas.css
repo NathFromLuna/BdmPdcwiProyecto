@@ -17,10 +17,15 @@
         margin-left: 3%;
         margin-right: 3%;
     }
-    #general{
+    #general {
         padding-top: 2%;
         padding-left: 5%;
         padding-right: 5%;
+    }
+    body{
+        font-family: 'Raleway', sans-serif;
+        /*font-family: 'Nunito', sans-serif;*/
+        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
     }
 }
 
@@ -47,9 +52,13 @@
         margin-left: 2%;
         margin-right: 2%;
     }
-    #general{
+    #general {
         padding-top: 1%;
         padding-left: 2%;
         padding-right: 2%;
+    }
+    body {
+        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
+        background-size: cover;
     }
 }
