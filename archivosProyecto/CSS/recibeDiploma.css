@@ -1,40 +1,54 @@
-body{
+body {
     font-family: 'Raleway', sans-serif;
     /*font-family: 'Nunito', sans-serif;*/
     background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
 }
-#contenidoCentral{
+
+#contenidoCentral {
     margin: 8%;
     margin-top: 3%;
     margin-bottom: 1%;
     margin-top: 15%;
 }
-#textoGracias{
-    color:rgb(214, 203, 240); 
+
+#textoGracias {
+    color: rgb(214, 203, 240);
     text-align: center;
 }
-.agradecimiento{
+
+.agradecimiento {
     font-size: xx-large;
 }
-.nombreCursoMaestro{
+
+.nombreCursoMaestro {
     font-weight: bold;
     font-size: x-large;
 }
-#desDiploma{
+
+#desDiploma {
     display: flex;
     text-align: right;
     margin-top: 15%;
     margin-left: 58%;
-    color:rgb(92, 84, 112); 
+    color: rgb(92, 84, 112);
 }
-#dip{
-    margin-top:2%;
+
+#dip {
+    margin-top: 2%;
 }
-#btnDiploma{
+
+#btnDiploma {
     margin-left: 3%;
     background-color: rgb(238, 235, 245);
     border-radius: 6px;
     padding: 2%;
-    color:rgb(44, 38, 59);
+    color: rgb(44, 38, 59);
     height: 8%;
+}
+
+@media screen and (min-width: 1280px) {
+    body{
+    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
+    background-size: cover;
+    }
 }
