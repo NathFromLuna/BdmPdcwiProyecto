@@ -19,4 +19,6 @@ function llevameAverCursos() {
 function llevameCrearCurso() {
     window.location.href = "subirCurso.html";
 }
-
+function llevameAhistorial() {
+    window.location.href = "historialAl.html";
+}

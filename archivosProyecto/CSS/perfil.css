@@ -8,8 +8,15 @@
 #datosPerfil{
     display: flex;
 }
-#btnMisCurs{
+#btnMisCursyOtrasCosas{
     text-align: right;
+}
+#btnHistorial{
+    background-color: rgb(238, 235, 245);
+    border-radius: 4px;
+    font-size: large;
+    padding: 1%;
+    color:rgb(44, 38, 59);
 }
 #btnMisCursos{
     background-color: rgb(238, 235, 245);
