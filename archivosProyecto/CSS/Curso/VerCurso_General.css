@@ -81,12 +81,13 @@ body {
     margin: 0px;
 }
 
+
 #btnComprar {
     margin-left: 6%;
     border-radius: 5px;
-    background-color: rgb(232, 229, 240);
+    background-color: rgb(238, 235, 245);
     font-weight: bold;
-    color: rgb(44, 38, 59);
+    color:rgb(44, 38, 59);
 }
 
 .comprar {
@@ -211,9 +212,9 @@ select {
 .btn {
     width: 25%;
     border-radius: 3px;
-    background-color: rgb(214, 203, 240);
+    background-color: rgb(238, 235, 245);
     font-weight: bold;
-    color: rgb(44, 38, 59);
+    color:rgb(44, 38, 59);
 }
 
 /****************************/
