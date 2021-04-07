@@ -18,9 +18,20 @@ table{
 td, th {
     /*border: 1px solid #dddddd;*/
     margin:3% ;
-   
     font-size: large;
     color:rgb(214, 203, 240); 
+}
+#tituloBtn{
+    display: flex;
+}
+#btnAnCur{
+    margin-left: 59%;
+    margin-top: 3%;
+    background-color: rgb(238, 235, 245);
+    border-radius: 6px;
+    padding: 1%;
+    color:rgb(44, 38, 59);
+    height: 5%;
 }
 
 .cursos{
@@ -33,6 +44,7 @@ td, th {
 #contenidoCentral{
     display: flex;
     margin: 8%;
+    margin-top: 4%;
 }
 
 .contenedorCursos{

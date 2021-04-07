@@ -16,4 +16,7 @@ function llevameAmisCursos() {
 function llevameAverCursos() {
     window.location.href = "VerCurso.html";
 }
+function llevameCrearCurso() {
+    window.location.href = "subirCurso.html";
+}
 
