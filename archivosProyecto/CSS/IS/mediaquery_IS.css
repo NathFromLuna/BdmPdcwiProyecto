@@ -37,15 +37,15 @@
     #ER {
         padding: 2%;
         margin-top: 5%;
-        font-size: 150%;
+        font-size: 2vh;
     }
     .Reg {
-        font-size: 150%;
+        font-size: 2.5vh;
     }
     label {
-        font-size: 160%;
+        font-size: 2vh;
     }
     input {
-        font-size: 130%;
+        font-size: 2vh;
     }
 }
