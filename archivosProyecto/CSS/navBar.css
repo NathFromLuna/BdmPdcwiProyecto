@@ -1,3 +1,4 @@
+
 .navbar-brand, .navbar-brand:hover{
   color: rgb(214, 203, 240); 
 }
@@ -7,10 +8,11 @@
 .navbar-brand{
   font-size:x-large;
 }
-#elementosNav {
-  float: right;
+#elementosNav {  
   display: flex;
-  transform: translate(456%, 0%);
+  position: absolute;
+  top: 5px;
+  right: 30px;
   background-color: rgb(73, 62, 102);
 }
 .dropbtn {
