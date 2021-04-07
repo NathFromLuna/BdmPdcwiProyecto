@@ -1,8 +1,8 @@
-body{
+body {
     font-family: 'Raleway', sans-serif;
     /*font-family: 'Nunito', sans-serif;*/
-
 }
+
 .general {
     padding-left: 5%;
     padding-right: 5%;
@@ -12,7 +12,7 @@ body{
     margin-left: 1%;
     margin-top: 2%;
     display: flex;
-    color:rgb(214, 203, 240); 
+    color: rgb(214, 203, 240);
 }
 
 .combo {
@@ -20,7 +20,7 @@ body{
     display: inline-block;
     margin: 0%;
     padding: 0%;
-    color:rgb(44, 38, 59);
+    color: rgb(44, 38, 59);
 }
 
 .tarjetas {
@@ -32,34 +32,31 @@ body{
     margin-top: 2%;
 }
 
-.titulo{
+.titulo {
     margin-top: 2%;
-    color:rgb(214, 203, 240); 
+    color: rgb(214, 203, 240);
 }
 
-.card-img {
-    max-height: 40ex;
-    max-width: 50%;
-    margin-left: 5%;
+
+
+p, #OrdenarPor {
+    color: rgb(44, 38, 59);
 }
 
-p, .OrdenarPor, #OrdenarPor {
-    color:rgb(44, 38, 59);
-}
-#OrdenarPor{
+#OrdenarPor {
     width: 300%;
     margin-left: 3%;
 }
+
 .card-title, .Ventas {
-   font-weight: bold;
-   color:rgb(44, 38, 59);
+    font-weight: bold;
+    color: rgb(44, 38, 59);
 }
 
-.col-md-4, .col-md-8{
-    background-color:rgb(96, 90, 114);
+.col-md-4, .col-md-8 {
+    background-color: rgb(96, 90, 114);
 }
 
-.card-body{
-    background-color:rgb(96, 90, 114);
+.card-body {
+    background-color: rgb(96, 90, 114);
 }
-

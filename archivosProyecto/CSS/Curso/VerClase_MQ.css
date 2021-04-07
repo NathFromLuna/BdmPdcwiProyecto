@@ -31,7 +31,8 @@
     .logo{
         margin-top: 5%;
     }
-    .num_nivel { font-size: 3vh; }
+    .num_nivel { margin-left: 5%;
+        font-size: 3vh; }
     .vid_nivel{ font-size: 2.6vh;}
 
 }
