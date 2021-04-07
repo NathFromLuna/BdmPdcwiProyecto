@@ -53,3 +53,10 @@ body{
 #barraAbajo{
     background-color: rgb(238, 235, 245);
 }
+
+@media screen and (min-width: 1280px) {
+    body{
+    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
+    background-size: cover;
+    }
+}
