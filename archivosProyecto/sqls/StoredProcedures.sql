@@ -66,14 +66,10 @@ create procedure editarUsuario (in idUs int, in nNombre varchar(50),
  in esTeacher bool,
  in nImagenPerfil blob)
 begin
-
-
-    insert into Usuarios(nombre, apellidos, nickname, correo, contraseña,
-    esMaestro, imagenPerfil)
-    values(nNombre, nApellidos, nNickname, nCorreo, nContraseña,
-    esTeacher, nImagenPerfil);
+	update Usuarios set nombre=nNombre,apellidos=nApellidos,
+    nickname=nNickname, correo=nCorreo, contraseña=nContraseña,
+    imagenPerfil=nImagenPerfil where id_usuario=idUs;
 end/
-
 
 delimiter /
 create procedure eliminarUsuario (in _usID int)
@@ -81,7 +77,6 @@ begin
     delete from usuarios where usID=_usID;
 end/
 
-  
 delimiter /
 create procedure buscarCurso (in cursoAbuscar varchar(200))
 begin
