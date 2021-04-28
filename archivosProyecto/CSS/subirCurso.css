@@ -23,7 +23,7 @@ body{
     margin: 2%;
     border-radius: 4px;
 }
-.btn{
+.btn, .nuevoLvl{
     background-color: rgb(238, 235, 245);
     border-radius: 4px;
     padding: 1%;
