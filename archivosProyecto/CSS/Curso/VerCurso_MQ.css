@@ -1,0 +1,111 @@
+@media screen and (max-width: 1362px) {
+    #contenidoGen {
+        margin: 4%;
+    }
+    #titulo {
+        font-size: 200%;
+    }
+    #titulo2 {
+        font-size: 200%;
+    }
+    #titulo3 {
+        font-size: 180%;
+    }
+    .ContenidoDescripcion {
+        font-size: 100%;
+    }
+    .form-group {
+        font-size: 180%;
+    }
+    #btn {
+        font-size: 60%;
+    }
+    .Titulo2 {
+        font-size: 160%;
+    }
+    .comentario {
+        font-size: 70%;
+    }
+    .Comentario {
+        font-size: 160%;
+    }
+    .text-com {
+        font-size: 130%;
+    }
+    .comprar {
+        font-size: 150%;
+    }
+    .S, .S2 {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        max-width: 10%;
+    }
+    .S1 {
+        max-width: 13%;
+    }
+    .S3 {
+        max-width: 14%;
+    }
+    .Datos {
+        font-size: 120%;
+    }
+}
+
+@media screen and (min-width: 1363px) {
+    #titulo {
+        font-size: 4vh;
+    }
+    #titulo2 {
+        font-size: 3vh;
+    }
+    #titulo3 {
+        font-size: 3vh;
+    }
+    .ContenidoDescripcion {
+        font-size: 2vh;
+    }
+    .form-group {
+        font-size: 200%;
+    }
+    #btn {
+        font-size: 60%;
+    }
+    .Titulo2 {
+        font-size: 5vh;
+    }
+    .comentario {
+        font-size: 3vh;
+    }
+    .Comentario {
+        font-size: 3vh;
+    }
+    .text-com {
+        font-size: 2.5vh;
+    }
+    #btnComprar {
+        font-size: 2.5vh;
+    }
+    .comprar{
+        font-size: 3vh;
+    }
+    .S, .S2 {
+        margin-top: 3%;
+        margin-bottom: 5%;
+        max-width: 8%;
+    }
+    .S1 {
+        max-width: 10%;
+        margin-top: -1%;
+    }
+    .S3 {
+        max-width: 11%;
+        margin-top: -2%;
+    }
+    .Datos {
+        font-size: 2.5vh;
+    }
+    #contenidoGen {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-
     <link rel="stylesheet" href="../CSS/mediaquery_Registro.css">
     <link rel="stylesheet" href="../CSS/Todo_Registro.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
@@ -23,6 +22,7 @@
 
 <body>
     <!--<form class="formR" name="Registro" id="Registro">-->
+    <div class="formR">
         <h3>Registro</h3>
         <div class="group">
             <label>Nombre:</label>
@@ -35,6 +35,12 @@
             <label>Apellido:</label>
             <input class="controls" type="text" name="Ap" id="Ap" placeholder="Introduzca apellido(s)" required
                 autocomplete="off">
+
+        </div>
+        <div class="group">
+            <label>Nickname:</label>
+            <input class="controls" type="text" name="Nickname" id="Nickname" placeholder="Introduzca un nombre de usuario"
+                required autocomplete="off">
 
         </div>
 
@@ -57,10 +63,10 @@
                 placeholder="Seleccione una imagen" required>
 
         </div>
-        <br/>
+        <br />
         <label class="radio-button"> Elegir si la cuenta será para aprender o enseñar: </label>
-        <div >
-            <br/>
+        <div>
+            <br />
             <input type="radio" name="tipo" id="Alumno" value="alumno">
             <label class="radio-button" for="Alumno">Alumno</label>
             <input type="radio" name="tipo" id="Maestro" value="maestro">
@@ -73,7 +79,7 @@
         <div class="group">
             <input class="ER" type="submit" value="Registrar" onclick="Registrar()">
         </div>
-
+    </div>
     <!--</form>-->
 
 </body>

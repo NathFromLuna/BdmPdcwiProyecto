@@ -5,14 +5,14 @@ body {
 }
 
 #chatAct {
-    background: url(../imagenesDef/Crashea3.jpg);
+    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
     width: 74.9%;
     height: 100%;
 }
 
 @media screen and (min-width: 1280px) {
     #chatAct {
-        background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
+        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
         background-size: cover;
         width: 74.9%;
         height: 100%;
@@ -80,7 +80,7 @@ body {
 }
 
 #btnEnviar {
-    background-image: url(../imagenesDef/iconoEnviar.png);
+    background-image: url(/archivosProyecto/imagenesDef/iconoEnviar.png);
     background-size: 33px;
     width: 40px;
     height: 40px;

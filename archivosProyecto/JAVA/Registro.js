@@ -2,7 +2,7 @@ function Registrar(form) {
   
     var nombre = document.getElementById("name").value;
     var apellidos = document.getElementById("Ap").value;
-    var nickname = document.getElementById("password").value;
+    var nickname = document.getElementById("Nickname").value;
     var correo = document.getElementById("email").value;
     var esProfeProv = $('input:radio[name=tipo]:checked').val();
     var p = document.getElementById("password").value;
@@ -35,7 +35,6 @@ function Registrar(form) {
                     esProfe="false";
             }
 
-            nickname="f";
             let Body = {nombre,apellidos,nickname,correo,p,esProfe,foto,opc}
 
             let jsonBody = JSON.stringify(Body)
