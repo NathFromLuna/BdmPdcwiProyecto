@@ -22,3 +22,6 @@ function llevameCrearCurso() {
 function llevameAhistorial() {
     window.location.href = "historialAl.html";
 }
+function llevameAVentas() {
+    window.location.href = "Ventas.html";
+}

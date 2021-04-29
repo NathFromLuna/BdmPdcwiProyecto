@@ -4,7 +4,7 @@ function Registrar(form) {
     var apellidos = document.getElementById("Ap").value;
     var nickname = document.getElementById("password").value;
     var correo = document.getElementById("email").value;
-    var esProfe = document.getElementById("password").value; 
+    var esProfeProv = $('input:radio[name=tipo]:checked').val();
     var p = document.getElementById("password").value;
     var foto = document.getElementById("password").value;
 
@@ -27,12 +27,18 @@ function Registrar(form) {
             window.alert("Contraseña guardada");
             var opc=1;
             foto="todavia no jala";
-            esProfe=true;
-            nickname="d";
+            var esProfe;
+            if(esProfeProv=="maestro")
+                esProfe="true";
+            else{
+                if(esProfeProv=="alumno")
+                    esProfe="false";
+            }
+
+            nickname="f";
             let Body = {nombre,apellidos,nickname,correo,p,esProfe,foto,opc}
 
             let jsonBody = JSON.stringify(Body)
-            console.log(jsonBody);
            fetch('../php/usuario.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
            .then(response => {
              return response.json();
@@ -42,14 +48,13 @@ function Registrar(form) {
             console.log(Jason);
             if(Jason=="success"){
                 alert("Registro exitoso");
-                window.location.href = "pantallaPrin.html";
+                window.location.href="IS.html";
             }
             else
                 alert(Jason.result)
             //"status" => "ok",
             //"result" => array()
             })
-
         }else {
             window.alert("La contraseña debe tener al menos un numero y un caracter especial")
         }

@@ -41,8 +41,10 @@
                $this->database = $value["database"];
                $this->port = $value["port"];
                }
+
                $this->conexion = new mysqli($this->server,$this->user,$this->password,$this->database,$this->port);
                if($this->conexion->connect_errno){
+
                    echo "algo va mal con la conexion";
                    die();
                }
@@ -57,6 +59,25 @@
         $this->conexion->query($query);
         return $this->conexion->affected_rows;
        }
+
+       public function obtenerDatos($query){
+        $results = $this->conexion->query($query);
+        $resultarray = array();
+        foreach($results as $key){
+            $resultarray[]= $key;
+
+        }
+        return $this->convertirUTF8($resultarray);
+       }
+
+       private function convertirUTF8($array){
+        array_walk_recursive($array,function(&$item,$key){
+            if(!mb_detect_encoding($item,'utf-8',true)){
+                $item = utf8_encode($item);
+            }
+        });
+        return $array;
+    }
 
     }
 ?>

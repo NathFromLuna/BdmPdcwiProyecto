@@ -1,14 +1,14 @@
 create database crashea;
 
 use crashea;
-drop database crashea
+
 create table Usuarios(
 	id_usuario int not null unique auto_increment,
     nombre varchar(50) not null,
     apellidos varchar (150),
     nickname varchar(100) unique,
     correo varchar(70) not null, 
-    contraseña varchar(40) not null,
+    contraseña varbinary(40) not null,
     esMaestro bool,
     imagenPerfil blob not null,  
 	primary key (id_usuario)
@@ -72,5 +72,11 @@ create table tablaAsociativaCursoCategoria(
     foreign key (id_cat) references Categorias(id_categorias),
 	foreign key (id_curso) references Curso(id_curso)
 )
+
+
+
+
+
+
 
 
