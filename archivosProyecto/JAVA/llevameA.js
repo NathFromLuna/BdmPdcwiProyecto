@@ -8,7 +8,7 @@ function llevameRegistrarme() {
     window.location.href = "Registro.htm";
 }
 function llevamePanP() {
-    window.location.href = "pantallaPrin.html";
+    window.location.href = "index.html";
 }
 function llevameAmisCursos() {
     window.location.href = "misCursos.html";

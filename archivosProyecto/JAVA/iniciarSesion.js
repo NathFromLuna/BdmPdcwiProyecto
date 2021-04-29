@@ -15,7 +15,7 @@ function iniciaSesion(){
             console.log(Jason);
             if(Jason=="sesionEncontrada"){
                 alert("bienvenido");
-                window.location.href = "pantallaPrin.html";
+                window.location.href = "index.html";
             }
             else
                 alert(Jason.result)
