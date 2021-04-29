@@ -34,7 +34,6 @@ function Registrar(form) {
                 if(esProfeProv=="alumno")
                     esProfe="false";
             }
-
             let Body = {nombre,apellidos,nickname,correo,p,esProfe,foto,opc}
 
             let jsonBody = JSON.stringify(Body)
