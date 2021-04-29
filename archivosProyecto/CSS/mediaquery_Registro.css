@@ -4,10 +4,7 @@
     .controls {font-size: 70%;}
     .ER {font-size: medium;}
     body{
-        background: url(../imagenesDef/Crashea3.jpg);
-    }
-    .radio-button {
-        font-size: 1.5vh;        
+        background: url();
     }
 }
 
@@ -23,9 +20,5 @@
     body{
         background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
         background-size: cover;
-    }
-    .radio-button {
-        
-        font-size: 2vh;        
     }
 }

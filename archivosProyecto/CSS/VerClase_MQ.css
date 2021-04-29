@@ -1,0 +1,38 @@
+@media screen and (max-width: 1279px) {
+    .video {
+        width: 80%;
+    }
+    .barra {
+        width: 20%;
+    }
+    #logodiv{
+        height: 10vw;
+        display:block;
+        margin:auto;
+    }
+    .logo{
+        margin-top: 10%;
+    }
+    .num_nivel { font-size: 2.5vh; }
+    .vid_nivel{ font-size: 2vh;}
+}
+@media screen and (min-width: 1280px) {
+    .video {
+        width: 70%;
+    }
+    .barra {
+        width: 30%;
+    }
+    #logodiv{
+        height: 10vw;
+        display:block;
+        margin:auto;
+    }
+    .logo{
+        margin-top: 5%;
+    }
+    .num_nivel { margin-left: 5%;
+        font-size: 3vh; }
+    .vid_nivel{ font-size: 2.6vh;}
+
+}
