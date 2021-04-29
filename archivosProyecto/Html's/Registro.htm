@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="/archivosProyecto/CSS//Registro/mediaquery_Registro.css">
-    <link rel="stylesheet" href="/archivosProyecto/CSS/Registro/Todo_Registro.css">
+    <link rel="stylesheet" href="../CSS//Registro/mediaquery_Registro.css">
+    <link rel="stylesheet" href="../CSS/Registro/Todo_Registro.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
         rel="stylesheet">
-    <script src="/archivosProyecto/JAVA/Registro.js"></script>
+    <script src="../JAVA/Registro.js"></script>
 
     <!--Fuentes-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <form class="formR" name="Registro" id="Registro">
+    <!--<form class="formR" name="Registro" id="Registro">-->
         <h3>Registro</h3>
         <div class="group">
             <label>Nombre:</label>
@@ -56,6 +56,15 @@
                 placeholder="Seleccione una imagen" required>
 
         </div>
+        <br/>
+        <label class="radio-button"> Elegir si la cuenta será para aprender o enseñar: </label>
+        <div >
+            <br/>
+            <input type="radio" name="tipo" id="Alumno">
+            <label class="radio-button" for="Alumno">Alumno</label>
+            <input type="radio" name="tipo" id="maestro">
+            <label class="radio-button" for="maestro">Maestro</label>
+        </div>
 
         <!-- Al enviar los datos para el registro debe enviarse la fecha en que fue hecho para guardar el campo
 "fecha en que se dieron de alta" -->
@@ -64,7 +73,7 @@
             <input class="ER" type="submit" value="Registrar" onclick="Registrar()">
         </div>
 
-    </form>
+    <!--</form>-->
 
 </body>
 
