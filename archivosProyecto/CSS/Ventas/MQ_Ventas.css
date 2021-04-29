@@ -1,7 +1,7 @@
 
 @media screen and (max-width: 1279px) {
     body{
-        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
+        background: url(../imagenesDef/Crashea3.jpg);
     }
     p {
         font-size: 100%;
@@ -34,7 +34,7 @@
 
 @media screen and (min-width: 1280px) {
     body{
-        background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
+        background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
         background-size: cover;
     }
     .card-text {
