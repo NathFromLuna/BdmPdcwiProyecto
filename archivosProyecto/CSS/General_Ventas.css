@@ -1,0 +1,62 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+}
+
+.general {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.espacio {
+    margin-left: 1%;
+    margin-top: 2%;
+    display: flex;
+    color: rgb(214, 203, 240);
+}
+
+.combo {
+    width: 5%;
+    display: inline-block;
+    margin: 0%;
+    padding: 0%;
+    color: rgb(44, 38, 59);
+}
+
+.tarjetas {
+    display: block;
+}
+
+.card {
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.titulo {
+    margin-top: 2%;
+    color: rgb(214, 203, 240);
+}
+
+
+
+p, #OrdenarPor {
+    color: rgb(44, 38, 59);
+}
+
+#OrdenarPor {
+    width: 300%;
+    margin-left: 3%;
+}
+
+.card-title, .Ventas {
+    font-weight: bold;
+    color: rgb(44, 38, 59);
+}
+
+.col-md-4, .col-md-8 {
+    background-color: rgb(96, 90, 114);
+}
+
+.card-body {
+    background-color: rgb(96, 90, 114);
+}
