@@ -56,12 +56,12 @@ td, th {
 body{
     font-family: 'Raleway', sans-serif;
     /*font-family: 'Nunito', sans-serif;*/
-    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg);
+    background: url(../imagenesDef/Crashea3.jpg);
 }
 
 @media screen and (min-width: 1280px) {
     body{
-    background: url(/archivosProyecto/imagenesDef/Crashea3.jpg) no-repeat center top;
+    background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
     background-size: cover;
     }
 }

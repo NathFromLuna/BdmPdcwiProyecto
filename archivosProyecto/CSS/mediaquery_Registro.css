@@ -6,6 +6,9 @@
     body{
         background: url(../imagenesDef/Crashea3.jpg);
     }
+    .radio-button {
+        font-size: 1.5vh;        
+    }
 }
 
 
@@ -20,5 +23,9 @@
     body{
         background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
         background-size: cover;
+    }
+    .radio-button {
+        
+        font-size: 2vh;        
     }
 }
