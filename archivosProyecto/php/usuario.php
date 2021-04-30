@@ -10,6 +10,8 @@ $_usuario = new Usuario;
         $jala = $_usuario->iniciarSesion($postbody);
     if($datos["opc"]==3)
         $jala = $_usuario->getPerfilUsuario();
+    if($datos["opc"]==4)
+        $jala = $_usuario->modificarUsuario($postbody);
     header('Content-Type: application/json');//le dices que devuelve un json
     echo json_encode($jala);
 ?>

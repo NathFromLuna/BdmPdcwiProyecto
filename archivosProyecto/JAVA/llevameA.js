@@ -25,3 +25,6 @@ function llevameAhistorial() {
 function llevameAVentas() {
     window.location.href = "Ventas.html";
 }
+function llevameAEdPerfil() {
+    window.location.href = "editarPerfil.html";
+}

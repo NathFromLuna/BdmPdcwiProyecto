@@ -4,11 +4,13 @@ use crashea;
 
 delimiter /
 create procedure obtenerPerfil (in correoUs varchar(70),
- in contraseñaUs varbinary(40))
+ in contraseñaUs varchar(40))
 begin
-	select nombre, apellidos, nickname, imagenPerfil from Usuarios 
+	select id_usuario, nombre, apellidos, nickname, esMaestro, imagenPerfil from Usuarios 
     where correoUs=correo and contraseñaUs=contraseña;
 end/
+
+drop procedure obtenerPerfil
 
 delimiter /
 create procedure esMaestro (in idUs int)
@@ -22,7 +24,7 @@ create procedure registrarUsuario (in nNombre varchar(50),
  in nApellidos varchar(150),
  in nNickname varchar(100),
  in nCorreo varchar(70),
- in nContraseña varbinary(40),
+ in nContraseña varchar(40),
  in esTeacher bool,
  in nImagenPerfil blob)
 begin
@@ -62,14 +64,13 @@ create procedure editarUsuario (in idUs int, in nNombre varchar(50),
  in nApellidos varchar(150),
  in nNickname varchar(100),
  in nCorreo varchar(70),
- in nContraseña varbinary(40),
- in esTeacher bool,
  in nImagenPerfil blob)
 begin
 	update Usuarios set nombre=nNombre,apellidos=nApellidos,
-    nickname=nNickname, correo=nCorreo, contraseña=nContraseña,
+    nickname=nNickname, correo=nCorreo,
     imagenPerfil=nImagenPerfil where id_usuario=idUs;
 end/
+drop procedure editarUsuario
 
 delimiter /
 create procedure eliminarUsuario (in _usID int)
