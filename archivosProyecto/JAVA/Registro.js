@@ -18,12 +18,11 @@ function Registrar(form) {
             if (ch >= "0" || ch <= "9")
                 num = true;
             if (ch == "/" || ch == "*" || ch == "¡" || ch == "”" || ch == "#" || ch == "$" || ch == "%" || ch == "&" || ch == "=" || ch == "’" || ch == "?" || ch == "¡" || ch == "¿" || ch == ":" || ch == ";" || ch == "," || ch == "."
-                || ch == "-" || ch == "_" || ch == "+" || ch == "{" || ch == "]" || ch == "[" || ch == "}") {
+                || ch == "-" || ch == "_" || ch == "+" || ch == "{" || ch == "]" || ch == "[" || ch == "}"|| ch=="@") {
                 carac = true;
             }
-
         }
-        if (true) {
+        if (num==true&&carac==true) {
             window.alert("Contraseña guardada");
             var opc=1;
             foto="todavia no jala";

@@ -44,7 +44,6 @@
 
                $this->conexion = new mysqli($this->server,$this->user,$this->password,$this->database,$this->port);
                if($this->conexion->connect_errno){
-
                    echo "algo va mal con la conexion";
                    die();
                }
