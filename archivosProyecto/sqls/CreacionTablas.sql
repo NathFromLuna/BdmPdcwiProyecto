@@ -18,6 +18,7 @@ create table Categorias(
 	id_categorias int not null unique auto_increment,
     nombre varchar(50) unique, 
     descripcion varchar(200),
+    alta bool DEFAULT NULL,
     primary key (id_categorias)
 );
 
@@ -30,6 +31,7 @@ create table Curso(
     costo float not null,
     cantidadNivelesCurso int not null,
     id_profesor int,
+    alta bool DEFAULT NULL,
 	primary key (id_curso),
     foreign key (id_profesor) references Usuarios(id_usuario)
 );
@@ -40,6 +42,7 @@ create table Niveles(
     videoLvl blob not null,
     otrosArchivo blob,
 	numeroNivel int not null,
+    alta bool DEFAULT NULL,
 	primary key (id_niveles),
     foreign key (id_curso) references Curso(id_curso)
 );
@@ -71,8 +74,17 @@ create table tablaAsociativaCursoCategoria(
     primary key (id_tablaAsociativaCC),
     foreign key (id_cat) references Categorias(id_categorias),
 	foreign key (id_curso) references Curso(id_curso)
-)
+);
 
+create table Mensajes(
+	id_mensaje int not null unique auto_increment,
+    id_de int,
+    id_para int,
+    mensaje varchar(250) not null,
+    primary key (id_mensaje),
+    foreign key (id_de) references Usuarios(id_usuario),
+	foreign key (id_para) references Usuarios(id_usuario)
+)
 
 
 
