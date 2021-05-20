@@ -1,0 +1,38 @@
+label, p, h3{
+   font-family: 'Raleway', sans-serif;
+   color:rgb(214, 203, 240); 
+}
+input{
+    font-family: 'Raleway', sans-serif;
+    margin-top: 1.5%;
+}
+
+
+label, input, p{
+    font-size: 120%;
+}
+h3{
+    font-size: 140%;
+    margin-top: 1%;
+}
+
+
+
+@media screen and (max-width: 1279px){
+    body{
+        font-family: 'Raleway', sans-serif;
+        background: url(../imagenesDef/Crashea3.jpg);
+        padding-left: 5%;
+        padding-top: 2%;
+    }   
+    
+}
+
+@media screen and (min-width: 1280px) {
+    body{
+    background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
+    background-size: cover;
+    padding-left: 5%;
+    padding-top: 3%;
+    }
+}

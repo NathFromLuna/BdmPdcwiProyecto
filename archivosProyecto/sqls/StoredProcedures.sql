@@ -1,4 +1,4 @@
-create database crashea;
+/*create database crashea;*/
 
 use crashea;
 
