@@ -18,7 +18,9 @@
         $(document).ready(function () {
             $("#añadeLvl").click(function () {
                 var nombre = $("#nameLvl").val();
-                $("#listaNiveles").append("<li >" + nombre + "<br> <button class='nuevoLvl'>Eliminar</li>");
+                var video =$("#video").val();
+                $("#listaNiveles").append("<li >" + nombre + " " + video + "<br> <button class='nuevoLvl'>Eliminar</li>");
+                
             });
             $("ul").on("click", ".nuevoLvl", function () {
                 $(this).parent().remove();
@@ -73,7 +75,8 @@
                     Costo curso<br>
                     <input id="costoCur" class="inputs" type="text"><br>
                     <div id="nivelesCur">
-                        Niveles: <input id="nameLvl" class="inputs" type="text" placeholder="Nombre nivel">
+                        Niveles: <input id="nameLvl" class="inputs" type="text" placeholder="Nombre nivel"> <br>
+                        Video: <input class="controls" class="form-error" type="file" name="video" id="video"placeholder="Seleccione una imagen" required>
                         <ul id="listaNiveles">
 
                         </ul>
