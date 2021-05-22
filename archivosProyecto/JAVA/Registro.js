@@ -5,16 +5,16 @@ function Registrar(form) {
     var nickname = document.getElementById("Nickname").value;
     var correo = document.getElementById("email").value;
     var esProfeProv = $('input:radio[name=tipo]:checked').val();
-    var p = document.getElementById("password").value;
+    var contrasena = document.getElementById("password").value;
     var foto = document.getElementById("password").value;
 
     var num = false;
     var carac = false;
 
-    if (p.length >= 8) {
+    if (contrasena.length >= 8) {
 
-        for (var i = 0; i < p.length; i++) {
-            var ch = p.charAt(i);
+        for (var i = 0; i < contrasena.length; i++) {
+            var ch = contrasena.charAt(i);
             if (ch >= "0" || ch <= "9")
                 num = true;
             if (ch == "/" || ch == "*" || ch == "¡" || ch == "”" || ch == "#" || ch == "$" || ch == "%" || ch == "&" || ch == "=" || ch == "’" || ch == "?" || ch == "¡" || ch == "¿" || ch == ":" || ch == ";" || ch == "," || ch == "."
@@ -25,7 +25,6 @@ function Registrar(form) {
         if (num==true&&carac==true) {
             window.alert("Contraseña guardada");
             var opc=1;
-            foto="todavia no jala";
             var esProfe;
             if(esProfeProv=="maestro")
                 esProfe="true";
@@ -33,12 +32,23 @@ function Registrar(form) {
                 if(esProfeProv=="alumno")
                     esProfe="false";
             }
-            let Body = {nombre,apellidos,nickname,correo,p,esProfe,foto,opc}
+            let Body = {nombre,apellidos,nickname,correo,contrasena,esProfe,foto,opc}
 
-            let jsonBody = JSON.stringify(Body)
-           fetch('../php/usuario.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
+
+            var FoDatos = new FormData();
+            FoDatos.append('nombre',nombre);
+            FoDatos.append('apellido',apellidos);
+            FoDatos.append('nickname',nickname);
+            FoDatos.append('correo',correo);
+            FoDatos.append('contrasena',contrasena);
+            FoDatos.append('esProfe',esProfe);
+            FoDatos.append('foto',$("#image")[0].files[0]);
+            FoDatos.append('opc',opc);
+
+           
+           fetch('../php/usuarioimagen.php',{method:"POST",body:FoDatos})
            .then(response => {
-             return response.json();
+             return response.text();
            })
            .then(data => {
             var Jason =data;

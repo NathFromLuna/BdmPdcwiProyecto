@@ -79,4 +79,7 @@
     }
 
     }
+
+   // $_usuario = new conexion;
+    //echo $_usuario.$listadatos;
 ?>

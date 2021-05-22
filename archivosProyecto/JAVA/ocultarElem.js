@@ -13,14 +13,22 @@ $(document).ready(function () {
             .then(data => {
                 var Jason = data;
                 var obj = JSON.parse( Jason);
+                console.log(data);
+                if(obj['esMaestro']==true){
+                    document.getElementById("imgAvatarUsuario").style.display = 'inline';
+                    document.getElementById("cerrarSes").style.display = 'inline';
+                    document.getElementById("navHistorial").style.display = 'none';
+                    document.getElementById("iniciaSes").style.display = 'inline';
+                    
+                }else{
+                    if(obj['esMaestro']==false){
+                        document.getElementById("imgAvatarUsuario").style.display = 'inline';
+                        document.getElementById("cerrarSes").style.display = 'inline';
+                        document.getElementById("navVentas").style.display = 'none';
+                        document.getElementById("iniciaSes").style.display = 'none';
+                    }
+                }
                 
-               if(obj['esMaestro']==true){
-                document.getElementById("navHistorial").style.display = 'none';
-               }else{
-                if(obj['esMaestro']==false)
-                    document.getElementById("navVentas").style.display = 'none';
-               }
-               
             })
     }
     function ocultarPerfil() {
