@@ -2,18 +2,24 @@
     require_once "conexion.php";
     session_start();
     class Usuario extends conexion{
-        public function CrearUsuario($json){
+        public function CrearUsuario($json,$foto){
             $datos = json_decode($json,true);
             //son los datos del json
             $nombre = $datos["nombre"];
             $apellidos = $datos["apellidos"];
             $nickname = $datos["nickname"];
             $correo = $datos["correo"];
-            $contrasena = $datos["p"];
+            $contrasena = $datos["contrasena"];
             $esProfe = $datos["esProfe"];
-            $foto = $datos["foto"];
+            //$foto = $datos["foto"];
+            // $file = file_get_contents( $foto);
+           
+            /* $file_tmpi = $foto;
+            $file = file_get_contents( $file_tmpi);
+            $blob =mysqli_real_escape_string($_usuario->conexion,$file);*/
+
             $query = "Call registrarUsuario('$nombre','$apellidos','$nickname',
-            '$correo','$contrasena',$esProfe,' $foto');";
+            '$correo','$contrasena',$esProfe,'$foto');";
             $verificacion = parent::rowsAfectados($query);
             
             if($verificacion){
@@ -23,6 +29,7 @@
                 $success="fail";
                 return $success;
             }
+           ;
         }
         public function iniciarSesion($json){
             $datos = json_decode($json,true);
@@ -47,16 +54,18 @@
                 $success="sesionNoExiste";
                 return $success;
             }
+            echo "coso ";
         }
 
         public function getPerfilUsuario(){
             header('Content-Type: application/json');
-            $nombre=$_SESSION["nombre"];
-            $apellidos=$_SESSION["apellidos"];
-            $nick=$_SESSION["nickname"];
-            $correo=$_SESSION["correo"];
-            $esProfe=$_SESSION["esMaestro"];
-            $imagenUs=$_SESSION["imagenP"];
+            if(isset($_SESSION["nombre"])){
+                $nombre=$_SESSION["nombre"];
+                $apellidos=$_SESSION["apellidos"];
+                $nick=$_SESSION["nickname"];
+                $correo=$_SESSION["correo"];
+                $esProfe=$_SESSION["esMaestro"];
+                $imagenUs=$_SESSION["imagenP"];
             $json = [
                 "nombre" => $nombre,
                 "apellidos"=> $apellidos,
@@ -66,6 +75,10 @@
                 "imagenP"=> $imagenUs
             ];
             return json_encode($json);
+            }else{
+                $success="fail";
+                return $success;
+            }
         }
 
         public function modificarUsuario($json){
@@ -94,6 +107,7 @@
                 $success="failCambios";
                 return $success;
             }
+          
         }
     }
 ?>

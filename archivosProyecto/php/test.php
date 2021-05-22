@@ -6,5 +6,5 @@ echo  $_SESSION["apellidos"];
 echo  $_SESSION["nickname"];
 echo  $_SESSION["esMaestr"];
 echo  $_SESSION["imagenP"];
-              
+
 ?>
