@@ -10,8 +10,6 @@ begin
     where correoUs=correo and contraseñaUs=contraseña;
 end/
 
-drop procedure obtenerPerfil
-
 delimiter /
 create procedure esMaestro (in idUs int)
 begin

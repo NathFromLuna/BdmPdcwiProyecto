@@ -11,7 +11,7 @@
 #btnMisCursyOtrasCosas{
     text-align: right;
 }
-#btnHistorial, #btnVentas{
+#btnHistorial, #btnVentas, #btnEdPerfil{
     background-color: rgb(238, 235, 245);
     border-radius: 4px;
     font-size: large;
