@@ -1,41 +1,90 @@
-body{
-    font-family: 'Raleway', sans-serif;
-    /*font-family: 'Nunito', sans-serif;*/
-    background: url(../imagenesDef/Crashea3.jpg);
+@media screen and (max-width: 1279px){
+    body{
+        font-family: 'Raleway', sans-serif;
+        background: url(../imagenesDef/Crashea3.jpg);
+    }
+    #contenidoCentral{
+        margin: 4%;
+        margin-left: 12%;
+    }
+    #cosasCurso{
+        display: flex;
+    }
+    #detallesCurso{
+        color:rgb(214, 203, 240); 
+        font-size: large;
+    }
+    #catCur{
+        padding-top: 1%;
+        padding-left: 3%;
+    }
+    .inputs{
+        background-color: rgb(238, 235, 245);
+        margin: 2%;
+        border-radius: 4px;
+    }
+    .btn, .nuevoLvl{
+        background-color: rgb(238, 235, 245);
+        border-radius: 4px;
+        padding: 1%;
+        color:rgb(44, 38, 59);
+    }
+    #trailer{
+        text-align: left;
+    }
+    #subirCurso{
+        margin: 2%;
+    }
+    #videoAgregarCurso{
+        margin: 4%;
+        text-align: right;
+    }
 }
-#contenidoCentral{
-    margin: 4%;
-    margin-left: 12%;
+
+@media screen and (min-width: 1280px){
+    body{
+        font-family: 'Raleway', sans-serif;
+        background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
+        background-size: cover;
+        color:rgb(214, 203, 240); 
+    }
+    #contenidoCentral{
+        margin-top: 2%;
+        margin-left: 4%;
+    }
+    #cosasCurso{
+        display: flex;
+    }
+    #detallesCurso{
+        font-size: 1.4vw;
+    }
+    #catCur{
+        padding-top: 1%;
+        padding-left: 10%;
+    }
+    .inputs{
+        background-color: rgb(238, 235, 245);
+        margin: 1%;
+    }
+    .btn, .nuevoLvl{
+        background-color: rgb(238, 235, 245);
+        border-radius: 4px;
+        padding: 1%;
+        color:rgb(44, 38, 59);
+    }
+    #videoAgregarCurso{
+        margin-top: 2%;
+        margin-left: 10%;
+        text-align: right;
+    }
+    #trailer{
+        text-align: left;
+    }
+    #subirCurso{
+        margin: 2%;
+    }
 }
-#cosasCurso{
-    display: flex;
-}
-#detallesCurso{
-    color:rgb(214, 203, 240); 
-    font-size: large;
-}
-#catCur{
-    padding-top: 1%;
-    padding-left: 3%;
-}
-.inputs{
-    background-color: rgb(238, 235, 245);
-    margin: 2%;
-    border-radius: 4px;
-}
-.btn, .nuevoLvl{
-    background-color: rgb(238, 235, 245);
-    border-radius: 4px;
-    padding: 1%;
-    color:rgb(44, 38, 59);
-}
-#trailer{
-    text-align: left;
-}
-#subirCurso{
-    margin: 2%;
-}
-#videoAgregarCurso{
-    margin: 4%;
-    text-align: right;
-}
+
+
+
+
