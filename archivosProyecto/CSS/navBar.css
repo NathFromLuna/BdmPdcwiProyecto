@@ -4,6 +4,7 @@
 }
 #imgAvatarUsuario{
   border-radius: 50%;
+  display: none;
 }
 .navbar-brand{
   font-size:x-large;
@@ -23,6 +24,7 @@
   border: none;
   cursor: pointer;
 }
+
 #iniciaSes{
   margin-top: 10px;
   margin-left: 1px;
@@ -30,7 +32,14 @@
   color:rgb(214, 203, 240); 
   background-color:rgb(73, 62, 102);
 }
-
+#cerrarSes{
+  display: none;
+  margin-top: 10px;
+  margin-left: 1px;
+  border: none;
+  color:rgb(214, 203, 240); 
+  background-color:rgb(73, 62, 102);
+}
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
