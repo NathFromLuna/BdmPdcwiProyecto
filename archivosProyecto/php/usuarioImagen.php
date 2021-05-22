@@ -6,9 +6,6 @@ $_usuario = new Usuario;
     $postbody = file_get_contents("php://input");
     $datos = json_decode($postbody,true);
 
-    
-
-
     if($_POST['opc']==1){
        $name=$_POST['nombre'];
         $apellido=$_POST['apellido'];
@@ -35,11 +32,11 @@ $_usuario = new Usuario;
     }
 
     
-    if($datos["opc"]==2)
+    if($_POST['opc']==2)
         $jala = $_usuario->iniciarSesion($postbody);
-    if($datos["opc"]==3)
+    if($_POST['opc']==3)
         $jala = $_usuario->getPerfilUsuario();
-    if($datos["opc"]==4)
+    if($_POST['opc']==4)
         $jala = $_usuario->modificarUsuario($postbody);
     header('Content-Type: application/json');//le dices que devuelve un json
     echo json_encode($jala);

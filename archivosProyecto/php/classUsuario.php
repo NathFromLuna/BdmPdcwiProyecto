@@ -22,12 +22,13 @@
             '$correo','$contrasena',$esProfe,'$foto');";
             $verificacion = parent::rowsAfectados($query);
             
-            if($verificacion){
+            if($verificacion == 1){
                 $success="success";
                 return $success;
+               
             }else{
                 $success="fail";
-                return $success;
+                return  parent::Error();
             }
            ;
         }

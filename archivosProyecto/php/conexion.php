@@ -59,6 +59,11 @@
         return $this->conexion->affected_rows;
        }
 
+       public function Error(){
+       
+        return $this->conexion->error;
+       }
+
        public function obtenerDatos($query){
         $results = $this->conexion->query($query);
         $resultarray = array();

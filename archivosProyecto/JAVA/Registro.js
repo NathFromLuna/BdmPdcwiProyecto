@@ -6,7 +6,7 @@ function Registrar(form) {
     var correo = document.getElementById("email").value;
     var esProfeProv = $('input:radio[name=tipo]:checked').val();
     var contrasena = document.getElementById("password").value;
-    var foto = document.getElementById("password").value;
+    
 
     var num = false;
     var carac = false;
@@ -32,7 +32,7 @@ function Registrar(form) {
                 if(esProfeProv=="alumno")
                     esProfe="false";
             }
-            let Body = {nombre,apellidos,nickname,correo,contrasena,esProfe,foto,opc}
+            let Body = {nombre,apellidos,nickname,correo,contrasena,esProfe,opc}
 
 
             var FoDatos = new FormData();

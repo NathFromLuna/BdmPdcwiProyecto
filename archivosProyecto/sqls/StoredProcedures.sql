@@ -10,6 +10,8 @@ begin
     where correoUs=correo and contraseñaUs=contraseña;
 end/
 
+drop procedure obtenerPerfil
+
 delimiter /
 create procedure esMaestro (in idUs int)
 begin
@@ -18,13 +20,14 @@ begin
 end/
     
 delimiter /
+
 create procedure registrarUsuario (in nNombre varchar(50),
  in nApellidos varchar(150),
  in nNickname varchar(100),
  in nCorreo varchar(70),
  in nContraseña varchar(40),
  in esTeacher bool,
- in nImagenPerfil blob)
+ in nImagenPerfil mediumblob)
 begin
     insert into Usuarios(nombre, apellidos, nickname, correo, contraseña,
     esMaestro, imagenPerfil)
@@ -35,8 +38,8 @@ end/
 delimiter /
 create procedure registrarCurso (in nNombre varchar(70),
  in nDescripcion varchar(200),
- in nImagenCurso blob,
- in nVideoTrailer blob,
+ in nImagenCurso mediumblob,
+ in nVideoTrailer mediumblob,
  in nCosto float,
  in nCantidadNivelesCurso int,
  in nId_profesor int)
@@ -49,8 +52,8 @@ end/
 
 delimiter /
 create procedure registrarNivel (in nId_curso int,
- in nVideoLvl blob,
- in nOtrosArchivo blob,
+ in nVideoLvl mediumblob,
+ in nOtrosArchivo mediumblob,
  in nNumeroNivel int)
 begin
     insert into Niveles(id_curso, videoLvl, otrosArchivo, numeroNivel)
@@ -62,7 +65,7 @@ create procedure editarUsuario (in idUs int, in nNombre varchar(50),
  in nApellidos varchar(150),
  in nNickname varchar(100),
  in nCorreo varchar(70),
- in nImagenPerfil blob)
+ in nImagenPerfil mediumblob)
 begin
 	update Usuarios set nombre=nNombre,apellidos=nApellidos,
     nickname=nNickname, correo=nCorreo,
