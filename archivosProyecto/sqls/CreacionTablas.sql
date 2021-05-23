@@ -10,7 +10,8 @@ create table Usuarios(
     correo varchar(70) not null, 
     contraseña varbinary(40) not null,
     esMaestro bool,
-    imagenPerfil mediumblob not null,  
+    imagenPerfil blob not null,  
+      alta bool DEFAULT NULL,
 	primary key (id_usuario)
 );
 
@@ -26,8 +27,8 @@ create table Curso(
 	id_curso int not null unique auto_increment,
     nombre varchar(70) not null unique,
     descripcion varchar(200) not null,
-    imagenCurso mediumblob not null,
-    videoTrailer mediumblob not null,
+    imagenCurso blob not null,
+    videoTrailer blob not null,
     costo float not null,
     cantidadNivelesCurso int not null,
     id_profesor int,
@@ -39,8 +40,8 @@ create table Curso(
 create table Niveles(
 	id_niveles int not null unique auto_increment,
     id_curso int,
-    videoLvl mediumblob not null,
-    otrosArchivo mediumblob,
+    videoLvl blob not null,
+    otrosArchivo blob,
 	numeroNivel int not null,
     alta bool DEFAULT NULL,
 	primary key (id_niveles),
@@ -86,7 +87,9 @@ create table Mensajes(
 	foreign key (id_para) references Usuarios(id_usuario)
 )
 
-select * from Usuarios
+
+
+
 
 
 
