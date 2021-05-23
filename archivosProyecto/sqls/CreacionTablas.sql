@@ -11,6 +11,7 @@ create table Usuarios(
     contraseña varbinary(40) not null,
     esMaestro bool,
     imagenPerfil blob not null,  
+      alta bool DEFAULT NULL,
 	primary key (id_usuario)
 );
 

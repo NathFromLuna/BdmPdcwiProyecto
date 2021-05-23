@@ -1,5 +1,3 @@
-/*create database crashea;*/
-
 use crashea;
 
 delimiter /
@@ -9,16 +7,10 @@ begin
 	select id_usuario, nombre, apellidos, nickname, esMaestro, imagenPerfil from Usuarios 
     where correoUs=correo and contraseñaUs=contraseña;
 end/
-
-delimiter /
-create procedure esMaestro (in idUs int)
-begin
-	select id_usuario from Usuarios 
-    where id=Usid_usuario and esMaestro=true;
-end/
     
 delimiter /
-create procedure registrarUsuario (in nNombre varchar(50),
+create procedure registrarUsuario (
+ in nNombre varchar(50),
  in nApellidos varchar(150),
  in nNickname varchar(100),
  in nCorreo varchar(70),
@@ -27,9 +19,9 @@ create procedure registrarUsuario (in nNombre varchar(50),
  in nImagenPerfil blob)
 begin
     insert into Usuarios(nombre, apellidos, nickname, correo, contraseña,
-    esMaestro, imagenPerfil)
+    esMaestro, imagenPerfil, alta)
     values(nNombre, nApellidos, nNickname, nCorreo, nContraseña,
-    esTeacher, nImagenPerfil);
+    esTeacher, nImagenPerfil, 1);
 end/
 
 delimiter /
@@ -42,9 +34,9 @@ create procedure registrarCurso (in nNombre varchar(70),
  in nId_profesor int)
 begin
     insert into Curso(nombre, descripcion, imagenCurso, videoTrailer, 
-    costo, cantidadNivelesCurso, id_profesor)
+    costo, cantidadNivelesCurso, id_profesor, alta)
     values(nNombre, nDescripcion, nImagenCurso, nVideoTrailer, 
-    nCosto, nCantidadNivelesCurso, nId_profesor);
+    nCosto, nCantidadNivelesCurso, nId_profesor, 1);
 end/
 
 delimiter /
@@ -53,9 +45,10 @@ create procedure registrarNivel (in nId_curso int,
  in nOtrosArchivo blob,
  in nNumeroNivel int)
 begin
-    insert into Niveles(id_curso, videoLvl, otrosArchivo, numeroNivel)
-    values(nId_curso, nVideoLvl, nOtrosArchivo, nNumeroNivel);
+    insert into Niveles(id_curso, videoLvl, otrosArchivo, numeroNivel, alta)
+    values(nId_curso, nVideoLvl, nOtrosArchivo, nNumeroNivel, 1);
 end/
+
 
 delimiter /
 create procedure editarUsuario (in idUs int, in nNombre varchar(50),
@@ -68,7 +61,7 @@ begin
     nickname=nNickname, correo=nCorreo,
     imagenPerfil=nImagenPerfil where id_usuario=idUs;
 end/
-drop procedure editarUsuario
+-- drop procedure editarUsuario
 
 delimiter /
 create procedure eliminarUsuario (in _usID int)
@@ -82,7 +75,37 @@ begin
     select nombre, id_curso from Curso where nombre like cursoAbuscar ;  -- concat(%, _NombreUsuario, %)
 end/
 
-call buscarCurso ('%r%') -- enviar comilla, porcentaje, variable, porcentaje, comilla
+delimiter $$
+create procedure guardarComentarios (
+	in Id_estudiante int,
+    in Id_curso int,  
+	in mensaje varchar(250)
+    )
+begin
+    insert into Comentarios(id_est, id_curs, comentario)
+    values(Id_estudiante, Id_curso, mensaje);
+end $$
+
+
+create procedure obtenerComentarios (
+	in Id_curso int
+    )
+begin
+	select nickname, imagenPerfil, comentario 
+    from Usuarios left join comentarios on id_comentario = id_usuario
+    where id_curs = Id_curso;
+end $$
+
+create procedure nuevaCategoria (
+	in  p_nombre varchar(50),
+    in p_descripcion varchar(200)
+    )
+begin
+    insert into Categorias(nombre, descripcion, alta)
+    values(p_nombre, p_descripcion, 1);
+end $$
+
+-- call buscarCurso ('%r%') -- enviar comilla, porcentaje, variable, porcentaje, comilla
     
     
     
