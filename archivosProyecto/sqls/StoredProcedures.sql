@@ -110,7 +110,34 @@ begin
 	select id_categorias, nombre
     from categorias;
 end $$
--- call buscarCurso ('%r%') -- enviar comilla, porcentaje, variable, porcentaje, comilla
+
+create procedure registrarHistorial (
+	in  p_ID_Est int,
+    in p_ID_Curso int
+    )
+begin
+    insert into historial(id_est, id_curs, avanceLvl)
+    values(p_ID_Est, p_ID_Curso, 0);
+end $$
+
+create procedure actualizarHistorial (
+	in  p_ID_Est int,
+    in p_ID_Curso int,
+    in p_Num_nivel int
+    )
+begin
+	declare numNivelRegistrado int;
+    set numNivelRegistrado = avance(p_ID_Est, p_ID_Curso);
     
+    if p_Num_nivel > numNivelRegistrado THEN
+        update historial
+        set       
+        avanceLvl = p_Num_nivel
+		WHERE  id_est = p_ID_Est and id_curs = p_ID_Curso;
+    END IF;
+end $$
+
+
+
     
     
