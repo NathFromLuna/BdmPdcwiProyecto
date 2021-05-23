@@ -105,6 +105,11 @@ begin
     values(p_nombre, p_descripcion, 1);
 end $$
 
+create procedure obtenerCategorias ()
+begin
+	select id_categorias, nombre
+    from categorias;
+end $$
 -- call buscarCurso ('%r%') -- enviar comilla, porcentaje, variable, porcentaje, comilla
     
     
