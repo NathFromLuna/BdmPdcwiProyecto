@@ -86,8 +86,7 @@ create table Mensajes(
 	foreign key (id_para) references Usuarios(id_usuario)
 )
 
-
-
+select * from Usuarios
 
 
 

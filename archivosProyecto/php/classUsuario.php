@@ -39,15 +39,11 @@
             $contrasena = $datos["contrasena"];
             $query = "Call obtenerPerfil('$correo','$contrasena');";
             
-            $verificacion = parent::obtenerDatos($query);
-            if(isset($verificacion[0]["id_usuario"])){
-                $_SESSION["id"]=$verificacion[0]["id_usuario"];
-                $_SESSION["nombre"]=$verificacion[0]["nombre"];
-                $_SESSION["apellidos"]=$verificacion[0]["apellidos"];
+            $verificacion = parent::ObtenerUsuario($query);
+            if($verificacion==1){
+               
                 $_SESSION["correo"]=$correo;
-                $_SESSION["nickname"]=$verificacion[0]["nickname"];
-                $_SESSION["esMaestro"]=$verificacion[0]["esMaestro"];
-                $_SESSION["imagenP"]=$verificacion[0]["imagenPerfil"];
+               
                 $success="sesionEncontrada";
                 return $success;
             }
@@ -66,16 +62,15 @@
                 $nick=$_SESSION["nickname"];
                 $correo=$_SESSION["correo"];
                 $esProfe=$_SESSION["esMaestro"];
-                $imagenUs=$_SESSION["imagenP"];
-            $json = [
+                
+           $json = [
                 "nombre" => $nombre,
                 "apellidos"=> $apellidos,
                 "nickname"=> $nick,
                 "correo"=> $correo,
-                "esMaestro"=> $esProfe,
-                "imagenP"=> $imagenUs
+                "esMaestro"=> $esProfe
             ];
-            return json_encode($json);
+            return $json;
             }else{
                 $success="fail";
                 return $success;

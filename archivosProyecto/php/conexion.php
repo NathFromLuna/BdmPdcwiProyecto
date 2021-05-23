@@ -1,29 +1,5 @@
 <?php
 
-  /*$direccion = dirname(__FILE__);
-
-  $jsondata = file_get_contents($direccion."/"."config");
-  $datosConexion=json_decode($jsondata,true);
-
-  foreach($datosConexion as $key => $value){
-    $server = $value["server"];
-    $user = $value["user"];
-    $password = $value["password"];
-    $database = $value["database"];
-    $port = $value["port"];
-    }
-  
-     $conexion = new mysqli($server,$user,$password,$database,$port);
-
-    if($conexion->connect_errno){
-      echo "algo va mal con la conexion";
-      die();
-    }else{
-      $query = "Call registrarUsuario('$nombre','cura','fab','sara@gmail.com','123',false,'0');";
-      $conexion->query($query);
-      echo $conexion->affected_rows;
-    }*/
-
     class conexion{
       private $server;
       private $user;
@@ -72,6 +48,29 @@
 
         }
         return $this->convertirUTF8($resultarray);
+       }
+
+
+       public function ObtenerUsuario($query){
+        $resultado = mysqli_query($this->conexion,$query);
+        $row = mysqli_fetch_array($resultado); 
+        if(isset($row["nombre"]) ){
+          session_start();
+          $_SESSION["id"]=$row["id_usuario"];
+          $_SESSION["nombre"]=$row["nombre"];
+          $_SESSION["apellidos"]=$row["apellidos"];
+          
+          $_SESSION["nickname"]=$row["nickname"];
+          $_SESSION["esMaestro"]=$row["esMaestro"];
+          $_SESSION["imagenP"]=$row["imagenPerfil"];
+          return 1;
+        }
+        else
+        {
+
+          return 0;
+          
+          }
        }
 
        private function convertirUTF8($array){

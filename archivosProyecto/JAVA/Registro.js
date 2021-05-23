@@ -51,9 +51,10 @@ function Registrar(form) {
              return response.text();
            })
            .then(data => {
+             
             var Jason =data;
             console.log(Jason);
-            if(Jason=="success"){
+            if(Jason==="success"){
                 alert("Registro exitoso");
                 window.location.href="IS.html";
             }

@@ -76,8 +76,9 @@ drop procedure editarUsuario
 delimiter /
 create procedure eliminarUsuario (in _usID int)
 begin
-    delete from usuarios where usID=_usID;
+    delete from usuarios where id_usuario=_usID;
 end/
+
 
 delimiter /
 create procedure buscarCurso (in cursoAbuscar varchar(200))
@@ -87,5 +88,5 @@ end/
 
 call buscarCurso ('%r%') -- enviar comilla, porcentaje, variable, porcentaje, comilla
     
-    
+
     

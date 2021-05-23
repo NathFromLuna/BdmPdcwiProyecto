@@ -38,6 +38,6 @@ $_usuario = new Usuario;
         $jala = $_usuario->getPerfilUsuario();
     if($_POST['opc']==4)
         $jala = $_usuario->modificarUsuario($postbody);
-    header('Content-Type: application/json');//le dices que devuelve un json
-    echo json_encode($jala);
+   
+    echo $jala;
 ?>
