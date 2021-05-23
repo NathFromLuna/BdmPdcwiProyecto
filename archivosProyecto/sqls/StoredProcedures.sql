@@ -137,7 +137,14 @@ begin
     END IF;
 end $$
 
-
+create procedure registrarCursoCategoria (
+	in  p_ID_Cat int,
+    in p_ID_Curso int
+    )
+begin
+    insert into tablaasociativacursocategoria(id_cat, id_curso)
+    values(p_ID_Cat, p_ID_Curso);
+end $$
 
     
     

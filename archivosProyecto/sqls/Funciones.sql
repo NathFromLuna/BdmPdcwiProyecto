@@ -4,8 +4,7 @@ CREATE FUNCTION `avance` (p_ID_Est int, p_ID_Curso int)
 RETURNS INTEGER
 DETERMINISTIC
 BEGIN
-	declare numNivel int;    
-    
+	declare numNivel int;        
     select avanceLvl
     into numNivel
     from historial
