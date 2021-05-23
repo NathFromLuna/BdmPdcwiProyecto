@@ -1,6 +1,5 @@
 $(document).ready(function () {
     ocultarElNav();
-    ocultarMisCursos();
     function ocultarElNav() {
         var opc = 3;
         let Body = { opc }
@@ -31,24 +30,7 @@ $(document).ready(function () {
                 
             })
     }
-   
     
-    function ocultarMisCursos() {
-        var opc = 3;
-        let Body = { opc }
-        let jsonBody = JSON.stringify(Body)
-        fetch('../php/usuario.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                var Jason = data;
-                var obj = JSON.parse( Jason);
-               
-                if(obj['esMaestro']==false)
-                    document.getElementById("btnAnCur").style.display = 'none';
-               
-            })
-    }
+
 })
 
