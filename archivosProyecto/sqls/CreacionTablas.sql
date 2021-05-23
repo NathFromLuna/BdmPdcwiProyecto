@@ -10,8 +10,8 @@ create table Usuarios(
     correo varchar(70) not null, 
     contraseña varbinary(40) not null,
     esMaestro bool,
-    imagenPerfil blob not null,  
-      alta bool DEFAULT NULL,
+    imagenPerfil mediumblob not null,  
+	alta bool DEFAULT NULL,
 	primary key (id_usuario)
 );
 
@@ -27,8 +27,8 @@ create table Curso(
 	id_curso int not null unique auto_increment,
     nombre varchar(70) not null unique,
     descripcion varchar(200) not null,
-    imagenCurso blob not null,
-    videoTrailer blob not null,
+    imagenCurso mediumblob not null,
+    videoTrailer varchar(500) not null,
     costo float not null,
     cantidadNivelesCurso int not null,
     id_profesor int,
@@ -40,8 +40,8 @@ create table Curso(
 create table Niveles(
 	id_niveles int not null unique auto_increment,
     id_curso int,
-    videoLvl blob not null,
-    otrosArchivo blob,
+    videoLvl varchar(500) not null,
+    otrosArchivo varchar(500),
 	numeroNivel int not null,
     alta bool DEFAULT NULL,
 	primary key (id_niveles),

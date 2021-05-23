@@ -51,7 +51,6 @@
                 $success="sesionNoExiste";
                 return $success;
             }
-            echo "coso ";
         }
 
         public function getPerfilUsuario(){

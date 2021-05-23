@@ -8,7 +8,7 @@ function iniciaSesion(){
             console.log(jsonBody);
            fetch('../php/usuario.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
            .then(response => {
-             return response.json();
+             return response.text();
            })
            .then(data => {
             var Jason =data;

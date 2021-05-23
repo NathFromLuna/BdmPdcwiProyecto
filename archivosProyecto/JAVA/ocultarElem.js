@@ -4,11 +4,13 @@ $(document).ready(function () {
         var opc = 3;
         let Body = { opc }
         let jsonBody = JSON.stringify(Body)
+        console.log(jsonBody);
         fetch('../php/usuario.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
             .then(response => {
                 return response.text();
             })
             .then(data => {
+
                 var Jason = data;
                 var obj = JSON.parse( Jason);
                 console.log(data);

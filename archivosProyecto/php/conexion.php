@@ -55,7 +55,7 @@
         $resultado = mysqli_query($this->conexion,$query);
         $row = mysqli_fetch_array($resultado); 
         if(isset($row["nombre"]) ){
-          session_start();
+          //session_start();
           $_SESSION["id"]=$row["id_usuario"];
           $_SESSION["nombre"]=$row["nombre"];
           $_SESSION["apellidos"]=$row["apellidos"];
