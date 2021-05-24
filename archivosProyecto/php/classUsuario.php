@@ -56,6 +56,7 @@
         public function getPerfilUsuario(){
             header('Content-Type: application/json');
             if(isset($_SESSION["nombre"])){
+                $idUs=$_SESSION["id"];
                 $nombre=$_SESSION["nombre"];
                 $apellidos=$_SESSION["apellidos"];
                 $nick=$_SESSION["nickname"];
@@ -63,6 +64,7 @@
                 $esProfe=$_SESSION["esMaestro"];
                 
            $json = [
+                "idUsuario" => $idUs,
                 "nombre" => $nombre,
                 "apellidos"=> $apellidos,
                 "nickname"=> $nick,
@@ -90,7 +92,6 @@
             $verificacion = parent::rowsAfectados($query);
             
             if($verificacion){
-                
                 $_SESSION["nombre"]=$nombre;
                 $_SESSION["apellidos"]=$apellidos;
                 $_SESSION["correo"]=$correo;

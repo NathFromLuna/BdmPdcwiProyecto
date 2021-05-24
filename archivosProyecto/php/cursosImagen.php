@@ -1,31 +1,28 @@
 <?php
-require_once 'classUsuario.php';
+require_once 'classCursos.php';
 $_curso = new Cursos;
 //recibe el json y lo tranforma a un arreglo
     $postbody = file_get_contents("php://input");
     $datos = json_decode($postbody,true);
     
     if($_POST['opc']==1){
-        $nombre = $datos["nombre"];
-        $descripcion= $datos["descripcionCurso"];
-        $videoTrailer= $datos["trailer"];
-        $costo= $datos["precio"];
-        $cantLvls= $datos["niveles"];
-        $idProfesor= $datos["creador"];
+        $nombre = $_POST["nombre"];
+        $descripcion= $_POST["descripcionCurso"];
+        $videoTrailer= $_POST["trailer"];
+        $costo= $_POST["precio"];
+        $cantLvls= $_POST["niveles"];
 
          $file_tmpi = $_FILES['foto']['tmp_name'];
          $file = file_get_contents( $file_tmpi);
-         $blob =mysqli_real_escape_string($_usuario->conexion,$file);
+         $blob =mysqli_real_escape_string($_curso->conexion,$file);
  
-         $json = [
-             "nombre" => $name,
+        $json = [
+             "nombre" => $nombre,
              "descripcionCurso"=> $descripcion,
              "trailer"=> $videoTrailer,
              "precio"=> $costo,
              "niveles"=> $cantLvls,
-             "creador"=> $idProfesor
          ];
- 
          $coso = json_encode($json);
          $jala = $_curso->CrearCurso($coso,$blob);
      }

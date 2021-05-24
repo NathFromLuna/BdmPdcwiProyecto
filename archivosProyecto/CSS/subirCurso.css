@@ -2,6 +2,7 @@
     body{
         font-family: 'Raleway', sans-serif;
         background: url(../imagenesDef/Crashea3.jpg);
+        color:rgb(214, 203, 240); 
     }
     #contenidoCentral{
         margin: 4%;

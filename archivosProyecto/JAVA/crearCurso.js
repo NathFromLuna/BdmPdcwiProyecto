@@ -1,11 +1,15 @@
+var cantNiveles=0;
 $(document).ready(function () {
+    cantNiveles=0;
     $("#añadeLvl").click(function () {
         var nombre = $("#nameLvl").val();
         var video =$("#video").val();
-        $("#listaNiveles").append("<li >" + nombre + " " + video + "<br> <button class='nuevoLvl'>Eliminar</li>");
+        cantNiveles++;
         
+        $("#listaNiveles").append("<li >" + nombre + " " + video + "<br> <button class='nuevoLvl'>Eliminar</li>");
     });
     $("ul").on("click", ".nuevoLvl", function () {
+        cantNiveles--;
         $(this).parent().remove();
     });
 
@@ -32,43 +36,55 @@ $(document).ready(function () {
                 } 
             })
     }
-
-    function crearCurso(form){
-        var FoDatos = new FormData();
-                FoDatos.append('nombre',nombre);
-                FoDatos.append('apellido',apellidos);
-                FoDatos.append('nickname',nickname);
-                FoDatos.append('correo',correo);
-                FoDatos.append('contrasena',contrasena);
-                FoDatos.append('esProfe',esProfe);
-                FoDatos.append('foto',$("#image")[0].files[0]);
-                FoDatos.append('opc',opc);
+   
     
-                $nombre = $datos["nombre"];
-            $descripcion= $datos["descripcionCurso"];
-            $videoTrailer= $datos["trailer"];
-            $costo= $datos["precio"];
-            $cantLvls= $datos["niveles"];
-            $idProfesor= $datos["creador"];
-               
-               fetch('../php/usuarioimagen.php',{method:"POST",body:FoDatos})
-               .then(response => {
-                 return response.text();
-               })
-               .then(data => {
-                 
-                var Jason =data;
-                console.log(Jason);
-                if(Jason==="success"){
-                    alert("Registro exitoso");
-                    window.location.href="IS.html";
-                }
-                else
-                    alert(Jason.result)
-                //"status" => "ok",
-                //"result" => array()
-                })
-            }
+        
 });
 
+function crearCurso(){
+        var nombre = document.getElementById("nameCur").value;
+        var descripcion = document.getElementById("desCur").value;
+        //var trailer = document.getElementById("Nickname").value;
+        var trailer="aun no puede";
+        var costo = document.getElementById("costoCur").value;
+        var cantLvls = cantNiveles;
+        var opc=1;
+
+        /*$nombre = $datos["nombre"];
+        $descripcion= $datos["descripcionCurso"];
+        $videoTrailer= $datos["trailer"];
+        $costo= $datos["precio"];
+        $cantLvls= $datos["niveles"];*/
+                
+       if(cantLvls<=0){
+            alert("agregue un nivel");
+       }else{
+        var FoDatos = new FormData();
+        FoDatos.append('nombre',nombre);
+        FoDatos.append('descripcionCurso',descripcion);
+        FoDatos.append('trailer',trailer);
+        FoDatos.append('precio',costo);
+        FoDatos.append('niveles',cantLvls);
+        FoDatos.append('foto',$("#imageMin")[0].files[0]);
+        FoDatos.append('opc',opc);
+
+    fetch('../php/cursosImagen.php',{method:"POST",body:FoDatos})
+    .then(response => {
+         return response.text();
+    })
+    .then(data => {
+         
+        var Jason =data;
+        console.log(Jason);
+        if(Jason==="success"){
+            alert("Registro exitoso");
+            window.location.href="misCursos.html";
+        }
+        else
+            alert(Jason.result)
+        //"status" => "ok",
+        //"result" => array()
+        })
+    }
+       }
 

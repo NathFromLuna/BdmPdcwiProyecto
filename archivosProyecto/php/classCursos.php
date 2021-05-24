@@ -10,7 +10,7 @@
             $videoTrailer= $datos["trailer"];
             $costo= $datos["precio"];
             $cantLvls= $datos["niveles"];
-            $idProfesor= $datos["creador"];
+            $idProfesor=  $_SESSION["id"];
 
             $query = "Call registrarCurso('$nombre','$descripcion','$foto',
             '$videoTrailer','$costo',$cantLvls,$idProfesor);";

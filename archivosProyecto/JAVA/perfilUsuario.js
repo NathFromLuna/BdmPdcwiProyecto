@@ -37,6 +37,7 @@ $(document).ready(function () {
                         document.getElementById("cerrarSes").style.display = 'inline';
                         document.getElementById("navVentas").style.display = 'none';
                         document.getElementById("iniciaSes").style.display = 'none';
+                        document.getElementById("nuevaCat").style.display = 'none';
                         document.getElementById("imgAvatarUsuario").src = "../php/profilePicture.php";
                    }
             })
