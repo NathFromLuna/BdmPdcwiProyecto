@@ -10,23 +10,12 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/navBar.css">
     <link rel="stylesheet" href="../CSS/subirCurso.css">
-    <script type="text/javascript" src="../JAVA/llevameA.js"></script>
     <script type="text/javascript" src="../JAVA/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../JAVA/llevameA.js"></script>
+    <script type="text/javascript" src="../JAVA/crearCurso.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
         rel="stylesheet">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#añadeLvl").click(function () {
-                var nombre = $("#nameLvl").val();
-                var video =$("#video").val();
-                $("#listaNiveles").append("<li >" + nombre + " " + video + "<br> <button class='nuevoLvl'>Eliminar</li>");
-                
-            });
-            $("ul").on("click", ".nuevoLvl", function () {
-                $(this).parent().remove();
-            });
-        });
-    </script>
+    
 </head>
 
 <body>
@@ -45,11 +34,13 @@
                     <a href="../Html's/misCursos.html">Mis cursos</a>
                     <a href="../Html's/mensajes.html">Mensajes</a>
                     <hr>
-                    <a href="../Html's/Ventas.html">Ventas</a>
+                    <a id="navVentas" href="../Html's/Ventas.html">Ventas</a>
+                    <a id="navHistorial" href="../Html's/historialAl.html">Historial</a>
                 </class>
             </div>
             <div>
                 <button id="iniciaSes" onclick="llevameAInSes();">Inicia sesión</button>
+                <button id="cerrarSes" onclick="llevameAInSes();">Cerrar sesión</button>
             </div>
         </div>
     </nav>
@@ -88,17 +79,17 @@
                 <div id="trailer">
                      Seleccionar imagen para la miniatura:
                      <br>
-                    <input class="controls" class="form-error" type="file" name="image" id="image"
+                    <input class="controls" class="form-error .btn" type="file" name="image" id="image"
                     placeholder="Seleccione una imagen" required>
                     <br>
                     Seleccionar trailer del curso:
                     <br>
-                    <input class="controls" class="form-error" type="file" name="image" id="image"
+                    <input class="controls" class="form-error .btn" type="file" name="image" id="image"
                     placeholder="Seleccione una imagen" required>
                     <br>
 
                 </div>
-                <button id="subirCurso" class="btn" onclick="llevameAmisCursos()">Subir curso</button>
+                <button id="subirCurso" class="btn" onclick="crearCurso()">Subir curso</button>
             </div>
 
         </div>
