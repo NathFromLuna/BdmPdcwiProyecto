@@ -7,8 +7,8 @@ require_once "conexion.php";
             //son los datos del json
             $nombre = $datos["nombre"];
             $descripcion = $datos["descripcion"];
-            
-            $query = "Call nuevaCategoria('$nombre','$descripcion');";
+            $creador = $_SESSION["id"];
+            $query = "Call nuevaCategoria('$nombre','$descripcion',$creador);";
             $verificacion = parent::rowsAfectados($query);
             
             if($verificacion == 1){
@@ -24,11 +24,12 @@ require_once "conexion.php";
             header('Content-Type: application/json');
             
             //son los datos del json
-            $query = "Call obtenerCategorias();";
+            $query = "call obtenerCategorias();";
             
-            $cursos = parent::obtenerDatos($query);
+            $categorias = parent::obtenerDatos($query);
+        
             if(isset($categorias[0]["nombre"])){           
-                return json_encode($cursos);
+                return json_encode($categorias);
             }
             else{
                 $success="NoHayCategorias";

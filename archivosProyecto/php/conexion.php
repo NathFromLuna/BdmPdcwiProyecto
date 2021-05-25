@@ -43,9 +43,9 @@
        public function obtenerDatos($query){
         $results = $this->conexion->query($query);
         $resultarray = array();
+    
         foreach($results as $key){
-            $resultarray[]= $key;
-
+          $resultarray[]= $key;
         }
         return $this->convertirUTF8($resultarray);
        }
