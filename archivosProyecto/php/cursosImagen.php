@@ -7,12 +7,14 @@ $_curso = new Cursos;
     $datos = json_decode($postbody,true);
     
     if($_POST['opc']==1){
+
         $nombre = $_POST["nombre"];
         $descripcion= $_POST["descripcionCurso"];
-        
         $costo= $_POST["precio"];
         $cantLvls= $_POST["niveles"];
-
+        $categoria1= $_POST["categoria1"];
+        $categoria2= $_POST["categoria2"];
+        
         $file_tmpi = $_FILES['foto']['tmp_name'];
         $file = file_get_contents( $file_tmpi);
         $blob =mysqli_real_escape_string($_curso->conexion,$file);
@@ -28,6 +30,8 @@ $_curso = new Cursos;
              "trailer"=> $nuevoNombreTrailer,
              "precio"=> $costo,
              "niveles"=> $cantLvls,
+             "categoria1"=> $categoria1,
+             "categoria2"=> $categoria2
          ];
          $coso = json_encode($json);
          $jala = $_curso->CrearCurso($coso,$blob);

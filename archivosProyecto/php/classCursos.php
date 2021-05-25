@@ -10,10 +10,15 @@
             $videoTrailer= $datos["trailer"];
             $costo= $datos["precio"];
             $cantLvls= $datos["niveles"];
+            $categoria1= $datos["categoria1"];
+            $categoria2= $datos["categoria2"];
+           
             $idProfesor=  $_SESSION["id"];
 
             $query = "Call registrarCurso('$nombre','$descripcion','$foto',
-            '$videoTrailer','$costo',$cantLvls,$idProfesor);";
+            '$videoTrailer',$costo,$cantLvls,$idProfesor,$categoria1,
+            $categoria2);";
+
             $verificacion = parent::rowsAfectados($query);
             
             if($verificacion == 1){
