@@ -1,5 +1,3 @@
-use crashea;
-
 delimiter /
 create procedure obtenerPerfil (in correoUs varchar(70),
  in contraseñaUs varchar(40))
@@ -25,25 +23,25 @@ begin
 end/
 
 delimiter /
-create procedure registrarCurso (in nNombre varchar(70),
+create procedure registrarCurso (
+in nNombre varchar(70),
  in nDescripcion varchar(200),
  in nImagenCurso mediumblob,
  in nVideoTrailer varchar(500),
  in nCosto float,
  in nCantidadNivelesCurso int,
- in nId_profesor int)
+ in nId_profesor int,
+ in nId_cat1 int,
+ in nID_cat2 int
+ )
 begin
+   declare idDelCurso int;    
     insert into Curso(nombre, descripcion, imagenCurso, videoTrailer, 
     costo, cantidadNivelesCurso, id_profesor, alta)
     values(nNombre, nDescripcion, nImagenCurso, nVideoTrailer, 
     nCosto, nCantidadNivelesCurso, nId_profesor, 1);
-end/
-
-delimiter /
-create procedure getCursosProfEs (in creadorDelCursoBuscar int)
-begin
-    select id_curso, nombre, cantidadNivelesCurso from Curso 
-    where id_profesor=creadorDelCursoBuscar ;  -- concat(%, _NombreUsuario, %)
+	set idDelCurso = RegCatCurs(nId_cat1, nID_cat2, nNombre, nDescripcion, nCantidadNivelesCurso, nId_profesor);     
+    
 end/
 
 delimiter /
@@ -105,11 +103,12 @@ end $$
 
 create procedure nuevaCategoria (
 	in  p_nombre varchar(50),
-    in p_descripcion varchar(200)
+    in p_descripcion varchar(200),
+    in p_DeQuien int
     )
 begin
-    insert into Categorias(nombre, descripcion, alta)
-    values(p_nombre, p_descripcion, 1);
+    insert into Categorias(nombre, descripcion, alta, id_creadorCat)
+    values(p_nombre, p_descripcion, 1, p_DeQuien);
 end $$
 
 create procedure obtenerCategorias ()
@@ -117,7 +116,42 @@ begin
 	select id_categorias, nombre
     from categorias;
 end $$
--- call buscarCurso ('%r%') -- enviar comilla, porcentaje, variable, porcentaje, comilla
+
+create procedure registrarHistorial (
+	in  p_ID_Est int,
+    in p_ID_Curso int
+    )
+begin
+    insert into historial(id_est, id_curs, avanceLvl)
+    values(p_ID_Est, p_ID_Curso, 0);
+end $$
+
+create procedure actualizarHistorial (
+	in  p_ID_Est int,
+    in p_ID_Curso int,
+    in p_Num_nivel int
+    )
+begin
+	declare numNivelRegistrado int;
+    set numNivelRegistrado = avance(p_ID_Est, p_ID_Curso);
+    
+    if p_Num_nivel > numNivelRegistrado THEN
+        update historial
+        set       
+        avanceLvl = p_Num_nivel
+		WHERE  id_est = p_ID_Est and id_curs = p_ID_Curso;
+    END IF;
+end $$
+
+create procedure registrarCursoCategoria (
+	in  p_ID_Cat int,
+    in p_ID_Curso int
+    )
+begin
+    insert into tablaasociativacursocategoria(id_cat, id_curso)
+    values(p_ID_Cat, p_ID_Curso);
+end $$
+
     
     
     
