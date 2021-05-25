@@ -11,12 +11,7 @@
             $correo = $datos["correo"];
             $contrasena = $datos["contrasena"];
             $esProfe = $datos["esProfe"];
-            //$foto = $datos["foto"];
-            // $file = file_get_contents( $foto);
-           
-            /* $file_tmpi = $foto;
-            $file = file_get_contents( $file_tmpi);
-            $blob =mysqli_real_escape_string($_usuario->conexion,$file);*/
+            
 
             $query = "Call registrarUsuario('$nombre','$apellidos','$nickname',
             '$correo','$contrasena',$esProfe,'$foto');";

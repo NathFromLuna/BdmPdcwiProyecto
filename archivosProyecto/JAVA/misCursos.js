@@ -30,6 +30,38 @@ $(document).ready(function () {
    
             })
     }
+    function mostrarEntrada() {
+
+        var opc = 1;
+        let Body = { opc }
+        
+        let jsonBody = JSON.stringify(Body);
+        //var foto="Images/placeholder.png"
+        $.fetchPosts('php/post.php', jsonBody)
+            .then(
+                function (data) {
+                    //console.log(data);
+
+                    var Jason = data;
+                    var obj = JSON.parse(Jason);
+
+                    //console.log(Jason);
+
+                    for (var i in obj) {
+                        $("#EspacioEntradas").append("<br>");
+                        $("#EspacioEntradas").append("<center><subtitle id='" + obj[i]['postID'] + "' class='TituloBlog'>" + obj[i]['Titulo'] + "<subtitle/><center/>");
+                        //$("#EspacioEntradas").append("<center><subtitle onclick='refresh(" + obj[i][postID] + ");'>" + obj[i]['Titulo'] + "<subtitle/><center/>");
+                        $("#EspacioEntradas").append("<br>");
+                        //$("#EspacioEntradas").append("<center><img class='col-lg-6 col-md-2 col-sm-1 img-fluid' style'height:200px; width:450px;' src='Images/placeholder.png'><center/>");
+                        $("#EspacioEntradas").append("<center><img class='col-lg-6 col-md-2 col-sm-1 img-fluid' style'height:200px; width:450px;' src=' " + obj[i]['Imagen'] + " '><center/>");
+                        $("#EspacioEntradas").append("<br>");
+                        $("#EspacioEntradas").append("<center><sub>" + obj[i]['FechaCreacion'] + "<sub/><center/>");
+                        $("#EspacioEntradas").append("<br>"); $("#EspacioEntradas").append("<br>");
+                    }
+                }
+            );
+
+    }
     
     
 

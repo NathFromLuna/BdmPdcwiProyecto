@@ -27,7 +27,6 @@
         }
 
         public function getCurso($json){
-          
                 $datos = json_decode($json,true);
                 //son los datos del json
                 $correo = $datos["correo"];
@@ -47,6 +46,22 @@
                     return $success;
                 }
            
+        }
+
+        public function traerTodosLosCursos1Prof(){
+            header('Content-Type: application/json');
+            $escuelaCur=$_SESSION["id"];
+            //son los datos del json
+            $query = "Call getCursosProfEs('$escuelaCur');";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["nombre"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
         }
 
         public function modificarCurso($json){

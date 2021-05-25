@@ -11,6 +11,11 @@ $_curso = new Cursos;
         echo json_encode($jala);
     }
     if($datos["opc"]==3){
+        header('Content-Type: application/json');
+        $jala = $_curso->traerTodosLosCursos1Prof();
+        echo json_encode($jala);
+    }
+    if($datos["opc"]==4){
         $jala = $_curso->modificarCurso($postbody);
         echo $jala;
     }

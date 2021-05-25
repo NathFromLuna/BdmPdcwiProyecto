@@ -44,18 +44,11 @@ $(document).ready(function () {
 function crearCurso(){
         var nombre = document.getElementById("nameCur").value;
         var descripcion = document.getElementById("desCur").value;
-        //var trailer = document.getElementById("Nickname").value;
-        var trailer="aun no puede";
+        
         var costo = document.getElementById("costoCur").value;
         var cantLvls = cantNiveles;
         var opc=1;
 
-        /*$nombre = $datos["nombre"];
-        $descripcion= $datos["descripcionCurso"];
-        $videoTrailer= $datos["trailer"];
-        $costo= $datos["precio"];
-        $cantLvls= $datos["niveles"];*/
-                
        if(cantLvls<=0){
             alert("agregue un nivel");
        }else{
@@ -66,6 +59,7 @@ function crearCurso(){
         FoDatos.append('precio',costo);
         FoDatos.append('niveles',cantLvls);
         FoDatos.append('foto',$("#imageMin")[0].files[0]);
+        FoDatos.append('trailer',$("#videoTrailer")[0].files[0]);
         FoDatos.append('opc',opc);
 
     fetch('../php/cursosImagen.php',{method:"POST",body:FoDatos})
@@ -76,8 +70,9 @@ function crearCurso(){
          
         var Jason =data;
         console.log(Jason);
+        debugger;
         if(Jason==="success"){
-            alert("Registro exitoso");
+            alert("Curso creado con éxito");
             window.location.href="misCursos.html";
         }
         else

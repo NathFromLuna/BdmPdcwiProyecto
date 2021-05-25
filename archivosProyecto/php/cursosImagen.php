@@ -1,4 +1,5 @@
 <?php
+
 require_once 'classCursos.php';
 $_curso = new Cursos;
 //recibe el json y lo tranforma a un arreglo
@@ -8,18 +9,23 @@ $_curso = new Cursos;
     if($_POST['opc']==1){
         $nombre = $_POST["nombre"];
         $descripcion= $_POST["descripcionCurso"];
-        $videoTrailer= $_POST["trailer"];
+        
         $costo= $_POST["precio"];
         $cantLvls= $_POST["niveles"];
 
-         $file_tmpi = $_FILES['foto']['tmp_name'];
-         $file = file_get_contents( $file_tmpi);
-         $blob =mysqli_real_escape_string($_curso->conexion,$file);
+        $file_tmpi = $_FILES['foto']['tmp_name'];
+        $file = file_get_contents( $file_tmpi);
+        $blob =mysqli_real_escape_string($_curso->conexion,$file);
  
+        $videoTrailer= $_FILES['trailer']['tmp_name'];
+        $idCreador=$_SESSION["id"];
+        $nuevoNombreTrailer="../videos/".$nombre.$idCreador.".mp4";
+        move_uploaded_file($videoTrailer,$nuevoNombreTrailer);
+
         $json = [
              "nombre" => $nombre,
              "descripcionCurso"=> $descripcion,
-             "trailer"=> $videoTrailer,
+             "trailer"=> $nuevoNombreTrailer,
              "precio"=> $costo,
              "niveles"=> $cantLvls,
          ];

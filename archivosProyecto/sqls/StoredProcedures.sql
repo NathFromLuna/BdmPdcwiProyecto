@@ -40,6 +40,13 @@ begin
 end/
 
 delimiter /
+create procedure getCursosProfEs (in creadorDelCursoBuscar int)
+begin
+    select id_curso, nombre, cantidadNivelesCurso from Curso 
+    where id_profesor=creadorDelCursoBuscar ;  -- concat(%, _NombreUsuario, %)
+end/
+
+delimiter /
 create procedure registrarNivel (in nId_curso int,
  in nVideoLvl varchar(500),
  in nOtrosArchivo varchar(500),
