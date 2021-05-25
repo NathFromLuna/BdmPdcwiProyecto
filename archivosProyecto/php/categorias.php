@@ -1,5 +1,5 @@
 <?php
-require_once 'classUsuario.php';
+require_once 'classCategoria.php';
 $_categoria = new categoria;
 //recibe el json y lo tranforma a un arreglo
     $postbody = file_get_contents("php://input");

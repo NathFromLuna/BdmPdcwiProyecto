@@ -34,7 +34,7 @@ function crearCat(){
         
     let jsonBody = JSON.stringify(Body);
 
-    fetch('../php/cursosImagen.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
+    fetch('../php/categorias.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
     .then(response => {
          return response.text();
     })
