@@ -19,9 +19,12 @@ create table Categorias(
 	id_categorias int not null unique auto_increment,
     nombre varchar(50) unique, 
     descripcion varchar(200),
+    id_creadorCat int,
     alta bool DEFAULT NULL,
-    primary key (id_categorias)
+    primary key (id_categorias),
+    foreign key (id_creadorCat) references Usuarios(id_usuario)
 );
+
 
 create table Curso(
 	id_curso int not null unique auto_increment,
@@ -87,6 +90,7 @@ create table Mensajes(
 	foreign key (id_para) references Usuarios(id_usuario)
 )
 
+select * from Categorias
 
 
 
