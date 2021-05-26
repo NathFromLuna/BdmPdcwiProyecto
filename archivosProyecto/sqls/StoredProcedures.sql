@@ -152,6 +152,7 @@ begin
     values(p_ID_Cat, p_ID_Curso);
 end $$
 
+delimiter $$
 create procedure DePasoNivelCurso (
  in nVideoLvl varchar(500),
  in nOtrosArchivo varchar(500),

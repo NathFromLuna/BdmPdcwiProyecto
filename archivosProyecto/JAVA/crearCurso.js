@@ -1,15 +1,38 @@
 var cantNiveles=0;
+var nombreNivel=Array();
+var videoNivel=Array();
+var otrosArchivos=Array();
+var idNivel=Array();
 $(document).ready(function () {
     cantNiveles=0;
+    var idNiveles=0;
     $("#añadeLvl").click(function () {
         var nombre = $("#nameLvl").val();
-        var video =$("#video").val();
+        var video =$("#videoLvl")[0].files[0];
+        var videoLiga= $("#videoLvl").val();
+        var archivo =$("#archivoNivel")[0].files[0];
         cantNiveles++;
-        
-        $("#listaNiveles").append("<li >" + nombre + " " + video + "<br> <button class='nuevoLvl'>Eliminar</li>");
+        nombreNivel.push(nombre);
+        videoNivel.push(video);
+        otrosArchivos.push(archivo);
+        idNivel.push(idNiveles);
+        $("#listaNiveles").append("<li id='" + idNiveles + "'>" + nombre + " " + videoLiga + "<br> <button id='" + idNiveles + "' class='nuevoLvl'>Eliminar</li>");
+        idNiveles++;
     });
     $("ul").on("click", ".nuevoLvl", function () {
         cantNiveles--;
+        this.id;
+        var nivelAborrar;
+        for(var i=0;i<(idNivel.length);i++){
+            if(this.id==idNivel[i]){
+                nivelAborrar=idNivel[i];
+            }
+        }
+        nombreNivel.splice(nivelAborrar,1);
+        videoNivel.splice(nivelAborrar,1);
+        otrosArchivos.splice(nivelAborrar,1);
+        idNivel.splice(nivelAborrar,1);
+        debugger;
         $(this).parent().remove();
     });
 
@@ -95,7 +118,12 @@ function crearCurso(){
                 FoDatos.append('foto',$("#imageMin")[0].files[0]);
                 FoDatos.append('trailer',$("#videoTrailer")[0].files[0]);
                 FoDatos.append('opc',opc);
-
+                for(var i=0;i<(idNivel.length);i++){
+                    FoDatos.append('nombreNlv'+i,nombreNivel[i]);
+                    FoDatos.append('videoNvl'+i,videoNivel[i]);
+                    FoDatos.append('otroArchNvl'+i,otrosArchivos[i]);
+                }
+                debugger;
                 fetch('../php/cursosImagen.php',{method:"POST",body:FoDatos})
                 .then(response => {
                    return response.text();

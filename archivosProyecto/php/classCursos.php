@@ -2,8 +2,9 @@
     require_once "conexion.php";
     session_start();
     class Cursos extends conexion{
-        public function CrearCurso($json,$foto){
+        public function CrearCurso($json,$json2,$foto){
             $datos = json_decode($json,true);
+            $datos2 = json_decode($json2,true);
             //son los datos del json
             $nombre = $datos["nombre"];
             $descripcion= $datos["descripcionCurso"];
@@ -12,21 +13,38 @@
             $cantLvls= $datos["niveles"];
             $categoria1= $datos["categoria1"];
             $categoria2= $datos["categoria2"];
-           
             $idProfesor=  $_SESSION["id"];
 
             $query = "Call registrarCurso('$nombre','$descripcion','$foto',
             '$videoTrailer',$costo,$cantLvls,$idProfesor,$categoria1,
             $categoria2);";
-
             $verificacion = parent::rowsAfectados($query);
+            $verificacion2 = false;
+            $contador=0;
+            $contador2=1;
+            while(isset($datos2[$contador])){
+                $nombreNvl=$datos2[$contador];
+                $contador++;
+                $videoLvl=$datos2[$contador];
+                $contador++;
+                $archivoNvl=$datos2[$contador];
+                $contador++;
+                $query ="call DePasoNivelCurso('$videoLvl','$archivoNvl',
+                $contador2,'$nombre','$descripcion',$cantLvls,$idProfesor);";
+                $contador2++;
+                $cantidad = parent::rowsAfectados($query);
+                if($cantidad!=1){
+                    $verificacion2 = true;
+                }
+            }
+
             
-            if($verificacion == 1){
+            if($verificacion == 1 && $verificacion2 == false){
                 $success="success";
                 return $success;
             }else{
                 $success="fail";
-                return  parent::Error();
+                return parent::Error();
             }
            ;
         }
