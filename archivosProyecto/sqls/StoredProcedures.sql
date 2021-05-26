@@ -152,6 +152,20 @@ begin
     values(p_ID_Cat, p_ID_Curso);
 end $$
 
+create procedure DePasoNivelCurso (
+ in nVideoLvl varchar(500),
+ in nOtrosArchivo varchar(500),
+ in nNumeroNivel int,
+in nNombre varchar(70),
+in nDescripcion varchar(200),
+in nCantidadNivelesCurso int,
+in nId_profesor int
+ )
+begin
+   declare idDelCurso int;    
+	set idDelCurso = RegNivCurso(nVideoLvl, nOtrosArchivo, nNumeroNivel, nNombre, nDescripcion, nCantidadNivelesCurso, nId_profesor);     
+    
+end$$
     
     
     

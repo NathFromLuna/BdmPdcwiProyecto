@@ -31,9 +31,10 @@ CALL registrarCursoCategoria(p_ID_cat2, idDelCurso);
 RETURN 1;
 END$$
 
-
-/*
-CREATE FUNCTION `ObtenerIDCurso` (
+CREATE FUNCTION `RegNivCurso` (
+ nVideoLvl varchar(500),
+ nOtrosArchivo varchar(500),
+ nNumeroNivel int,
 nNombre varchar(70),
 nDescripcion varchar(200),
 nCantidadNivelesCurso int,
@@ -46,5 +47,7 @@ declare idDelCurso int;
     into idDelCurso
     from Curso
     where nombre = nNombre and descripcion = nDescripcion and cantidadNivelesCurso = nCantidadNivelesCurso and id_profesor = nId_profesor;
-RETURN idDelCurso;
-END*/
+CALL registrarNivel(idDelCurso, nVideoLvl, nOtrosArchivo, nNumeroNivel);
+RETURN 1;
+END$$
+
