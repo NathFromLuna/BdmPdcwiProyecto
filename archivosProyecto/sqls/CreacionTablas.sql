@@ -91,10 +91,10 @@ create table Mensajes(
 	foreign key (id_para) references Usuarios(id_usuario)
 )
 
-select * from Usuarios
-select * from Categorias
-select * from Curso
-select * from tablaAsociativaCursoCategoria
+select * from Usuarios;
+select * from Categorias;
+select * from Curso;
+select * from tablaAsociativaCursoCategoria;
 
 
 
