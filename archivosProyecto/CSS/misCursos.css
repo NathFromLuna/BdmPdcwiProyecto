@@ -1,6 +1,7 @@
 h3{ 
     margin: 3%;
     margin-left: 2%;
+    margin-bottom: 0%;
     font-size: xx-large;
     color:rgb(214, 203, 240); 
 }
@@ -22,6 +23,7 @@ td, th {
     color:rgb(214, 203, 240); 
 }
 #tituloBtn{
+    width: 100%;
     display: flex;
 }
 #btnAnCur{
@@ -32,6 +34,10 @@ td, th {
     padding: 1%;
     color:rgb(44, 38, 59);
     height: 5%;
+}
+#anadirCur{
+    width: 100%;
+    text-align: right;
 }
 
 .cursos{
@@ -45,6 +51,7 @@ td, th {
     display: flex;
     margin: 8%;
     margin-top: 4%;
+    width: 100%;
 }
 
 .contenedorCursos{

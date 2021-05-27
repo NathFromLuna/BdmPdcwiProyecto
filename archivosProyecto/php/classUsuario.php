@@ -11,23 +11,19 @@
             $correo = $datos["correo"];
             $contrasena = $datos["contrasena"];
             $esProfe = $datos["esProfe"];
-            //$foto = $datos["foto"];
-            // $file = file_get_contents( $foto);
-           
-            /* $file_tmpi = $foto;
-            $file = file_get_contents( $file_tmpi);
-            $blob =mysqli_real_escape_string($_usuario->conexion,$file);*/
+            
 
             $query = "Call registrarUsuario('$nombre','$apellidos','$nickname',
             '$correo','$contrasena',$esProfe,'$foto');";
             $verificacion = parent::rowsAfectados($query);
             
-            if($verificacion){
+            if($verificacion == 1){
                 $success="success";
                 return $success;
+               
             }else{
                 $success="fail";
-                return $success;
+                return  parent::Error();
             }
            ;
         }
@@ -38,15 +34,11 @@
             $contrasena = $datos["contrasena"];
             $query = "Call obtenerPerfil('$correo','$contrasena');";
             
-            $verificacion = parent::obtenerDatos($query);
-            if(isset($verificacion[0]["id_usuario"])){
-                $_SESSION["id"]=$verificacion[0]["id_usuario"];
-                $_SESSION["nombre"]=$verificacion[0]["nombre"];
-                $_SESSION["apellidos"]=$verificacion[0]["apellidos"];
+            $verificacion = parent::ObtenerUsuario($query);
+            if($verificacion==1){
+               
                 $_SESSION["correo"]=$correo;
-                $_SESSION["nickname"]=$verificacion[0]["nickname"];
-                $_SESSION["esMaestro"]=$verificacion[0]["esMaestro"];
-                $_SESSION["imagenP"]=$verificacion[0]["imagenPerfil"];
+               
                 $success="sesionEncontrada";
                 return $success;
             }
@@ -54,27 +46,27 @@
                 $success="sesionNoExiste";
                 return $success;
             }
-            echo "coso ";
         }
 
         public function getPerfilUsuario(){
             header('Content-Type: application/json');
             if(isset($_SESSION["nombre"])){
+                $idUs=$_SESSION["id"];
                 $nombre=$_SESSION["nombre"];
                 $apellidos=$_SESSION["apellidos"];
                 $nick=$_SESSION["nickname"];
                 $correo=$_SESSION["correo"];
                 $esProfe=$_SESSION["esMaestro"];
-                $imagenUs=$_SESSION["imagenP"];
-            $json = [
+                
+           $json = [
+                "idUsuario" => $idUs,
                 "nombre" => $nombre,
                 "apellidos"=> $apellidos,
                 "nickname"=> $nick,
                 "correo"=> $correo,
-                "esMaestro"=> $esProfe,
-                "imagenP"=> $imagenUs
+                "esMaestro"=> $esProfe
             ];
-            return json_encode($json);
+            return $json;
             }else{
                 $success="fail";
                 return $success;
@@ -95,7 +87,6 @@
             $verificacion = parent::rowsAfectados($query);
             
             if($verificacion){
-                
                 $_SESSION["nombre"]=$nombre;
                 $_SESSION["apellidos"]=$apellidos;
                 $_SESSION["correo"]=$correo;

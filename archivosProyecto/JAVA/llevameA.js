@@ -28,3 +28,6 @@ function llevameAVentas() {
 function llevameAEdPerfil() {
     window.location.href = "editarPerfil.html";
 }
+function llevameANewCat() {
+    window.location.href = "Categoria.html";
+}

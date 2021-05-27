@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="../CSS/navBar.css">
 <script type="text/javascript" src="../JAVA/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="../JAVA/llevameA.js"></script>
-<script type="text/javascript" src="../JAVA/ocultarElem.js"></script>
+<script type="text/javascript" src="../JAVA/crearCategoria.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
     rel="stylesheet">
 
@@ -51,11 +51,18 @@
     <br/>
     <input type="text" name="Datos" id="Nombre" placeholder="Introduzca nombre" required>
     <br/>
-
+    Descripción del curso: <br>
+    <textarea id="desCat" class="inputs" rows="4" cols="50" name="desCur"
+        placeholder=" Escriba una descripción"></textarea>
     <h3>Categorías creadas:</h3>
-    <p class="Categoria">Categoria 1</p>
-    <p class="Categoria">Categoria 2</p>
-    <p class="Categoria">Categoria 3</p>
+    <ul id="todasCat">
+
+    </ul>
+    <div id="botones">
+      <button id="crearCat" class="btn" onclick="crearCat();">Crear categoria</button>
+      <button id="regresar" class="btn" onclick="llevamePerfil();">Regresar</button>
+    </div>
+    
 </div>
 </body>
 </html>

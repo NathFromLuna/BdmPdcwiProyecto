@@ -11,7 +11,7 @@ create table Usuarios(
     contraseña varbinary(40) not null,
     esMaestro bool,
     imagenPerfil mediumblob not null,  
-      alta bool DEFAULT NULL,
+	alta bool DEFAULT NULL,
 	primary key (id_usuario)
 );
 
@@ -19,16 +19,19 @@ create table Categorias(
 	id_categorias int not null unique auto_increment,
     nombre varchar(50) unique, 
     descripcion varchar(200),
+    id_creadorCat int,
     alta bool DEFAULT NULL,
-    primary key (id_categorias)
+    primary key (id_categorias),
+    foreign key (id_creadorCat) references Usuarios(id_usuario)
 );
+
 
 create table Curso(
 	id_curso int not null unique auto_increment,
     nombre varchar(70) not null unique,
     descripcion varchar(200) not null,
     imagenCurso mediumblob not null,
-    videoTrailer blob not null,
+    videoTrailer varchar(500) not null,
     costo float not null,
     cantidadNivelesCurso int not null,
     id_profesor int,
@@ -40,8 +43,9 @@ create table Curso(
 create table Niveles(
 	id_niveles int not null unique auto_increment,
     id_curso int,
-    videoLvl blob not null,
-    otrosArchivo blob,
+    nombreNvl varchar(150) not null unique,
+    videoLvl varchar(500) not null,
+    otrosArchivo varchar(500),
 	numeroNivel int not null,
     alta bool DEFAULT NULL,
 	primary key (id_niveles),
@@ -86,9 +90,6 @@ create table Mensajes(
     foreign key (id_de) references Usuarios(id_usuario),
 	foreign key (id_para) references Usuarios(id_usuario)
 )
-
-
-
 
 
 

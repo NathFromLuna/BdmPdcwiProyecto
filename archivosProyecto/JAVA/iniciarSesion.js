@@ -8,7 +8,7 @@ function iniciaSesion(){
             console.log(jsonBody);
            fetch('../php/usuario.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
            .then(response => {
-             return response.json();
+             return response.text();
            })
            .then(data => {
             var Jason =data;
@@ -18,7 +18,7 @@ function iniciaSesion(){
                 window.location.href = "index.html";
             }
             else
-                alert(Jason.result)
+                alert("Error, revise los datos")
             //"status" => "ok",
             //"result" => array()
             })

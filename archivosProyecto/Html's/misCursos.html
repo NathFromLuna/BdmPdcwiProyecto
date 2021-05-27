@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../CSS/misCursos.css">
   <script type="text/javascript" src="../JAVA/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="../JAVA/llevameA.js"></script>
-  <script type="text/javascript" src="../JAVA/ocultarElem.js"></script>
+  <script type="text/javascript" src="../JAVA/misCursos.js"></script>
 </head>
 
 <body>
@@ -34,96 +34,30 @@
           <a href="../Html's/misCursos.html">Mis cursos</a>
           <a href="../Html's/mensajes.html">Mensajes</a>
           <hr>
-          <a href="../Html's/Ventas.html">Ventas</a>
+          <a id="navVentas" href="../Html's/Ventas.html">Ventas</a>
+          <a id="navHistorial" href="../Html's/historialAl.html">Historial</a>
         </class>
       </div>
       <div>
         <button id="iniciaSes" onclick="llevameAInSes();">Inicia sesión</button>
+        <button id="cerrarSes" onclick="llevameAInSes();">Cerrar sesión</button>
       </div>
 
     </div>
   </nav>
   <div id="contenidoCentral">
     <div class="contenedorCursos">
-      <div id="tituloBtn">
-          <h3>Mis cursos</h3>
-          <button id="btnAnCur" onclick="llevameCrearCurso();">Añadir curso</button>
-      </div>
       <div>
-        <table>
-          <tr>
-            <th>
-              Categoria curso
-            </th>
-          </tr>
-          <tr>
-            <th id="cursos">
-              <div class="cursos">
-                <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="165" width="240">
-                <br>
-                <a class="titCursos" href="../Html's/VerCurso.html">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="165" width="240">
-                <br>
-                <a class="titCursos" href="../Html's/VerCurso.html">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="165" width="240">
-                <br>
-                <a class="titCursos" href="../Html's/VerCurso.html">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-          </tr>
-          <tr rowspan="2">
-            <th>
-              Categoria curso
-            </th>
-          </tr>
-          <tr>
-            <th id="cursos">
-              <div class="cursos">
-                <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="165" width="240">
-                <br>
-                <a class="titCursos" href="../Html's/VerCurso.html">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="165" width="240">
-                <br>
-                <a class="titCursos" href="../Html's/VerCurso.html">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-            <th>
-              <!--aqui quiero poner los cuadritos de los cursos-->
-              <div class="cursos">
-                <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="165" width="240">
-                <br>
-                <a class="titCursos" href="../Html's/VerCurso.html">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-          </tr>
-        </table>
+        <div id="tituloBtn">
+          <h3>Mis cursos</h3>
+      </div>
+      <div id="anadirCur">
+        <button id="btnAnCur" onclick="llevameCrearCurso();">Añadir curso</button>
+      </div>
+      <div id="hayCursos"></div>
+      </div>
+      <div id="cursosCreados">
+        
       </div>
       
     </div>

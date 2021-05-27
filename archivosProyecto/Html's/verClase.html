@@ -5,14 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Ver clase</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="../CSS/verClase.css">
   <link rel="stylesheet" href="../CSS/VerClase_MQ.css">
 
   <link rel="stylesheet" href="../CSS/navBar.css">
+  <script type="text/javascript" src="../JAVA/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="../JAVA/llevameA.js"></script>
+  <script type="text/javascript" src="../JAVA/verClase.js"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
     rel="stylesheet">
 </head>
@@ -34,17 +37,19 @@
             <a href="../Html's/misCursos.html">Mis cursos</a>
             <a href="../Html's/mensajes.html">Mensajes</a>
             <hr>
-            <a href="../Html's/Ventas.html">Ventas</a>
+            <a id="navVentas" href="../Html's/Ventas.html">Ventas</a>
+            <a id="navHistorial" href="../Html's/historialAl.html">Historial</a>
           </class>
         </div>
         <div>
           <button id="iniciaSes" onclick="llevameAInSes();">Inicia sesión</button>
+          <button id="cerrarSes" onclick="llevameAInSes();">Cerrar sesión</button>
         </div>
 
       </div>
     </nav>
     <div class="video">
-      <video class="Video_Clase" src="../ImagenesaCambiar/BTS - Butterfly - Music Box Edition.mp4" controls
+      <video id="videoNivel" class="Video_Clase" src="../ImagenesaCambiar/BTS - Butterfly - Music Box Edition.mp4" controls
         poster="vistaprevia.jpg"></video>
 
     </div>
@@ -52,79 +57,13 @@
 
     <div class="barra" style="height: 91vh; overflow-y: scroll;">
       <div class="logo">
-        <img src="../ImagenesaCambiar/referenciaCampoFloresProyATAH.png" id="logodiv" alt="">
+        <img id="imgCurso" src="../ImagenesaCambiar/referenciaCampoFloresProyATAH.png" id="logodiv" alt="">
 
       </div>
       <div class="botones">
-        <button id="btnDescargar">Descargar archivos</button>
+        
       </div>
-      <div class="niveles">
-
-        <div class="num_nivel">
-          Nivel 1
-          <div class="vid_nivel">
-            Video 1
-          </div>
-          <div class="vid_nivel">
-            Video 2
-          </div>
-          <div class="vid_nivel">
-            Video 3
-          </div>
-          <div class="vid_nivel">
-            Video 4
-          </div>
-        </div>
-
-        <div class="num_nivel">
-          Nivel 2
-          <div class="vid_nivel">
-            Video 1
-          </div>
-          <div class="vid_nivel">
-            Video 2
-          </div>
-          <div class="vid_nivel">
-            Video 3
-          </div>
-          <div class="vid_nivel">
-            Video 4
-          </div>
-        </div>
-
-        <div class="num_nivel">
-          Nivel 2
-          <div class="vid_nivel">
-            Video 1
-          </div>
-          <div class="vid_nivel">
-            Video 2
-          </div>
-          <div class="vid_nivel">
-            Video 3
-          </div>
-          <div class="vid_nivel">
-            Video 4
-          </div>
-        </div>
-
-        <div class="num_nivel">
-          Nivel 2
-          <div class="vid_nivel">
-            Video 1
-          </div>
-          <div class="vid_nivel">
-            Video 2
-          </div>
-          <div class="vid_nivel">
-            Video 3
-          </div>
-          <div class="vid_nivel">
-            Video 4
-          </div>
-        </div>
-
-      </div>
+      <div id="nomNivel" class='niveles'></div>
     </div>
 </body>
 
