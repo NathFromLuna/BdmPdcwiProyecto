@@ -173,8 +173,9 @@ end$$
 delimiter $$
 create procedure getCursosProfEsp(in profeCreadorCursos int)
 begin
-	select id_curso, nombre,cantidadNivelesCurso
-    from Curso where id_profesor=profeCreadorCursos;
+	select *
+    from CursoCompleto 
+    where CursoCompleto.Id_Prof = profeCreadorCursos;
 end $$
 
 delimiter $$
@@ -187,9 +188,9 @@ end $$
 delimiter $$
 create procedure getCurso(in idCurso int)
 begin
-	select id_curso, nombre, descripcion, cantidadNivelesCurso, 
-    videoTrailer, costo, id_profesor
-    from Curso where id_curso=idCurso;
+	select *
+    from CursoCompleto 
+    where CursoCompleto.id_curso = idCurso;
 end $$
 
 delimiter $$
@@ -205,6 +206,5 @@ begin
 	select id_curso, nombreNvl , videoLvl, numeroNivel, otrosArchivo
     from Niveles where id_niveles=idNvl;
 end $$
-drop procedure getNivel
 
    
