@@ -184,6 +184,11 @@ begin
     from Curso where id_curso=idCursoImg;
 end $$
 
-
+delimiter $$
+create procedure getCurso(in idCurso int)
+begin
+	select id_curso, nombre,cantidadNivelesCurso
+    from Curso where id_profesor=profeCreadorCursos;
+end $$
 
    
