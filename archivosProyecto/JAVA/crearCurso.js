@@ -100,49 +100,99 @@ function crearCurso(){
         var costo = document.getElementById("costoCur").value;
         var cantLvls = cantNiveles;
         var opc=1;
-
-       if(cantLvls<=0){
-            alert("agregue un nivel");
-       }else{
-           if(cat1==cat2){
-                alert("elija dos categorias diferentes");
-            }else{
-                var FoDatos = new FormData();
-                FoDatos.append('nombre',nombre);
-                FoDatos.append('descripcionCurso',descripcion);
-                FoDatos.append('trailer',trailer);
-                FoDatos.append('precio',costo);
-                FoDatos.append('niveles',cantLvls);
-                FoDatos.append('categoria1',cat1);
-                FoDatos.append('categoria2',cat2);
-                FoDatos.append('foto',$("#imageMin")[0].files[0]);
-                FoDatos.append('trailer',$("#videoTrailer")[0].files[0]);
-                FoDatos.append('opc',opc);
-                for(var i=0;i<(idNivel.length);i++){
-                    FoDatos.append('nombreNlv'+i,nombreNivel[i]);
-                    FoDatos.append('videoNvl'+i,videoNivel[i]);
-                    FoDatos.append('otroArchNvl'+i,otrosArchivos[i]);
-                }
-                fetch('../php/cursosImagen.php',{method:"POST",body:FoDatos})
-                .then(response => {
-                   return response.text();
-                })
-                .then(data => {
-         
-                var Jason =data;
-                console.log(Jason);
-                debugger;
-                if(Jason==="success"){
-                    alert("Curso creado con éxito");
-                    window.location.href="misCursos.html";
-                }
-                else
-                    alert(Jason.result)
-                    //"status" => "ok",
-                    //"result" => array()
-                })
-            }
-        
+        if(cat1 == "0" || cat2 == "0"){
+            alert("Seleccione una categoria, si no hay creadas, debe crear una");
         }
+        else {
+            var apCost = true;
+            for (var i = 0; i < costo.length; i++) {
+                var ch = costo.charAt(i);
+                if (ch < "0" || ch > "9") {
+                    apCost = false;
+                        
+                 }
+            }
+
+            if(apCost == true){
+                if(cantLvls<=0){
+                    alert("agregue un nivel");
+                }
+                else{
+                    if(nombre != "" && descripcion != "" && costo != "" && cantLvls != ""){
+                        if(cat1==cat2){
+                            alert("elija dos categorias diferentes");
+                        }
+                        else{
+                            debugger;
+                                var cancel = false;
+                                var comprobacion;
+                                var FoDatos = new FormData();
+                                FoDatos.append('nombre',nombre);
+                                FoDatos.append('descripcionCurso',descripcion);
+                               // FoDatos.append('trailer',trailer);                    
+                                FoDatos.append('precio',costo);
+                                FoDatos.append('niveles',cantLvls);
+                                FoDatos.append('categoria1',cat1);
+                                FoDatos.append('categoria2',cat2);
+                                FoDatos.append('foto',$("#imageMin")[0].files[0]);
+                                comprobacion = $("#imageMin")[0].files[0];
+                                if (comprobacion == undefined){
+                                    cancel = true
+                                }
+                                FoDatos.append('trailer',$("#videoTrailer")[0].files[0]);
+                                comprobacion = $("#videoTrailer")[0].files[0];
+                                if (comprobacion == undefined){
+                                    cancel = true
+                                }
+                                FoDatos.append('opc',opc);
+                                for(var i=0;i<(idNivel.length);i++){
+                                    FoDatos.append('nombreNlv'+i,nombreNivel[i]);
+                                    FoDatos.append('videoNvl'+i,videoNivel[i]);
+                                    comprobacion = videoNivel[i];
+                                    if(comprobacion == undefined){                                   
+                                        cancel = true;
+                                    }
+                                    FoDatos.append('otroArchNvl'+i,otrosArchivos[i]);
+                                }                    
+                                if(cancel == false){
+                                    fetch('../php/cursosImagen.php',{method:"POST",body:FoDatos})
+                                    .then(response => {
+                                    return response.text();
+                                    })
+                                    .then(data => {
+                            
+                                        var Jason =data;
+                                        console.log(Jason);
+                                        debugger;
+                                        if(Jason==="success"){
+                                            alert("Curso creado con éxito");
+                                            window.location.href="misCursos.html";
+                                        }
+                                        else{
+                                            alert(Jason.result)
+                                            //"status" => "ok",
+                                            //"result" => array()
+                                        }
+                                        })
+                                }
+                                else{
+                                    alert("El curso debe tener imagen y trailer y todos los niveles deben tener un video");
+                                }                
+                        }
+                    }
+                    else{
+                        alert("Llene todos los campos")
+    
+                    }     
+                
+                }
+            }
+            else{
+                alert("Solo números");
+            }
+
+     
+        }
+  
 }
 

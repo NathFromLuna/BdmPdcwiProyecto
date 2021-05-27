@@ -59,7 +59,6 @@ $(document).ready(function () {
             })
             .then(data => {
                var obj = data;
-
                document.getElementById("titulo").innerHTML = obj['nombre'];
                document.getElementById("titulo2").innerHTML = obj['profeCurso'];
                document.getElementById("titulo3").innerHTML = obj['categorias'];
