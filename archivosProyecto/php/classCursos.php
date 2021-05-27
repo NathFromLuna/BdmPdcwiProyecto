@@ -145,5 +145,64 @@
             }
           
         }
+        public function inscribirCurso($json){
+                $datos = json_decode($json,true);
+                //son los datos del json
+                $idAl = $_SESSION["id"];
+                $idCurso = $datos["idCurso"];
+                $query = "Call inscribirCurso($idAl,$idCurso);";
+
+                $verificacion = parent::rowsAfectados($query);
+                if($verificacion == 1){
+                    $success="success";
+                    return $success;    
+                }else{
+                    $success="fail";
+                    return parent::Error(); 
+                }
+           
+        }
+        public function cursoComprado($json){
+            $datos = json_decode($json,true);
+            //son los datos del json
+            $idAl = $_SESSION["id"];
+            $idCurso = $datos["idCurso"];
+            $query = "Call estaInscrito($idAl,$idCurso);";
+
+            $post = parent::obtenerDatos($query);
+            if(isset($post[0]["terminado"])){
+                $terminado = $post[0]["terminado"];
+                $json = [
+                    "terminado"=> $terminado
+                ];
+                return $json;
+            }
+            else{
+                $success="CursoNoReg";
+                return $success;
+            }
+       
+    }
+        
+
+
+          public function buscarcurso($json){
+            $datos = json_decode($json,true);
+            //son los datos del json
+            $buscado = $datos["buscando"];
+           
+            $query = "Call buscarCursoFiltro('%$buscado%');";
+            $cursos = parent::obtenerDatos($query);
+            
+            if(isset($cursos[0]["id_curso"])){
+               
+                return json_encode($cursos);
+                
+            }else{
+                $success="No se encontro";
+                return json_encode($success);
+            }
+          
+        }
     }
 ?>
