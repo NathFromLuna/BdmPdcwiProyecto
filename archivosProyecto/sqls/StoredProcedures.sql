@@ -207,4 +207,23 @@ begin
     from Niveles where id_niveles=idNvl;
 end $$
 
-   
+delimiter $$
+create procedure inscribirCurso(
+	in  idAlumno int,
+    in idCurso int
+    )
+begin
+    insert into inscripcionCurso(id_alumno, idCurso)
+    values(idAlumno, idCurso);
+    call registrarHistorial(idAlumno,idCurso);
+end $$
+
+delimiter $$
+create procedure estaInscrito(
+	in  idAlumno int,
+    in idCurso int
+    )
+begin
+    select terminado from inscripcionCurso;
+end $$
+
