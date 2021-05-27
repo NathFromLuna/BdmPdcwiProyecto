@@ -54,30 +54,37 @@ function crearCat(){
     var nombre = document.getElementById("Nombre").value;
     var descripcion = document.getElementById("desCat").value;
     var opc=1;
-    let Body = { nombre,descripcion,opc }
-        
-    let jsonBody = JSON.stringify(Body);
 
-    fetch('../php/categorias.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
-    .then(response => {
-         return response.text();
-    })
-    .then(data => {
-         
-        var Jason =data;
-        console.log(Jason);
-        if(Jason==="success"){
-            alert("Categoria creada con éxito");
-            window.location.href="perfil.html";
-        }
-        else{
-            alert("no se pudo crear la categoria, revise que el nombre sea único");
-            alert(Jason.result)
-        }
+    if(nombre != "" && descripcion != ""){
+        let Body = { nombre,descripcion,opc }
+        
+        let jsonBody = JSON.stringify(Body);
+
+        fetch('../php/categorias.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
+        .then(response => {
+            return response.text();
+        })
+        .then(data => {
             
-        //"status" => "ok",
-        //"result" => array()
-    })
+            var Jason =data;
+            console.log(Jason);
+            if(Jason==="success"){
+                alert("Categoria creada con éxito");
+                window.location.href="perfil.html";
+            }
+            else{
+                alert("no se pudo crear la categoria, revise que el nombre sea único");
+                alert(Jason.result)
+            }
+                
+            //"status" => "ok",
+            //"result" => array()
+        })
+    }
+   else{
+    window.alert("Llene todos los campos")
+   }
+   
     
 }
 

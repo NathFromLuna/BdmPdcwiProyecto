@@ -14,9 +14,6 @@ $(document).ready(function () {
     $("#nivelesCurso").on("click", ".btnVerClase", function () {
         nivelEsp(this.id);
     });
-    $("#comprarCurso").on("click", "#btnComprar", function () {
-        comprarCurso();
-    });
     function ocultarVerCurso() {
         var opc = 3;
         let Body = { opc }
@@ -38,9 +35,8 @@ $(document).ready(function () {
                     
                 }else{
                     if(obj['esMaestro']==false){
+                        document.getElementById("btnAnCur").style.display = 'none';
                         document.getElementById("navVentas").style.display = 'none';
-                        //aqui se manda a llamar la confirmacion de si tiene el curso
-                        cursoComprado();
                     }
                 }
                 mostrarUnCurso();       
@@ -59,7 +55,10 @@ $(document).ready(function () {
             })
             .then(data => {
                var obj = data;
+               //var obj = JSON.parse(Jason);
 
+               //"categorias","costo", cantidadNiveles
+            
                document.getElementById("titulo").innerHTML = obj['nombre'];
                document.getElementById("titulo2").innerHTML = obj['profeCurso'];
                document.getElementById("titulo3").innerHTML = obj['categorias'];
@@ -91,78 +90,7 @@ $(document).ready(function () {
                
             })
     }
-    
-    function comprarCurso(){
-        var idCurso = getQueryVariable("id")
-        var opc=6;
-        let Body = { idCurso,opc }
-            debugger;
-        let jsonBody = JSON.stringify(Body);
-    
-        fetch('../php/cursos.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
-        .then(response => {
-             return response.json();
-        })
-        .then(data => {
-             
-            var Jason =data;
-            debugger;
-            console.log(Jason);
-            if(Jason==obj['nombre']){
-                alert("Curso comprado con éxito");
-                document.getElementById("comprarCurso").style.display = 'none';
-                document.getElementById("nivelesCurso").style.display = 'inline';
-            }
-            else{
-    
-                alert(Jason.result)
-            }
-        })
-        
-    }
-    function cursoComprado(){
-        var idCurso = getQueryVariable("id")
-        var opc=7;
-        let Body = { idCurso,opc }
-            debugger;
-        let jsonBody = JSON.stringify(Body);
-    
-        fetch('../php/cursos.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
-        .then(response => {
-             return response.json();
-        })
-        .then(data => {
-            var Jason =data;
-            debugger;
-            console.log(Jason);
-            if(Jason['terminado']!=""){
-                document.getElementById("comprarCurso").style.display = 'none';
-                document.getElementById("nivelesCurso").style.display = 'inline';
-                if(Jason['terminado']==true){
-                    document.getElementById("califCurso").style.display = 'inline';
-                }else{
-                    if(Jason['terminado']==false){
-                        document.getElementById("califCurso").style.display = 'none';
-                    }
-                }
-            }
-            else{
-                document.getElementById("comprarCurso").style.display = 'inline';
-                document.getElementById("nivelesCurso").style.display = 'none';
-                document.getElementById("califCurso").style.display = 'none';
-                document.getElementById("progresoCur").style.display = 'none';
-                
-            }
-        })
-        
-    }
     function nivelEsp(idNivel) {
         window.location.href = "verClase.html?id="+idNivel;
     }
-
-
 })
-
-
-
-
