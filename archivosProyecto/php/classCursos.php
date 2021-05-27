@@ -50,25 +50,39 @@
         }
 
         public function getCurso($json){
-                $datos = json_decode($json,true);
-                //son los datos del json
-                $correo = $datos["correo"];
-                $contrasena = $datos["contrasena"];
-                $query = "Call obtenerPerfil('$correo','$contrasena');";
-                
-                $verificacion = parent::ObtenerUsuario($query);
-                if($verificacion==1){
-                   
-                    $_SESSION["correo"]=$correo;
-                   
-                    $success="sesionEncontrada";
-                    return $success;
-                }
-                else{
-                    $success="sesionNoExiste";
-                    return $success;
-                }
-           
+    
+            header('Content-Type: application/json');
+            $datos = json_decode($json,true);
+            //son los datos del json
+            $id=$datos["_postID"];
+            $query = "Call getCurso('$id');";
+            
+            $post = parent::obtenerDatos($query);
+            if(isset($post[0]["id_curso"])){
+                $idCurso =$post[0]["id_curso"];
+                $name = $post[0]["nombre"];
+                $descripcion = $post[0]["descripcion"];
+                $cantNvls = $post[0]["cantidadNivelesCurso"];
+                $trailerCur = $post[0]["videoTrailer"];
+                $costo = $post[0]["costo"];
+                $idProf = $post[0]["id_profesor"];
+              
+                $json = [
+                    "idCurso" => $idCurso,
+                    "nombre" => $name,
+                    "descripcion"=> $descripcion,
+                    "cantidadNiveles"=> $cantNvls,
+                    "trailerCurso"=> $trailerCur,
+                    "costo"=> $costo,
+                    "profeCurso"=> $idProf
+                ];
+                     
+                return $json;
+            }
+            else{
+                $success="CursoNoEncontrado";
+                return parent::Error();
+            }
         }
 
         public function traerTodosLosCursos1Prof(){

@@ -187,8 +187,25 @@ end $$
 delimiter $$
 create procedure getCurso(in idCurso int)
 begin
-	select id_curso, nombre,cantidadNivelesCurso
-    from Curso where id_profesor=profeCreadorCursos;
+	select id_curso, nombre ,cantidadNivelesCurso, videoTrailer,
+    costo, id_profesor
+    from Curso where id_curso=idCurso;
 end $$
+
+delimiter $$
+create procedure getNiveles(in idCurso int)
+begin
+	select id_niveles, nombreNvl , videoLvl,
+    numeroNivel, otrosArchivo
+    from Curso where id_curso=idCurso;
+end $$
+
+    id_curso int,
+    nombreNvl varchar(150) not null unique,
+    videoLvl varchar(500) not null,
+    otrosArchivo varchar(500),
+	numeroNivel int not null,
+
+
 
    

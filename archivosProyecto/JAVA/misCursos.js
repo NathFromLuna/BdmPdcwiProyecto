@@ -29,8 +29,7 @@ $(document).ready(function () {
                 }
                 
                 mostrarCursosProf();
-                
-                    
+
             })
     }
     ocultarMisCursos();
