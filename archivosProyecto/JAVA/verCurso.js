@@ -56,13 +56,16 @@ $(document).ready(function () {
             .then(data => {
                var obj = data;
                //var obj = JSON.parse(Jason);
-               
-               //$("#EspacioEntradas").append("<text style='margin: 20px;'>" + obj['Descripcion'] + "<text/>");
+
+               //"categorias","costo", cantidadNiveles
+            
                document.getElementById("titulo").innerHTML = obj['nombre'];
+               document.getElementById("titulo2").innerHTML = obj['profeCurso'];
+               document.getElementById("titulo3").innerHTML = obj['categorias'];
                document.getElementById("verdaderaDescripcion").innerHTML = obj['descripcion'];
+               document.getElementById("costoCantlvls").innerHTML = "Costo del curso: $"+obj['costo']+"<br> Cantidad de niveles: "+obj['cantidadNiveles'];
                document.getElementById("videoCursoAct").src = obj['trailerCurso'];
-                    
-                    //"trailerCurso"=> $trailerCur,
+
                 mostrarNiveles();
             })
     }
@@ -81,7 +84,7 @@ $(document).ready(function () {
                console.log(Jason);
                //var obj = JSON.parse(Jason);
                 for (var i in Jason) {
-                    $("#nivelesCurso").append("<div><h3 id="+Jason[i]['id_niveles']+" >"+Jason[i]['nombreNvl']+"</h3><br><p >Nivel:"+Jason[i]['numeroNivel']+" </p><button id="+Jason[i]['id_niveles']+"  class='btnVerClase'>Ver clase</button></div>");
+                    $("#nivelesCurso").append("<div><h3 id="+Jason[i]['id_niveles']+" >"+Jason[i]['nombreNvl']+"<div style='display: flex;'></h3><p >Nivel:"+Jason[i]['numeroNivel']+" </p><button id="+Jason[i]['id_niveles']+" class='btnVerClase'>Ver clase</button> </div></div>");
                 }
                //id_niveles, nombreNvl , videoLvl, numeroNivel, otrosArchivo
                

@@ -5,6 +5,7 @@ body {
     background-size: cover;
 }
 
+
 #general {
     width: 100%;
     height: 100%;
@@ -48,6 +49,9 @@ body {
 }
 
 #titulo, #titulo2, #titulo3 {
+    color: rgb(214, 203, 240);
+}
+p,h3{
     color: rgb(214, 203, 240);
 }
 
