@@ -18,7 +18,7 @@ function iniciaSesion(){
                 window.location.href = "index.html";
             }
             else
-                alert("Error, revise los datos")
+                alert(Jason.result)
             //"status" => "ok",
             //"result" => array()
             })

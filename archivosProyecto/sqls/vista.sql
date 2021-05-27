@@ -6,6 +6,8 @@ concat(Usuarios.nombre, " ", Usuarios.apellidos) as "NombreProfesor", Usuarios.i
     left join  tablaAsociativaCursoCategoria on  
      Curso.id_curso = tablaAsociativaCursoCategoria.id_curso left join Categorias 
     on tablaAsociativaCursoCategoria.id_cat = Categorias.id_categorias
-    group by Curso.id_curso;
+    group by Curso.id_curso order by Curso.id_curso desc;
+    Call buscarCursoFiltro('%nath%');
+    select * from CursoCompleto
     
     

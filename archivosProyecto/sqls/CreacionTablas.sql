@@ -66,10 +66,20 @@ create table Historial(
 	id_historial int not null unique auto_increment,
     id_est int,
     id_curs int,
-    avanceLvl varchar(10),
+    avanceLvl int,
 	primary key (id_historial),
 	foreign key (id_est) references Usuarios(id_usuario),
 	foreign key (id_curs) references Curso(id_curso)
+);
+
+create table inscripcionCurso(
+	id_inscripcion int not null unique auto_increment,
+    id_alumno int,
+    idCurso int,
+    terminado bool DEFAULT 0,
+    primary key (id_inscripcion),
+    foreign key (id_alumno) references Usuarios(id_usuario),
+	foreign key (idCurso) references Curso(id_curso)
 );
 
 create table tablaAsociativaCursoCategoria(
@@ -91,10 +101,11 @@ create table Mensajes(
 	foreign key (id_para) references Usuarios(id_usuario)
 )
 
-select * from Usuarios
-select * from Categorias
-select * from Curso
-select * from tablaAsociativaCursoCategoria
-
-
-
+select * from Usuarios;
+select * from Categorias;
+select * from Curso;
+select * from tablaAsociativaCursoCategoria;
+select * from Historial;
+select * from inscripcionCurso;
+drop table Historial;
+drop table inscripcionCurso
