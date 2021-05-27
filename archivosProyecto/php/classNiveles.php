@@ -20,6 +20,35 @@
             }
         }
 
+        public function getNivel($json){
+            header('Content-Type: application/json');
+            $datos = json_decode($json,true);
+            //son los datos del json
+            $id=$datos["idNivel"];
+            $query = "Call getNivel('$id');";
+            
+            $post = parent::obtenerDatos($query);
+            if(isset($post[0]["nombreNvl"])){
+                $idCurso = $post[0]["id_curso"];
+                $name = $post[0]["nombreNvl"];
+                $trailerNvl = $post[0]["videoLvl"];
+                $numLvl = $post[0]["numeroNivel"];
+                $otrosArch = $post[0]["otrosArchivo"];
+              
+                $json = [
+                    "idCurso" => $idCurso,
+                    "nombreNvl" => $name,
+                    "trailerNivel"=> $trailerNvl,
+                    "numeroNivel"=> $numLvl,
+                    "otrosArchivo"=> $otrosArch
+                ];    
+                return $json;
+            }
+            else{
+                $success="NivelNoEncontrado";
+                return parent::Error();
+            }
+        }
         public function modificarCurso($json){
             $datos = json_decode($json,true);
             //son los datos del json

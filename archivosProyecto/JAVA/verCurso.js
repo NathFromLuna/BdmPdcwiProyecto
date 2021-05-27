@@ -11,7 +11,9 @@ $(document).ready(function () {
         }
         return false;
     }
-
+    $("#nivelesCurso").on("click", ".btnVerClase", function () {
+        nivelEsp(this.id);
+    });
     function ocultarVerCurso() {
         var opc = 3;
         let Body = { opc }
@@ -79,13 +81,13 @@ $(document).ready(function () {
                console.log(Jason);
                //var obj = JSON.parse(Jason);
                 for (var i in Jason) {
-                    $("#nivelesCurso").append("<div><h3 id="+Jason[i]['id_curso']+" >"+Jason[i]['nombreNvl']+"</h3><br><p >Nivel:"+Jason[i]['numeroNivel']+" </p><button id="+Jason[i]['id_curso']+" class='.btn'>Ver clase</button></div>");
+                    $("#nivelesCurso").append("<div><h3 id="+Jason[i]['id_niveles']+" >"+Jason[i]['nombreNvl']+"</h3><br><p >Nivel:"+Jason[i]['numeroNivel']+" </p><button id="+Jason[i]['id_niveles']+"  class='btnVerClase'>Ver clase</button></div>");
                 }
                //id_niveles, nombreNvl , videoLvl, numeroNivel, otrosArchivo
                
             })
     }
-    function cursoEsp(_postID) {
-        window.location.href = "VerCurso.html?id="+_postID;
+    function nivelEsp(idNivel) {
+        window.location.href = "verClase.html?id="+idNivel;
     }
 })

@@ -150,6 +150,13 @@ select {
     transition: .25s all ease;
 }
 
+.btnVerClase{
+    background-color: rgb(238, 235, 245);
+    border-radius: 4px;
+    font-size: large;
+    padding: 1%;
+    color:rgb(44, 38, 59);
+}
 /*Comentarios*/
 
 /**********************************************************************/
@@ -198,7 +205,7 @@ select {
     background-color: rgb(238, 235, 245);
 }
 
-.comentario {
+.comentario{
     color: rgb(214, 203, 240);
     background-color: rgba(59, 55, 71, 0.123);
     margin-left: 4.5%;

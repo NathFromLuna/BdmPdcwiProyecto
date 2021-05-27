@@ -10,6 +10,11 @@ $_nivel = new Nivel;
         $jala = $_nivel->traerTodosLosNivelesCurso($datos);
         echo $jala;
     }
+    if($datos["opc"]==2){
+        header('Content-Type: application/json');
+        $jala = $_nivel->getNivel($postbody);
+        echo json_encode($jala);
+    }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
     //echo $jala;
