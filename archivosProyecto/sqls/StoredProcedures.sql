@@ -227,3 +227,15 @@ begin
     select terminado from inscripcionCurso;
 end $$
 
+
+delimiter /
+
+
+create procedure buscarCursoFiltro (in cursoAbuscar varchar(200))
+begin
+    select * from CursoCompleto where nombre like cursoAbuscar or 
+    nombre like cursoAbuscar or
+    nombre like cursoAbuscar limit 3;  -- concat(%, _NombreUsuario, %)
+end/
+
+   
