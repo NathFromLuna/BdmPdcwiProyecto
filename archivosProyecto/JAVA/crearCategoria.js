@@ -66,7 +66,6 @@ function crearCat(){
          
         var Jason =data;
         console.log(Jason);
-        debugger;
         if(Jason==="success"){
             alert("Categoria creada con éxito");
             window.location.href="perfil.html";

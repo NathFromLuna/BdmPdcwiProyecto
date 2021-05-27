@@ -34,7 +34,8 @@
           <a href="../Html's/misCursos.html">Mis cursos</a>
           <a href="../Html's/mensajes.html">Mensajes</a>
           <hr>
-          <a href="../Html's/Ventas.html">Ventas</a>
+          <a id="navVentas" href="../Html's/Ventas.html">Ventas</a>
+          <a id="navHistorial" href="../Html's/historialAl.html">Historial</a>
         </class>
       </div>
       <div>
@@ -46,34 +47,17 @@
   </nav>
   <div id="contenidoCentral">
     <div class="contenedorCursos">
-      <div id="tituloBtn">
+      <div>
+        <div id="tituloBtn">
           <h3>Mis cursos</h3>
       </div>
       <div id="anadirCur">
         <button id="btnAnCur" onclick="llevameCrearCurso();">Añadir curso</button>
       </div>
-      <div>
-        <table>
-          <tr>
-            <th>
-              Categoria curso
-            </th>
-          </tr>
-          <tr>
-            <th id="cursos">
-              <div class="cursos">
-                <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="165" width="240">
-                <br>
-                <a class="titCursos" href="../Html's/VerCurso.html">Titulo del curso</a>
-                <br>
-                <p class="niveles">Lvls: 4</p>
-              </div>
-            </th>
-           
-          </tr>
-          
-          
-        </table>
+      <div id="hayCursos"></div>
+      </div>
+      <div id="cursosCreados">
+        
       </div>
       
     </div>

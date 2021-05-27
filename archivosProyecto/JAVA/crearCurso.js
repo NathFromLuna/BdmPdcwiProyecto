@@ -123,7 +123,6 @@ function crearCurso(){
                     FoDatos.append('videoNvl'+i,videoNivel[i]);
                     FoDatos.append('otroArchNvl'+i,otrosArchivos[i]);
                 }
-                debugger;
                 fetch('../php/cursosImagen.php',{method:"POST",body:FoDatos})
                 .then(response => {
                    return response.text();

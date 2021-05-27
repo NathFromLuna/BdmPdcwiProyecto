@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    ocultarMisCursos();
+    
+    $("#cursosCreados").on("click", ".titCursos", function () {
+        cursoEsp(this.id);
+    });
     function ocultarMisCursos() {
         var opc = 3;
         let Body = { opc }
@@ -15,54 +18,51 @@ $(document).ready(function () {
                 document.getElementById("cerrarSes").style.display = 'inline';
                 document.getElementById("imgAvatarUsuario").src = "../php/profilePicture.php";
                 document.getElementById("iniciaSes").style.display = 'none';    
-                
-                if(obj['esMaestro']==false){
-                    
+                if(obj['esMaestro']==true){
                     document.getElementById("navHistorial").style.display = 'none';
                     
                 }else{
                     if(obj['esMaestro']==false){
                         document.getElementById("btnAnCur").style.display = 'none';
-    
                         document.getElementById("navVentas").style.display = 'none';
                     }
                 }
-   
+                
+                mostrarCursosProf();
+                
+                    
             })
     }
-    function mostrarEntrada() {
-
-        var opc = 1;
+    ocultarMisCursos();
+    function mostrarCursosProf() {
+        var opc = 3;
         let Body = { opc }
+        let jsonBody = JSON.stringify(Body)
+        console.log(jsonBody);
         
-        let jsonBody = JSON.stringify(Body);
-        //var foto="Images/placeholder.png"
-        $.fetchPosts('php/post.php', jsonBody)
-            .then(
-                function (data) {
-                    //console.log(data);
-
-                    var Jason = data;
-                    var obj = JSON.parse(Jason);
-
-                    //console.log(Jason);
-
-                    for (var i in obj) {
-                        $("#EspacioEntradas").append("<br>");
-                        $("#EspacioEntradas").append("<center><subtitle id='" + obj[i]['postID'] + "' class='TituloBlog'>" + obj[i]['Titulo'] + "<subtitle/><center/>");
-                        //$("#EspacioEntradas").append("<center><subtitle onclick='refresh(" + obj[i][postID] + ");'>" + obj[i]['Titulo'] + "<subtitle/><center/>");
-                        $("#EspacioEntradas").append("<br>");
-                        //$("#EspacioEntradas").append("<center><img class='col-lg-6 col-md-2 col-sm-1 img-fluid' style'height:200px; width:450px;' src='Images/placeholder.png'><center/>");
-                        $("#EspacioEntradas").append("<center><img class='col-lg-6 col-md-2 col-sm-1 img-fluid' style'height:200px; width:450px;' src=' " + obj[i]['Imagen'] + " '><center/>");
-                        $("#EspacioEntradas").append("<br>");
-                        $("#EspacioEntradas").append("<center><sub>" + obj[i]['FechaCreacion'] + "<sub/><center/>");
-                        $("#EspacioEntradas").append("<br>"); $("#EspacioEntradas").append("<br>");
-                    }
+        fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+                
+            var Jason = data;
+            //var obj = JSON.parse(Jason);
+            console.log(data);
+            
+            if(data=="NoHayCursos"){
+                $("#hayCursos").append("<p>No hay cursos creados</p>");
+            }else{
+                for (var i in Jason) {
+                    //window.location.href = "blogEspecifico.html?id="+_postID
+                    //href='../Html's/VerCurso.html?id='
+                    $("#cursosCreados").append("<div class='cursos'><img src ='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='165' width='240'><br><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><br><p class='niveles'>Lvls:"+Jason[i]['cantidadNivelesCurso']+" </p></div>");
                 }
-            );
-
+            }
+        })
+          
     }
-    
-    
-
+    function cursoEsp(_postID) {
+        window.location.href = "VerCurso.html?id="+_postID;
+    }
 })

@@ -41,13 +41,13 @@ $_curso = new Cursos;
         
             $videoTrailerNvl= $_FILES['videoNvl'.$contador]['tmp_name'];
             $nombreNvl=$_POST["nombreNlv".$contador];
-            $nuevoNombreTrailerNvl="../videos/".$nombreNvl.$contador.".mp4";
+            $nuevoNombreTrailerNvl="../videos/".$nombre.$nombreNvl.$contador.".mp4";
             move_uploaded_file($videoTrailerNvl,$nuevoNombreTrailerNvl);
             
             $tipo=$_FILES['otroArchNvl'.$contador]['name'];
             $otroArchNvl= $_FILES['otroArchNvl'.$contador]['tmp_name'];
             $nombreNvl=$_POST["nombreNlv".$contador];
-            $nuevoNombreArchNvl="../archivos/".$nombreNvl.$contador.$tipo;
+            $nuevoNombreArchNvl="../archivos/".$nombre.$nombreNvl.$contador.$tipo;
             move_uploaded_file($otroArchNvl,$nuevoNombreArchNvl);
 
             $json2[$contador2]=$nombreNvl;
@@ -59,8 +59,6 @@ $_curso = new Cursos;
             $contador++;
         }
         $coco= json_encode($json2);
-
-        
         $coso = json_encode($json);
 
         $jala = $_curso->CrearCurso($coso,$coco,$blob);

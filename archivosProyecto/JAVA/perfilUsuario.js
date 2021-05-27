@@ -29,7 +29,7 @@ $(document).ready(function () {
                     document.getElementById("navHistorial").style.display = 'none';
                     document.getElementById("iniciaSes").style.display = 'none';
                     document.getElementById("imgAvatarUsuario").src = "../php/profilePicture.php";
-                   }else{
+                }else{
                     if(obj['esMaestro']==false)
                         document.getElementById("btnVentas").style.display = 'none';
 

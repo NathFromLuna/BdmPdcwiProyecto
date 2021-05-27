@@ -32,6 +32,7 @@ RETURN 1;
 END$$
 
 CREATE FUNCTION `RegNivCurso` (
+nNombreNvl varchar(150),
  nVideoLvl varchar(500),
  nOtrosArchivo varchar(500),
  nNumeroNivel int,
@@ -47,7 +48,7 @@ declare idDelCurso int;
     into idDelCurso
     from Curso
     where nombre = nNombre and descripcion = nDescripcion and cantidadNivelesCurso = nCantidadNivelesCurso and id_profesor = nId_profesor;
-CALL registrarNivel(idDelCurso, nVideoLvl, nOtrosArchivo, nNumeroNivel);
+CALL registrarNivel(idDelCurso,nNombreNvl, nVideoLvl, nOtrosArchivo, nNumeroNivel);
 RETURN 1;
 END$$
 

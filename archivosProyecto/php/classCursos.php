@@ -29,7 +29,7 @@
                 $contador++;
                 $archivoNvl=$datos2[$contador];
                 $contador++;
-                $query ="call DePasoNivelCurso('$videoLvl','$archivoNvl',
+                $query ="call DePasoNivelCurso('$nombreNvl','$videoLvl','$archivoNvl',
                 $contador2,'$nombre','$descripcion',$cantLvls,$idProfesor);";
                 $contador2++;
                 $cantidad = parent::rowsAfectados($query);
@@ -75,10 +75,10 @@
             header('Content-Type: application/json');
             $escuelaCur=$_SESSION["id"];
             //son los datos del json
-            $query = "Call getCursosProfEs('$escuelaCur');";
+            $query = "Call getCursosProfEsp('$escuelaCur');";
             
             $cursos = parent::obtenerDatos($query);
-            if(isset($cursos[0]["nombre"])){           
+            if(isset($cursos[0]["id_curso"])){           
                 return json_encode($cursos);
             }
             else{
@@ -86,7 +86,21 @@
                 return $success;
             }
         }
-
+        public function traerTodosLosCursosInsAl(){
+            header('Content-Type: application/json');
+            $alumno=$_SESSION["id"];
+            //son los datos del json
+            $query = "Call getCursosProfEsp('$alumno');";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
+        }
         public function modificarCurso($json){
             $datos = json_decode($json,true);
             //son los datos del json

@@ -46,12 +46,13 @@ end/
 
 delimiter /
 create procedure registrarNivel (in nId_curso int,
+ in nNombreNvl varchar(150),
  in nVideoLvl varchar(500),
  in nOtrosArchivo varchar(500),
  in nNumeroNivel int)
 begin
-    insert into Niveles(id_curso, videoLvl, otrosArchivo, numeroNivel, alta)
-    values(nId_curso, nVideoLvl, nOtrosArchivo, nNumeroNivel, 1);
+    insert into Niveles(id_curso,nombreNvl, videoLvl, otrosArchivo, numeroNivel, alta)
+    values(nId_curso,nNombreNvl, nVideoLvl, nOtrosArchivo, nNumeroNivel, 1);
 end/
 
 
@@ -153,10 +154,11 @@ begin
 end $$
 
 delimiter $$
-create procedure DePasoNivelCurso (
- in nVideoLvl varchar(500),
- in nOtrosArchivo varchar(500),
- in nNumeroNivel int,
+create procedure DePasoNivelCurso( 
+in nNombreNvl varchar(150),
+in nVideoLvl varchar(500),
+in nOtrosArchivo varchar(500),
+in nNumeroNivel int,
 in nNombre varchar(70),
 in nDescripcion varchar(200),
 in nCantidadNivelesCurso int,
@@ -164,9 +166,24 @@ in nId_profesor int
  )
 begin
    declare idDelCurso int;    
-	set idDelCurso = RegNivCurso(nVideoLvl, nOtrosArchivo, nNumeroNivel, nNombre, nDescripcion, nCantidadNivelesCurso, nId_profesor);     
+	set idDelCurso = RegNivCurso(nNombreNvl,nVideoLvl, nOtrosArchivo, nNumeroNivel, nNombre, nDescripcion, nCantidadNivelesCurso, nId_profesor);     
     
 end$$
-    
-    
-    
+
+delimiter $$
+create procedure getCursosProfEsp(in profeCreadorCursos int)
+begin
+	select id_curso, nombre,cantidadNivelesCurso
+    from Curso where id_profesor=profeCreadorCursos;
+end $$
+
+delimiter $$
+create procedure getFotoCursos(in idCursoImg int)
+begin
+	select imagenCurso
+    from Curso where id_curso=idCursoImg;
+end $$
+
+
+
+   

@@ -1,5 +1,5 @@
 <?php
-require_once 'classUsuario.php';
+require_once 'classCursos.php';
 $_curso = new Cursos;
 //recibe el json y lo tranforma a un arreglo
     $postbody = file_get_contents("php://input");
@@ -13,9 +13,14 @@ $_curso = new Cursos;
     if($datos["opc"]==3){
         header('Content-Type: application/json');
         $jala = $_curso->traerTodosLosCursos1Prof();
-        echo json_encode($jala);
+        echo $jala;
     }
     if($datos["opc"]==4){
+        header('Content-Type: application/json');
+        $jala = $_curso->traerTodosLosCursosInsAl();
+        echo $jala;
+    }
+    if($datos["opc"]==5){
         $jala = $_curso->modificarCurso($postbody);
         echo $jala;
     }

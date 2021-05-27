@@ -43,6 +43,7 @@ create table Curso(
 create table Niveles(
 	id_niveles int not null unique auto_increment,
     id_curso int,
+    nombreNvl varchar(150) not null unique,
     videoLvl varchar(500) not null,
     otrosArchivo varchar(500),
 	numeroNivel int not null,
@@ -90,10 +91,10 @@ create table Mensajes(
 	foreign key (id_para) references Usuarios(id_usuario)
 )
 
+select * from Usuarios
 select * from Categorias
-
-
-
+select * from Curso
+select * from tablaAsociativaCursoCategoria
 
 
 
