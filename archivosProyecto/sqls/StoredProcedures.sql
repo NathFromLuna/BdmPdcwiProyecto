@@ -221,15 +221,15 @@ end $$
 delimiter $$
 create procedure estaInscrito(
 	in  idAlumno int,
-    in idCurso int
+    in id_Curso int
     )
 begin
-    select terminado from inscripcionCurso;
+    select terminado from inscripcionCurso 
+    where id_alumno=idAlumno and idCurso=id_Curso;
 end $$
-
+drop procedure estaInscrito
 
 delimiter /
-
 
 create procedure buscarCursoFiltro (in cursoAbuscar varchar(200))
 begin

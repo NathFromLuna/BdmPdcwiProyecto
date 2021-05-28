@@ -100,14 +100,13 @@ $(document).ready(function () {
     
         fetch('../php/cursos.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
         .then(response => {
-             return response.json();
+             return response.text();
         })
         .then(data => {
-             
             var Jason =data;
             debugger;
             console.log(Jason);
-            if(Jason==obj['nombre']){
+            if(Jason==="success"){
                 alert("Curso comprado con éxito");
                 document.getElementById("comprarCurso").style.display = 'none';
                 document.getElementById("nivelesCurso").style.display = 'inline';
@@ -134,24 +133,28 @@ $(document).ready(function () {
             var Jason =data;
             debugger;
             console.log(Jason);
-            if(Jason['terminado']!=""){
-                document.getElementById("comprarCurso").style.display = 'none';
-                document.getElementById("nivelesCurso").style.display = 'inline';
-                if(Jason['terminado']==true){
-                    document.getElementById("califCurso").style.display = 'inline';
-                }else{
-                    if(Jason['terminado']==false){
-                        document.getElementById("califCurso").style.display = 'none';
-                    }
-                }
-            }
-            else{
+            
+            if(Jason=="CursoNoReg"){
                 document.getElementById("comprarCurso").style.display = 'inline';
                 document.getElementById("nivelesCurso").style.display = 'none';
                 document.getElementById("califCurso").style.display = 'none';
                 document.getElementById("progresoCur").style.display = 'none';
+            }else{
+                if(Jason['terminado']!=""){
+                    document.getElementById("comprarCurso").style.display = 'none';
+                    document.getElementById("nivelesCurso").style.display = 'inline';
+                    if(Jason['terminado']==true){
+                        document.getElementById("califCurso").style.display = 'inline';
+                    }else{
+                        if(Jason['terminado']==false){
+                            document.getElementById("califCurso").style.display = 'none';
+                        }
+                    }
+                }
                 
             }
+            
+            
         })
         
     }
