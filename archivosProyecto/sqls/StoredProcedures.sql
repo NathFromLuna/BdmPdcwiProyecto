@@ -227,7 +227,7 @@ begin
     select terminado from inscripcionCurso 
     where id_alumno=idAlumno and idCurso=id_Curso;
 end $$
-drop procedure estaInscrito
+
 
 delimiter /
 

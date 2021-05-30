@@ -99,13 +99,16 @@ create table Mensajes(
     primary key (id_mensaje),
     foreign key (id_de) references Usuarios(id_usuario),
 	foreign key (id_para) references Usuarios(id_usuario)
+);
+
+create table calificarCurso(
+	id_calificacion int not null unique auto_increment,
+    id_AlumnoCalif int,
+    id_cursoCalif int,
+    calificacion int,
+    primary key (id_calificacion),
+    foreign key (id_AlumnoCalif) references Usuarios(id_usuario),
+	foreign key (id_cursoCalif) references Curso(id_curso)
 )
 
-select * from Usuarios;
-select * from Categorias;
-select * from Curso;
-select * from tablaAsociativaCursoCategoria;
-select * from Historial;
-select * from inscripcionCurso;
-drop table Historial;
-drop table inscripcionCurso
+
