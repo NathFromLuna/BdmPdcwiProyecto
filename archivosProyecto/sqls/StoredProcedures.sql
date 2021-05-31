@@ -102,6 +102,18 @@ begin
     where id_curs = Id_curso;
 end $$
 
+delimiter $$
+create procedure getComentario(in idCreador int,
+in idCurso int, 
+in comentario varchar(250))
+begin
+	select * from comentariosCompletos 
+    where comentariosCompletos.id_usuario = idCreador 
+    and comentariosCompletos.id_curso= idCurso
+    and comentariosCompletos.comentario= comentario;
+end $$
+call getComentario(2,14,"este es un comentario nuevo")
+
 create procedure nuevaCategoria (
 	in  p_nombre varchar(50),
     in p_descripcion varchar(200),

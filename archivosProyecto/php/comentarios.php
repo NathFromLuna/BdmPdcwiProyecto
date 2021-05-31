@@ -8,6 +8,7 @@ $_comentario = new Comentario;
     if($datos["opc"]==1){
         header('Content-Type: application/json');
         $jala = $_comentario->crearComentario($postbody);
+        echo json_encode($jala);
     }
     if($datos["opc"]==2){
         header('Content-Type: application/json');
@@ -15,6 +16,6 @@ $_comentario = new Comentario;
     }
     header('Content-Type: application/json');//le dices que devuelve un json
     
-    echo $jala;
-    json_encode($jala);
+    //echo $jala;
+    //json_encode($jala);
 ?>

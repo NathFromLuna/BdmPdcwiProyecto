@@ -13,14 +13,27 @@ require_once "conexion.php";
             $verificacion = parent::rowsAfectados($query);
             
             if($verificacion == 1){
+                $query2 = "Call getComentario($creador,$curso,'$mensaje');";
+                $post = parent::obtenerDatos($query2);
+                if(isset($post[0]["id_usuario"])){
+                    $idUs =$post[0]["id_usuario"];
+                    $nombre = $post[0]["nombre"];
+                    $comentario = $post[0]["comentario"];
+                    $json = [
+                        "idUsuario" => $idUs,
+                        "nombreUs" => $nombre,
+                        "comentarioHecho"=> $comentario
+                    ];
+                    return $json;
+                }
                 $success="success";
-                return $success;
-               
+                //return $success;
             }else{
                 $success="fail";
                 return  parent::Error();
             }
         }
+
         public function getAllComentarios(){
             header('Content-Type: application/json');
             

@@ -6,6 +6,6 @@
     header("content_type: image/jpeg");
     $result = mysqli_query($conexion->conexion, $sql);
     $row = mysqli_fetch_array($result);
-    $imagendata = $row["imagenCurso"];
+    $imagendata = $row["imagenPerfil"];
     echo $imagendata;
 ?>

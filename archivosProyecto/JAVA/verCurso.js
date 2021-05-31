@@ -184,51 +184,43 @@ $(document).ready(function () {
     
             fetch('../php/comentarios.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
             .then(response => {
-                return response.text();
+                return response.json();
             })
             .then(data => {
                 
                 var Jason =data;
                 console.log(Jason);
-                if(Jason==="success"){
-                    alert("Comentario publicado con éxito");
+                debugger;
+                    /*"idUsuario" => $idUs,
+                    "nombreUs" => $nombre,
+                    "comentarioHecho"=> $comentario*/
+                $("#comentariosEchos").empty();
+                var comentariosEchos = document.getElementById("comentariosEchos");
 
-                /*<div class="media">
-                    <img src="https://i.pinimg.com/originals/5d/3d/10/5d3d1003688a50afee49b8ab1526322a.jpg"
-                        class="ImagenPerfil" name="ImagenPerfil" alt="...">
-                    <div class="media-body">
-                        <h5 class="Comentario" name="NombreComentario">Sara Lin</h5>
-                        <p class="text-com"> Me encantan los webtoon. Son tan graciosos y romanticos </p>
-                    </div>
-                </div>*/
-                
                 var div1 =document.createElement('div');
                 div1.setAttribute("class","media");
                 var img1 = document.createElement("img");
-                img1.setAttribute("src","../JAVA/fotos.php?id="+Jason[i]['id_curso']);
-                img1.setAttribute("alt","fotoCurso");
-                img1.setAttribute("height","130");
-                img1.setAttribute("width","215");
-                var br1 = document.createElement("br");
+                img1.setAttribute("src","../JAVA/fotosComents.php?id="+Jason["idUsuario"]);
+                img1.setAttribute("class","ImagenPerfil");
+                img1.setAttribute("alt","...");
+                var div2 =document.createElement('div');
+                div2.setAttribute("class","media-body");
                 
-                var br2 = document.createElement("br");
+                var h5 = document.createElement("h5");
+                h5.setAttribute("class","Comentario");
+                h5.innerHTML =Jason["nombreUs"];
+
                 var p1 = document.createElement("p");
-                p1.setAttribute("class","niveles");
-                p1.innerHTML ="Lvls:"+ Jason[i]["cantidadNivelesCurso"];
+                p1.setAttribute("class","text-com");
+                p1.innerHTML =Jason["comentarioHecho"];
+
+                div2.appendChild(h5);
+                div2.appendChild(p1);
                 div1.appendChild(img1);
-                div1.appendChild(br1);
-                div1.appendChild(a1);
-                div1.appendChild(br2);
-                div1.appendChild(p1);
-                th1.appendChild(div1);
-                comentariosEchos.appendChild(th1);
-
-
-                }
-                else{
-                    alert("no se pudo publicar el comentario");
-                    alert(Jason.result)
-                }
+                div1.appendChild(div2);
+               
+                comentariosEchos.appendChild(div1);
+ 
             })
         }
        else{
