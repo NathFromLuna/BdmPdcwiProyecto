@@ -28,19 +28,18 @@ require_once "conexion.php";
             }
         }
 
-        public function getAllComentarios(){
+        public function getAllComentarios($json){
             header('Content-Type: application/json');
-            
+            $datos = json_decode($json,true);
+            $curso = $datos["idCurso"];
             //son los datos del json
-            $query = "call obtenerCategorias();";
-            
-            $categorias = parent::obtenerDatos($query);
-        
-            if(isset($categorias[0]["nombre"])){           
-                return json_encode($categorias);
-            }
-            else{
-                $success="NoHayCategorias";
+            $query2 = "Call obtenerComentarios($curso);";
+            $comentarios = parent::obtenerDatos($query2);
+                
+            if(isset($comentarios[0]["id_usuario"])){           
+                return json_encode($comentarios);
+            }else{
+                $success="NoHayComentarios";
                 return $success;
             }
         }

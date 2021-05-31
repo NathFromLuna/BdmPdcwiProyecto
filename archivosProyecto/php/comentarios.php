@@ -11,7 +11,7 @@ $_comentario = new Comentario;
     }
     if($datos["opc"]==2){
         header('Content-Type: application/json');
-        $jala = $_comentario->getAllComentarios();   
+        $jala = $_comentario->getAllComentarios($postbody);   
     }
     header('Content-Type: application/json');//le dices que devuelve un json
     
