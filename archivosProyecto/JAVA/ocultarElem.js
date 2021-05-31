@@ -61,7 +61,7 @@ $(document).ready(function () {
                      var th1 =document.createElement('th');
                       th1.setAttribute("id","cursos");
                       var div1 =document.createElement('div');
-                      div1.setAttribute("id","cursos");
+                      div1.setAttribute("class","cursos");
                       var img1 = document.createElement("img");
                       img1.setAttribute("src","../JAVA/fotos.php?id="+Jason[i]['id_curso']);
                       img1.setAttribute("alt","fotoCurso");
@@ -69,7 +69,7 @@ $(document).ready(function () {
                       img1.setAttribute("width","215");
                       var br1 = document.createElement("br");
                       var a1 = document.createElement("a");
-                      a1.setAttribute("class","titCurso");
+                      a1.setAttribute("class","titCursos");
                       a1.setAttribute("href","verCurso.html?id="+Jason[i]['id_curso']);//aqui pones la direccion html donde lo colocas
                       a1.setAttribute("onclick","llevameAverCursos()");
                       a1.innerHTML =Jason[i]["nombre"];

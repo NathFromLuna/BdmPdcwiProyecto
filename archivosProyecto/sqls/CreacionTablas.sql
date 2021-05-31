@@ -111,4 +111,5 @@ create table calificarCurso(
 	foreign key (id_cursoCalif) references Curso(id_curso)
 )
 
-
+select * from Curso
+select * from Comentarios
