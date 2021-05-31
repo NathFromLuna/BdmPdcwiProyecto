@@ -50,16 +50,16 @@
     <div id="contCen">
       <div id="cursosBarraBus">
         <div id="barraBus">
-          <form>
+          <!-- <form>-->
             <br>
             <!--aqui quiero empezar la barra de busqueda-->
             <center>
               <div id="barraBusqueda">
                 <input type="text" id="busqueda" placeholder="Busca algo...">
-                <button id="btnBus"></button>
+                <button id="btnBus" onclick="buscar();"></button>
               </div>
             </center>
-          </form>
+         <!-- </form>-->
         </div>
         <div class="contenedorCursos">
           <table>
@@ -68,7 +68,7 @@
                 Categoria curso
               </th>
             </tr>
-            <tr>
+            <tr id="listacursos">
               <th id="cursos">
                 <div class="cursos">
                   <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="130" width="215">

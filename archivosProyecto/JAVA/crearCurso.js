@@ -75,7 +75,7 @@ $(document).ready(function () {
                 //var obj = JSON.parse(Jason);
                 console.log(data);
                 if(data=="NoHayCategorias"){
-                    debugger;
+                    
                     $("#categoria1").append("<option value='0' >No hay categorias disponibles</option>");
                     $("#categoria2").append("<option value='0' >No hay categorias disponibles</option>");
                     //<p class="Categoria">Categoria 1</p>

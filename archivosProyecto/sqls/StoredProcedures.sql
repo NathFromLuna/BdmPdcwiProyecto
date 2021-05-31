@@ -92,13 +92,13 @@ begin
     values(Id_estudiante, Id_curso, mensaje);
 end $$
 
-
+delimiter $$
 create procedure obtenerComentarios (
 	in Id_curso int
     )
 begin
-	select nickname, imagenPerfil, comentario 
-    from Usuarios left join comentarios on id_comentario = id_usuario
+	select id_usuario,nickname, comentario 
+    from comentariosCompletos  
     where id_curs = Id_curso;
 end $$
 
@@ -186,6 +186,13 @@ begin
 end $$
 
 delimiter $$
+create procedure getFotoComents(in idUsuarioImg int)
+begin
+	select imagenPerfil
+    from Usuarios where id_usuario=idUsuarioImg;
+end $$
+
+delimiter $$
 create procedure getCurso(in idCurso int)
 begin
 	select *
@@ -206,5 +213,36 @@ begin
 	select id_curso, nombreNvl , videoLvl, numeroNivel, otrosArchivo
     from Niveles where id_niveles=idNvl;
 end $$
+
+delimiter $$
+create procedure inscribirCurso(
+	in  idAlumno int,
+    in idCurso int
+    )
+begin
+    insert into inscripcionCurso(id_alumno, idCurso)
+    values(idAlumno, idCurso);
+    call registrarHistorial(idAlumno,idCurso);
+end $$
+
+delimiter $$
+create procedure estaInscrito(
+	in  idAlumno int,
+    in id_Curso int
+    )
+begin
+    select terminado from inscripcionCurso 
+    where id_alumno=idAlumno and idCurso=id_Curso;
+end $$
+
+
+delimiter /
+
+create procedure buscarCursoFiltro (in cursoAbuscar varchar(200))
+begin
+    select * from CursoCompleto where nombre like cursoAbuscar or 
+    NombreProfesor like cursoAbuscar or
+    Categorias like cursoAbuscar limit 3;  -- concat(%, _NombreUsuario, %)
+end/
 
    

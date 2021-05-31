@@ -57,6 +57,7 @@ create table Comentarios(
     id_est int,
     id_curs int,
     comentario varchar(250) not null,
+    fechaPublicacion timestamp DEFAULT current_timestamp, 
 	primary key (id_comentario),
     foreign key (id_est) references Usuarios(id_usuario),
 	foreign key (id_curs) references Curso(id_curso)
@@ -66,10 +67,20 @@ create table Historial(
 	id_historial int not null unique auto_increment,
     id_est int,
     id_curs int,
-    avanceLvl varchar(10),
+    avanceLvl int,
 	primary key (id_historial),
 	foreign key (id_est) references Usuarios(id_usuario),
 	foreign key (id_curs) references Curso(id_curso)
+);
+
+create table inscripcionCurso(
+	id_inscripcion int not null unique auto_increment,
+    id_alumno int,
+    idCurso int,
+    terminado bool DEFAULT 0,
+    primary key (id_inscripcion),
+    foreign key (id_alumno) references Usuarios(id_usuario),
+	foreign key (idCurso) references Curso(id_curso)
 );
 
 create table tablaAsociativaCursoCategoria(
@@ -89,8 +100,16 @@ create table Mensajes(
     primary key (id_mensaje),
     foreign key (id_de) references Usuarios(id_usuario),
 	foreign key (id_para) references Usuarios(id_usuario)
+);
+
+create table calificarCurso(
+	id_calificacion int not null unique auto_increment,
+    id_AlumnoCalif int,
+    id_cursoCalif int,
+    calificacion int,
+    primary key (id_calificacion),
+    foreign key (id_AlumnoCalif) references Usuarios(id_usuario),
+	foreign key (id_cursoCalif) references Curso(id_curso)
 )
-
-
 
 

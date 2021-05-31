@@ -24,6 +24,25 @@ $_curso = new Cursos;
         $jala = $_curso->modificarCurso($postbody);
         echo $jala;
     }
+    if($datos["opc"]==6){
+        header('Content-Type: application/json');
+        $jala = $_curso->inscribirCurso($postbody);
+        header('Content-Type: application/json');//le dices que devuelve un json
+        echo $jala;
+        json_encode($jala);
+    }
+    if($datos["opc"]==7){
+        header('Content-Type: application/json');
+        $jala = $_curso->cursoComprado($postbody);
+        echo json_encode($jala);
+    }
+
+    if($datos["opc"]==8){
+        header('Content-Type: application/json');
+        $jala = $_curso->buscarcurso($postbody);
+ 
+        echo $jala;
+    }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
     //echo $jala;
