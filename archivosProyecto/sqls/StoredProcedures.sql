@@ -186,6 +186,13 @@ begin
 end $$
 
 delimiter $$
+create procedure getFotoComents(in idUsuarioImg int)
+begin
+	select imagenPerfil
+    from Usuarios where id_usuario=idUsuarioImg;
+end $$
+
+delimiter $$
 create procedure getCurso(in idCurso int)
 begin
 	select *

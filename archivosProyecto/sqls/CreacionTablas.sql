@@ -57,6 +57,7 @@ create table Comentarios(
     id_est int,
     id_curs int,
     comentario varchar(250) not null,
+    fechaPublicacion timestamp DEFAULT current_timestamp, 
 	primary key (id_comentario),
     foreign key (id_est) references Usuarios(id_usuario),
 	foreign key (id_curs) references Curso(id_curso)
@@ -111,5 +112,4 @@ create table calificarCurso(
 	foreign key (id_cursoCalif) references Curso(id_curso)
 )
 
-select * from Curso
-select * from Comentarios
+

@@ -7,7 +7,10 @@ concat(Usuarios.nombre, " ", Usuarios.apellidos) as "NombreProfesor", Usuarios.i
      Curso.id_curso = tablaAsociativaCursoCategoria.id_curso left join Categorias 
     on tablaAsociativaCursoCategoria.id_cat = Categorias.id_categorias
     group by Curso.id_curso order by Curso.id_curso desc;
-    Call buscarCursoFiltro('%nath%');
-    select * from CursoCompleto
-    
-    
+
+create view comentariosCompletos as
+select Comentarios.id_comentario,Comentarios.id_curs,Usuarios.id_usuario,
+	Usuarios.nombre, Comentarios.comentario, Comentarios.fechaPublicacion
+	from Usuarios join Comentarios on Usuarios.id_usuario=Comentarios.id_est
+    order by Comentarios.fechaPublicacion
+
