@@ -10,7 +10,7 @@ concat(Usuarios.nombre, " ", Usuarios.apellidos) as "NombreProfesor", Usuarios.i
 
 create view comentariosCompletos as
 select Comentarios.id_comentario,Comentarios.id_curs,Usuarios.id_usuario,
-	Usuarios.nombre, Comentarios.comentario, Comentarios.fechaPublicacion
+	Usuarios.nickname, Comentarios.comentario, Comentarios.fechaPublicacion
 	from Usuarios join Comentarios on Usuarios.id_usuario=Comentarios.id_est
     order by Comentarios.fechaPublicacion
 

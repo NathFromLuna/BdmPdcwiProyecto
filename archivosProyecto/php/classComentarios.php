@@ -13,21 +13,15 @@ require_once "conexion.php";
             $verificacion = parent::rowsAfectados($query);
             
             if($verificacion == 1){
-                $query2 = "Call getComentario($creador,$curso,'$mensaje');";
-                $post = parent::obtenerDatos($query2);
-                if(isset($post[0]["id_usuario"])){
-                    $idUs =$post[0]["id_usuario"];
-                    $nombre = $post[0]["nombre"];
-                    $comentario = $post[0]["comentario"];
-                    $json = [
-                        "idUsuario" => $idUs,
-                        "nombreUs" => $nombre,
-                        "comentarioHecho"=> $comentario
-                    ];
-                    return $json;
+                $query2 = "Call obtenerComentarios($curso);";
+                $comentarios = parent::obtenerDatos($query2);
+                
+                if(isset($comentarios[0]["id_usuario"])){           
+                   return json_encode($comentarios);
+                }else{
+                    $success="NoHayComentarios";
+                    return $success;
                 }
-                $success="success";
-                //return $success;
             }else{
                 $success="fail";
                 return  parent::Error();

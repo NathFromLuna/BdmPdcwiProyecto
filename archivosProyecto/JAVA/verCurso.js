@@ -191,36 +191,39 @@ $(document).ready(function () {
                 var Jason =data;
                 console.log(Jason);
                 debugger;
-                    /*"idUsuario" => $idUs,
-                    "nombreUs" => $nombre,
-                    "comentarioHecho"=> $comentario*/
+                    //id_usuario,nickname, comentario
                 $("#comentariosEchos").empty();
                 var comentariosEchos = document.getElementById("comentariosEchos");
-
-                var div1 =document.createElement('div');
-                div1.setAttribute("class","media");
-                var img1 = document.createElement("img");
-                img1.setAttribute("src","../JAVA/fotosComents.php?id="+Jason["idUsuario"]);
-                img1.setAttribute("class","ImagenPerfil");
-                img1.setAttribute("alt","...");
-                var div2 =document.createElement('div');
-                div2.setAttribute("class","media-body");
-                
-                var h5 = document.createElement("h5");
-                h5.setAttribute("class","Comentario");
-                h5.innerHTML =Jason["nombreUs"];
-
-                var p1 = document.createElement("p");
-                p1.setAttribute("class","text-com");
-                p1.innerHTML =Jason["comentarioHecho"];
-
-                div2.appendChild(h5);
-                div2.appendChild(p1);
-                div1.appendChild(img1);
-                div1.appendChild(div2);
-               
-                comentariosEchos.appendChild(div1);
- 
+                if(data=="NoHayComentarios"){
+                    alert("no hay comentarios disponibles");
+                }else{
+                    for (var i in Jason){
+                        var div1 =document.createElement('div');
+                        div1.setAttribute("class","media");
+                        var img1 = document.createElement("img");
+                        img1.setAttribute("src","../JAVA/fotosComents.php?id="+Jason[i]["id_usuario"]);
+                        img1.setAttribute("class","ImagenPerfil");
+                        img1.setAttribute("alt","...");
+                        var div2 =document.createElement('div');
+                        div2.setAttribute("class","media-body");
+                        
+                        var h5 = document.createElement("h5");
+                        h5.setAttribute("class","Comentario");
+                        h5.innerHTML =Jason[i]["nickname"];
+        
+                        var p1 = document.createElement("p");
+                        p1.setAttribute("class","text-com");
+                        p1.innerHTML =Jason[i]["comentario"];
+        
+                        div2.appendChild(h5);
+                        div2.appendChild(p1);
+                        div1.appendChild(img1);
+                        div1.appendChild(div2);
+                       
+                        comentariosEchos.appendChild(div1);
+                    }
+                }  
+     
             })
         }
        else{

@@ -92,27 +92,15 @@ begin
     values(Id_estudiante, Id_curso, mensaje);
 end $$
 
-
+delimiter $$
 create procedure obtenerComentarios (
 	in Id_curso int
     )
 begin
-	select nickname, imagenPerfil, comentario 
-    from Usuarios left join comentarios on id_comentario = id_usuario
+	select id_usuario,nickname, comentario 
+    from comentariosCompletos  
     where id_curs = Id_curso;
 end $$
-
-delimiter $$
-create procedure getComentario(in idCreador int,
-in idCurso int, 
-in comentario varchar(250))
-begin
-	select * from comentariosCompletos 
-    where comentariosCompletos.id_usuario = idCreador 
-    and comentariosCompletos.id_curso= idCurso
-    and comentariosCompletos.comentario= comentario;
-end $$
-call getComentario(2,14,"este es un comentario nuevo")
 
 create procedure nuevaCategoria (
 	in  p_nombre varchar(50),
