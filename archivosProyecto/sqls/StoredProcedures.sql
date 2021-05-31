@@ -97,10 +97,11 @@ create procedure obtenerComentarios (
 	in Id_curso int
     )
 begin
-	select id_usuario,nickname, comentario 
+	select id_usuario,nickname, comentario,fechaPublicacion 
     from comentariosCompletos  
-    where id_curs = Id_curso;
+    where id_curs = Id_curso order by fechaPublicacion desc;
 end $$
+
 
 create procedure nuevaCategoria (
 	in  p_nombre varchar(50),
