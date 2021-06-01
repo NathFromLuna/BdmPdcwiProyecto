@@ -90,6 +90,7 @@
         public function traerTodosLosCursos1Prof(){
             header('Content-Type: application/json');
             $escuelaCur=$_SESSION["id"];
+            
             //son los datos del json
             $query = "Call getCursosProfEsp('$escuelaCur');";
             
@@ -230,6 +231,23 @@
            //     return json_encode($success);
           //  }
           
+        }
+
+        public function traerTodosLosCursosAlumno(){
+            header('Content-Type: application/json');
+            $idAlumn=$_SESSION["id"];
+            
+            //son los datos del json
+            $query = "Call getCursosAlumno('$idAlumn');";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
         }
 
     }

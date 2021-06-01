@@ -269,3 +269,10 @@ begin
     END IF;
 end $$
 
+delimiter $$
+create procedure getCursosAlumno(in p_ID_Alumno int)
+begin
+select *
+from Historial join CursoCompleto on id_curso = Historial.id_curs and Historial.id_est = p_ID_Alumno;
+end $$
+
