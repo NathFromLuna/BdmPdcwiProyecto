@@ -43,6 +43,12 @@ $_curso = new Cursos;
  
         echo $jala;
     }
+
+    if($datos["opc"]==9){
+        header('Content-Type: application/json');
+        $jala = $_curso->ObtNomsCurso($postbody); 
+        echo json_encode($jala);
+    }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
     //echo $jala;

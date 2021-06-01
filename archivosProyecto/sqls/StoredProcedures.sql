@@ -268,3 +268,4 @@ begin
     where id_alumno = p_ID_Est AND idCurso = ID_Curso;
     END IF;
 end $$
+

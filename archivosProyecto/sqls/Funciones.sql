@@ -101,3 +101,4 @@ BEGIN
     where id_curso = p_ID_Curso;
 RETURN numTotal;
 END$$
+

@@ -182,9 +182,34 @@
                 return $success;
             }
        
-    }
+        }
         
+        public function ObtNomsCurso($json){
+            $datos = json_decode($json,true);           
+            $idCurso = $datos["idCurso"];
+            $query = "Call getCurso($idCurso);";            
+            $post = parent::obtenerDatos($query);
+            if(isset($post[0]["nombre"])){
+                $NomAl = $_SESSION["nombre"];
+                $NomAl .= " ";
+                $NomAl .= $_SESSION["apellidos"];
+                $name = $post[0]["nombre"];
+                $NomProf = $post[0]["NombreProfesor"];
+              
+                $json = [
+                    "nombreAlumno" => $NomAl,
+                    "nombre" => $name,   
+                    "nombreProfesor" => $NomProf,
 
+                ];
+                     
+                return $json;
+            }
+            else{
+                $success="CursoNoEncontrado";
+                return parent::Error();
+            }
+        }
 
           public function buscarcurso($json){
             $datos = json_decode($json,true);
@@ -206,5 +231,6 @@
           //  }
           
         }
+
     }
 ?>

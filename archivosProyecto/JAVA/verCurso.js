@@ -21,6 +21,10 @@ $(document).ready(function () {
         debugger;
         hacerComentario();
     });
+    $("#btnDiploma").on("click", "#btnDip", function () {
+        var idCurso = getQueryVariable("id");
+        CursoTerm(idCurso);
+    });
     function ocultarVerCurso() {
         var opc = 3;
         let Body = { opc }
@@ -294,6 +298,9 @@ $(document).ready(function () {
     }
     function nivelEsp(idNivel) {
         window.location.href = "verClase.html?id="+idNivel;
+    }
+    function CursoTerm(idNivel) {
+        window.location.href = "recibeDiploma.html?id="+idNivel;
     }
 })
 
