@@ -55,7 +55,6 @@ begin
     values(nId_curso,nNombreNvl, nVideoLvl, nOtrosArchivo, nNumeroNivel, 1);
 end/
 
-
 delimiter /
 create procedure editarUsuario (in idUs int, in nNombre varchar(50),
  in nApellidos varchar(150),
@@ -102,7 +101,6 @@ begin
     where id_curs = Id_curso order by fechaPublicacion desc;
 end $$
 
-
 create procedure nuevaCategoria (
 	in  p_nombre varchar(50),
     in p_descripcion varchar(200),
@@ -127,21 +125,26 @@ begin
     insert into historial(id_est, id_curs, avanceLvl)
     values(p_ID_Est, p_ID_Curso, 0);
 end $$
-
+delimiter $$
 create procedure actualizarHistorial (
 	in  p_ID_Est int,
-    in p_ID_Curso int,
-    in p_Num_nivel int
+    in p_ID_Nivel int
     )
 begin
 	declare numNivelRegistrado int;
-    set numNivelRegistrado = avance(p_ID_Est, p_ID_Curso);
+    declare Num_Nivel int;
+    declare Num_Curso int;
     
-    if p_Num_nivel > numNivelRegistrado THEN
+    set Num_Curso = obtNumCurso(p_ID_Nivel);
+    
+    set numNivelRegistrado = avance(p_ID_Est, p_ID_Nivel);
+	set Num_Nivel = obtNumNivel(p_ID_Nivel);
+    
+    if Num_Nivel > numNivelRegistrado THEN
         update historial
         set       
-        avanceLvl = p_Num_nivel
-		WHERE  id_est = p_ID_Est and id_curs = p_ID_Curso;
+        avanceLvl = Num_Nivel
+		WHERE  id_est = p_ID_Est and id_curs = Num_Curso;
     END IF;
 end $$
 
@@ -236,7 +239,6 @@ begin
     where id_alumno=idAlumno and idCurso=id_Curso;
 end $$
 
-
 delimiter /
 
 create procedure buscarCursoFiltro (in cursoAbuscar varchar(200))
@@ -246,4 +248,23 @@ begin
     Categorias like cursoAbuscar limit 3;  -- concat(%, _NombreUsuario, %)
 end/
 
-   
+delimiter $$
+create procedure RevisarFinalizacion (
+	in  p_ID_Est int,
+    in p_ID_Nivel int
+    )
+begin
+    declare Num_Nivel int;
+    declare ID_Curso int;    
+    declare Num_Total_Curso int;     
+    set ID_Curso = obtNumCurso(p_ID_Nivel);    
+	set Num_Nivel = obtNumNivel(p_ID_Nivel);
+    set Num_Total_Curso = obNivTotalCurso(ID_Curso);
+    
+    if Num_Nivel = Num_Total_Curso THEN
+    update inscripcionCurso
+    set
+	terminado = true
+    where id_alumno = p_ID_Est AND idCurso = ID_Curso;
+    END IF;
+end $$

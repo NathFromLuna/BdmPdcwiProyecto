@@ -154,6 +154,7 @@ $(document).ready(function () {
                 document.getElementById("nivelesCurso").style.display = 'none';
                 document.getElementById("califCurso").style.display = 'none';
                 document.getElementById("progresoCur").style.display = 'none';
+                document.getElementById("btnDiploma").style.display = 'none';
                 
             }else{
                 if(Jason['terminado']!=""){
@@ -162,8 +163,10 @@ $(document).ready(function () {
                     document.getElementById("btn").disabled=false;
                     if(Jason['terminado']==true){
                         document.getElementById("califCurso").style.display = 'inline';
+                        document.getElementById("btnDiploma").style.display = 'inline';
                     }else{
                         if(Jason['terminado']==false){
+                            document.getElementById("btnDiploma").style.display = 'none';
                             document.getElementById("califCurso").style.display = 'none';
                         }
                     }
