@@ -129,6 +129,7 @@ $(document).ready(function () {
                 alert("Curso comprado con éxito");
                 document.getElementById("comprarCurso").style.display = 'none';
                 document.getElementById("nivelesCurso").style.display = 'inline';
+                document.getElementById("btn").disabled=false;
             }
             else{
     
