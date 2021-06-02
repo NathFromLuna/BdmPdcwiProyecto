@@ -277,3 +277,24 @@ begin
     END IF;
 end $$
 
+delimiter $$
+create procedure getCursosAlumno(in p_ID_Alumno int)
+begin
+select *
+from Historial join CursoCompleto on id_curso = Historial.id_curs and Historial.id_est = p_ID_Alumno;
+end $$
+
+
+delimiter $$
+create procedure getHistorialAlumno(in p_ID_Alumno int)
+begin
+select Curso.id_curso, Curso.nombre,Curso.descripcion, cantidadNivelesCurso, group_concat(Categorias.nombre) as "Categorias",
+Curso.cantidadNivelesCurso, Historial.avanceLvl
+from Usuarios join  Historial on Usuarios.id_usuario = Historial.id_est
+join Curso on Historial.id_curs = Curso.id_curso
+left join  tablaAsociativaCursoCategoria on  
+Curso.id_curso = tablaAsociativaCursoCategoria.id_curso left join Categorias 
+on tablaAsociativaCursoCategoria.id_cat = Categorias.id_categorias
+where Usuarios.id_usuario = p_ID_Alumno
+group by Curso.id_curso order by Curso.id_curso desc;
+end $$

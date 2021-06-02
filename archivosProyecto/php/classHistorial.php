@@ -34,6 +34,22 @@
                 return parent::Error(); 
             }
         }
+
+        public function traerTodosLosCursosAHistorial(){
+            header('Content-Type: application/json');
+            $alumno=$_SESSION["id"];
+            //son los datos del json
+            $query = "Call getHistorialAlumno('$alumno');";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
+        }
    
     }
 ?>
