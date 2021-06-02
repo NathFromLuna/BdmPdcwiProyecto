@@ -1,5 +1,7 @@
 #contenidoCentral{
-    margin: 3%;
+    padding: 3%;
+    width: 100vw;
+    height: max-content;
 }
 h3{ 
     margin: 3%;
@@ -30,13 +32,13 @@ td, th {
     padding: 10px;
     padding-bottom: 15px;
     text-align: left;
-    font-size: large;
+    font-size: 1.4vw;
     color:rgb(214, 203, 240); 
 }
 
 .titCursos{
     margin-top: 0%;
-    font-size: large;
+    font-size: 1.6vw;
     color:rgb(214, 203, 240); 
     font-weight: bold;
 }
@@ -54,6 +56,17 @@ body{
     background-color: rgb(238, 235, 245);
 }
 
+#Tarjeta{
+    width: 100%;
+    display: inline-block;
+}
+#thIm{
+    width: 20%;
+}
+#Imagen{
+    width: 14vw;
+    max-height: 25vh;
+}
 @media screen and (min-width: 1280px) {
     body{
     background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
