@@ -183,6 +183,14 @@ begin
 end $$
 
 delimiter $$
+create procedure getCursosProfEspVentas(in profeCreadorCursos int)
+begin
+	select *
+    from cursosCompletosVentas 
+    where cursosCompletosVentas.Id_Prof = profeCreadorCursos;
+end $$
+
+delimiter $$
 create procedure getFotoCursos(in idCursoImg int)
 begin
 	select imagenCurso

@@ -15,12 +15,10 @@ select Comentarios.id_comentario,Comentarios.id_curs,Usuarios.id_usuario,
     order by Comentarios.fechaPublicacion;
 
 create view cursosCompletosVentas as
-select CursoCompleto.id_curso, CursoCompleto.nombre, CursoCompleto.descripcion, 
-	CursoCompleto.videoTrailer, CursoCompleto.costo,
-    count(inscripcionCurso.idCurso) as "cursosComprados", 
-    avg(calificarCurso.calificacion) as "calificacion"
+select CursoCompleto.id_curso, CursoCompleto.Id_Prof, CursoCompleto.nombre, 
+	CursoCompleto.descripcion, CursoCompleto.videoTrailer, CursoCompleto.costo,
+    CursoCompleto.cantidadNivelesCurso, count(inscripcionCurso.idCurso) as "cursosComprados", 
+    avg(calificarCurso.calificacion) as "calificacion" 
 	from CursoCompleto join inscripcionCurso on CursoCompleto.id_curso=inscripcionCurso.idCurso
 	left join calificarCurso on CursoCompleto.id_curso=calificarCurso.id_cursoCalif
     group by CursoCompleto.id_curso;
-
-    
