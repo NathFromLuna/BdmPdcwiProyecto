@@ -49,10 +49,14 @@ $_curso = new Cursos;
         $jala = $_curso->ObtNomsCurso($postbody); 
         echo json_encode($jala);
     }
+    if($datos["opc"]==10){
+        header('Content-Type: application/json');
+        $jala = $_curso->traerTodosLosCursosAlumno();
+        echo $jala;
+    }
     if($datos["opc"]==11){
         header('Content-Type: application/json');
         $jala = $_curso->traerTodosLosCursosVentas();
-        echo $jala;
     }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
