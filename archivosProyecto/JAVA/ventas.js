@@ -101,8 +101,8 @@ $(document).ready(function () {
                     h5.setAttribute("class","card-title");
                     h5.innerHTML =Jason[i]["nombre"];
     
-                    var a1 =document.createElement('div');
-                    a1.setAttribute("href","../Html's/DatosVentas.html?id="+Jason[i]["id_curso"]);
+                    var a1 =document.createElement('a');
+                    a1.setAttribute("href","DatosVentas.html?id="+Jason[i]["id_curso"]);
                     a1.appendChild(h5);
 
                     var p1 = document.createElement("p");
