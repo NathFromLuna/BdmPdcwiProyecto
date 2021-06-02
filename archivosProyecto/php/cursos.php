@@ -54,6 +54,10 @@ $_curso = new Cursos;
         $jala = $_curso->traerTodosLosCursosAlumno();
         echo $jala;
     }
+    if($datos["opc"]==11){
+        header('Content-Type: application/json');
+        $jala = $_curso->traerTodosLosCursosVentas();
+    }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
     //echo $jala;

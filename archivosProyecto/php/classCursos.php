@@ -212,7 +212,22 @@
             }
         }
 
-          public function buscarcurso($json){
+        public function traerTodosLosCursosVentas(){
+            header('Content-Type: application/json');
+            $escuelaCur=$_SESSION["id"];
+            //son los datos del json
+            $query = "Call getCursosProfEspVentas($escuelaCur);";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
+        }
+        public function buscarcurso($json){
             $datos = json_decode($json,true);
             //son los datos del json
             $buscado = $datos["buscando"];
