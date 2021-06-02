@@ -2,8 +2,9 @@ label, p, h3{
    font-family: 'Raleway', sans-serif;
    color:rgb(214, 203, 240); 
 }
-input{
+input, textarea{
     font-family: 'Raleway', sans-serif;
+    color:rgb(0, 0, 0) !important; 
     margin-top: 1.5%;
 }
 

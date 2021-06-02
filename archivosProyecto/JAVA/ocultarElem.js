@@ -1,5 +1,9 @@
 $(document).ready(function () {
     ocultarElNav();
+    buscar();
+    $("body").on("click", "#btnBus", function () {
+        buscar();
+    });
     function ocultarElNav() {
         var opc = 3;
         let Body = { opc }
@@ -32,10 +36,10 @@ $(document).ready(function () {
                 
             })
     }
-
+   
     function buscar(){
         var buscando = document.getElementById("busqueda").value;
-        var opc = 1;
+        var opc = 8;
 
         let Body = { opc ,buscando}
         let jsonBody = JSON.stringify(Body)
@@ -48,19 +52,8 @@ $(document).ready(function () {
 
                 var Jason = data;
                 console.log(Jason);
-                    /*
-                <th id="cursos">
-                <div class="cursos">
-                  <img src="../ImagenesaCambiar/EthanYax.png" alt="fotoCurso" height="130" width="215">
-                  <br>
-                  <a class="titCursos" href="../Html's/VerCurso.html" onclick="llevameAverCursos()">Titulo del curso</a>
-                  <br>
-                  <p class="niveles">Lvls: 4</p>
-                </div>
-              </th>
-
-                    */
-                    debugger;
+        
+                   
                       $("#listacursos").empty();
                     var listacompleta = document.getElementById("listacursos");
                   for (var i in Jason) {
@@ -68,20 +61,20 @@ $(document).ready(function () {
                      var th1 =document.createElement('th');
                       th1.setAttribute("id","cursos");
                       var div1 =document.createElement('div');
-                      div1.setAttribute("id","cursos");
+                      div1.setAttribute("class","cursos");
                       var img1 = document.createElement("img");
-                      img1.setAttribute("src","../JAVA/foto.php?id="+Jason[i]['id_curso']);
+                      img1.setAttribute("src","../JAVA/fotos.php?id="+Jason[i]['id_curso']);
                       img1.setAttribute("alt","fotoCurso");
                       img1.setAttribute("height","130");
                       img1.setAttribute("width","215");
                       var br1 = document.createElement("br");
                       var a1 = document.createElement("a");
-                      a1.setAttribute("class","titCurso");
-                      a1.setAttribute("href","");//aqui pones la direccion html donde lo colocas
+                      a1.setAttribute("class","titCursos");
+                      a1.setAttribute("href","verCurso.html?id="+Jason[i]['id_curso']);//aqui pones la direccion html donde lo colocas
                       a1.setAttribute("onclick","llevameAverCursos()");
                       a1.innerHTML =Jason[i]["nombre"];
                       var br2 = document.createElement("br");
-                      var p1 = documen.createElement("p");
+                      var p1 = document.createElement("p");
                       p1.setAttribute("class","niveles");
                       p1.innerHTML ="Lvls:"+ Jason[i]["cantidadNivelesCurso"];
                       div1.appendChild(img1);

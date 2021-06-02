@@ -90,6 +90,7 @@
         public function traerTodosLosCursos1Prof(){
             header('Content-Type: application/json');
             $escuelaCur=$_SESSION["id"];
+            
             //son los datos del json
             $query = "Call getCursosProfEsp('$escuelaCur');";
             
@@ -145,7 +146,71 @@
             }
           
         }
+        public function inscribirCurso($json){
+                $datos = json_decode($json,true);
+                //son los datos del json
+                $idAl = $_SESSION["id"];
+                $idCurso = $datos["idCurso"];
+                $query = "Call inscribirCurso($idAl,$idCurso);";
 
+                $verificacion = parent::rowsAfectados($query);
+                if($verificacion == 1){
+                    $success="success";
+                    return $success;    
+                }else{
+                    $success="fail";
+                    return parent::Error(); 
+                }
+           
+        }
+        public function cursoComprado($json){
+            $datos = json_decode($json,true);
+            //son los datos del json
+            $idAl = $_SESSION["id"];
+            $idCurso = $datos["idCurso"];
+            $query = "Call estaInscrito($idAl,$idCurso);";
+
+            $post = parent::obtenerDatos($query);
+            if(isset($post[0]["terminado"])){
+                $terminado = $post[0]["terminado"];
+                $json = [
+                    "terminado"=> $terminado
+                ];
+                return $json;
+            }
+            else{
+                $success="CursoNoReg";
+                return $success;
+            }
+       
+        }
+        
+        public function ObtNomsCurso($json){
+            $datos = json_decode($json,true);           
+            $idCurso = $datos["idCurso"];
+            $query = "Call getCurso($idCurso);";            
+            $post = parent::obtenerDatos($query);
+            if(isset($post[0]["nombre"])){
+                $NomAl = $_SESSION["nombre"];
+                $NomAl .= " ";
+                $NomAl .= $_SESSION["apellidos"];
+                $name = $post[0]["nombre"];
+                $NomProf = $post[0]["NombreProfesor"];
+              
+                $json = [
+                    "nombreAlumno" => $NomAl,
+                    "nombre" => $name,   
+                    "nombreProfesor" => $NomProf,
+
+                ];
+                     
+                return $json;
+            }
+            else{
+                $success="CursoNoEncontrado";
+                return parent::Error();
+            }
+        }
 
           public function buscarcurso($json){
             $datos = json_decode($json,true);
@@ -155,15 +220,35 @@
             $query = "Call buscarCursoFiltro('%$buscado%');";
             $cursos = parent::obtenerDatos($query);
             
-            if(isset($cursos[0]["id_curso"]){
+          //  if(isset($cursos[0]["id_curso"])){
                
                 return json_encode($cursos);
+                //return $query;
                 
-            }else{
-                $success="No se encontro";
-                return json_encode($success);
-            }
+           // }else{
+              //  $success="No se encontro";
+            //return $query;
+           //     return json_encode($success);
+          //  }
           
         }
+
+        public function traerTodosLosCursosAlumno(){
+            header('Content-Type: application/json');
+            $idAlumn=$_SESSION["id"];
+            
+            //son los datos del json
+            $query = "Call getCursosAlumno('$idAlumn');";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
+        }
+
     }
 ?>

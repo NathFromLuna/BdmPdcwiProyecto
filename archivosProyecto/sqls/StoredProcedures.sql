@@ -55,7 +55,6 @@ begin
     values(nId_curso,nNombreNvl, nVideoLvl, nOtrosArchivo, nNumeroNivel, 1);
 end/
 
-
 delimiter /
 create procedure editarUsuario (in idUs int, in nNombre varchar(50),
  in nApellidos varchar(150),
@@ -92,14 +91,14 @@ begin
     values(Id_estudiante, Id_curso, mensaje);
 end $$
 
-
+delimiter $$
 create procedure obtenerComentarios (
 	in Id_curso int
     )
 begin
-	select nickname, imagenPerfil, comentario 
-    from Usuarios left join comentarios on id_comentario = id_usuario
-    where id_curs = Id_curso;
+	select id_usuario,nickname, comentario,fechaPublicacion 
+    from comentariosCompletos  
+    where id_curs = Id_curso order by fechaPublicacion desc;
 end $$
 
 create procedure nuevaCategoria (
@@ -126,21 +125,26 @@ begin
     insert into historial(id_est, id_curs, avanceLvl)
     values(p_ID_Est, p_ID_Curso, 0);
 end $$
-
+delimiter $$
 create procedure actualizarHistorial (
 	in  p_ID_Est int,
-    in p_ID_Curso int,
-    in p_Num_nivel int
+    in p_ID_Nivel int
     )
 begin
 	declare numNivelRegistrado int;
-    set numNivelRegistrado = avance(p_ID_Est, p_ID_Curso);
+    declare Num_Nivel int;
+    declare Num_Curso int;
     
-    if p_Num_nivel > numNivelRegistrado THEN
+    set Num_Curso = obtNumCurso(p_ID_Nivel);
+    
+    set numNivelRegistrado = avance(p_ID_Est, p_ID_Nivel);
+	set Num_Nivel = obtNumNivel(p_ID_Nivel);
+    
+    if Num_Nivel > numNivelRegistrado THEN
         update historial
         set       
-        avanceLvl = p_Num_nivel
-		WHERE  id_est = p_ID_Est and id_curs = p_ID_Curso;
+        avanceLvl = Num_Nivel
+		WHERE  id_est = p_ID_Est and id_curs = Num_Curso;
     END IF;
 end $$
 
@@ -186,6 +190,13 @@ begin
 end $$
 
 delimiter $$
+create procedure getFotoComents(in idUsuarioImg int)
+begin
+	select imagenPerfil
+    from Usuarios where id_usuario=idUsuarioImg;
+end $$
+
+delimiter $$
 create procedure getCurso(in idCurso int)
 begin
 	select *
@@ -207,15 +218,75 @@ begin
     from Niveles where id_niveles=idNvl;
 end $$
 
+delimiter $$
+create procedure inscribirCurso(
+	in  idAlumno int,
+    in idCurso int
+    )
+begin
+    insert into inscripcionCurso(id_alumno, idCurso)
+    values(idAlumno, idCurso);
+    call registrarHistorial(idAlumno,idCurso);
+end $$
+
+delimiter $$
+create procedure estaInscrito(
+	in  idAlumno int,
+    in id_Curso int
+    )
+begin
+    select terminado from inscripcionCurso 
+    where id_alumno=idAlumno and idCurso=id_Curso;
+end $$
 
 delimiter /
-
 
 create procedure buscarCursoFiltro (in cursoAbuscar varchar(200))
 begin
     select * from CursoCompleto where nombre like cursoAbuscar or 
-    nombre like cursoAbuscar or
-    nombre like cursoAbuscar limit 3;  -- concat(%, _NombreUsuario, %)
+    NombreProfesor like cursoAbuscar or
+    Categorias like cursoAbuscar limit 3;  -- concat(%, _NombreUsuario, %)
 end/
 
-   
+delimiter $$
+create procedure RevisarFinalizacion (
+	in  p_ID_Est int,
+    in p_ID_Nivel int
+    )
+begin
+    declare Num_Nivel int;
+    declare ID_Curso int;    
+    declare Num_Total_Curso int;     
+    set ID_Curso = obtNumCurso(p_ID_Nivel);    
+	set Num_Nivel = obtNumNivel(p_ID_Nivel);
+    set Num_Total_Curso = obNivTotalCurso(ID_Curso);
+    
+    if Num_Nivel = Num_Total_Curso THEN
+    update inscripcionCurso
+    set
+	terminado = true
+    where id_alumno = p_ID_Est AND idCurso = ID_Curso;
+    END IF;
+end $$
+
+delimiter $$
+create procedure getCursosAlumno(in p_ID_Alumno int)
+begin
+select *
+from Historial join CursoCompleto on id_curso = Historial.id_curs and Historial.id_est = p_ID_Alumno;
+end $$
+
+
+delimiter $$
+create procedure getHistorialAlumno(in p_ID_Alumno int)
+begin
+select Curso.id_curso, Curso.nombre,Curso.descripcion, cantidadNivelesCurso, group_concat(Categorias.nombre) as "Categorias",
+Curso.cantidadNivelesCurso, Historial.avanceLvl
+from Usuarios join  Historial on Usuarios.id_usuario = Historial.id_est
+join Curso on Historial.id_curs = Curso.id_curso
+left join  tablaAsociativaCursoCategoria on  
+Curso.id_curso = tablaAsociativaCursoCategoria.id_curso left join Categorias 
+on tablaAsociativaCursoCategoria.id_cat = Categorias.id_categorias
+where Usuarios.id_usuario = p_ID_Alumno
+group by Curso.id_curso order by Curso.id_curso desc;
+end $$

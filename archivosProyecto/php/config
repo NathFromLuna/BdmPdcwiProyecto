@@ -2,7 +2,7 @@
     "conexion":{
         "server":"localhost",
         "user":"root",
-        "password":"megustaseryo13",
+        "password":"Alarahi",
         "database":"crashea",
         "port":"3306"
     }
