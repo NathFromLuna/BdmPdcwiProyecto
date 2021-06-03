@@ -207,8 +207,8 @@ end $$
 delimiter $$
 create procedure getCurso(in idCurso int)
 begin
-	select *
-    from CursoCompleto 
+	select *,  ROUND( avg(calificarCurso.calificacion), 2) as "Media" 
+    from CursoCompleto left join calificarCurso on CursoCompleto.id_curso=calificarCurso.id_cursoCalif
     where CursoCompleto.id_curso = idCurso;
 end $$
 
