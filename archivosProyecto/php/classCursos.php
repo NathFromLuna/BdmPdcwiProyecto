@@ -266,6 +266,24 @@
                 return $success;
             }
         }
+        public function calificarCurso($json){
+            $datos = json_decode($json,true);
+            //son los datos del json
+            $idAl = $_SESSION["id"];
+            $idCurso = $datos["idCurso"];
+            $calCurso = $datos["cal"];
 
+            $query = "Call clificarCurso($idAl,$idCurso, $calCurso);";
+
+            $verificacion = parent::rowsAfectados($query);
+            if($verificacion == 1){
+                $success="success";
+                return $success;    
+            }else{
+                $success="fail";
+                return parent::Error(); 
+            }
+       
+    }
     }
 ?>

@@ -25,6 +25,21 @@ $(document).ready(function () {
         var idCurso = getQueryVariable("id");
         CursoTerm(idCurso);
     });
+    $("#califCurso").on("click", ".S", function () {
+        calificarCurso(1);
+    });
+    $("#califCurso").on("click", ".S1", function () {
+        calificarCurso(2);
+    });
+    $("#califCurso").on("click", ".S2", function () {
+        calificarCurso(3);
+    });
+    $("#califCurso").on("click", ".S3", function () {
+        calificarCurso(4);
+    });
+    $("#califCurso").on("click", ".S4", function () {
+        calificarCurso(5);
+    });
     function ocultarVerCurso() {
         var opc = 3;
         let Body = { opc }
@@ -305,6 +320,31 @@ $(document).ready(function () {
     }
     function CursoTerm(idNivel) {
         window.location.href = "recibeDiploma.html?id="+idNivel;
+    }
+    function calificarCurso(numero){
+        var idCurso = getQueryVariable("id");
+        var opc=12;
+        var cal = numero;
+        let Body = { idCurso,opc,cal }
+        let jsonBody = JSON.stringify(Body);
+    
+        fetch('../php/cursos.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
+        .then(response => {
+             return response.text();
+        })
+        .then(data => {
+            var Jason =data;
+            console.log(Jason);
+            if(Jason==="success"){
+                alert("Curso caliicado con éxito");
+                ocultarVerCurso();
+            }
+            else{
+    
+                alert(Jason.result)
+            }
+        })
+        
     }
 })
 

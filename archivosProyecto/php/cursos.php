@@ -58,6 +58,13 @@ $_curso = new Cursos;
         header('Content-Type: application/json');
         $jala = $_curso->traerTodosLosCursosVentas();
     }
+    if($datos["opc"]==12){
+        header('Content-Type: application/json');
+        $jala = $_curso->calificarCurso($postbody);
+        header('Content-Type: application/json');//le dices que devuelve un json
+        echo $jala;
+        json_encode($jala);
+    }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
     //echo $jala;

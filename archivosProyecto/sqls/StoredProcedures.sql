@@ -298,3 +298,10 @@ on tablaAsociativaCursoCategoria.id_cat = Categorias.id_categorias
 where Usuarios.id_usuario = p_ID_Alumno
 group by Curso.id_curso order by Curso.id_curso desc;
 end $$
+
+delimiter $$
+create procedure clificarCurso(in p_ID_Alumno int, in p_ID_Curso int, in p_cal int)
+begin
+insert into calificarCurso
+set id_AlumnoCalif = p_ID_Alumno, id_cursoCalif = p_ID_Curso, calificacion = p_cal;
+end $$
