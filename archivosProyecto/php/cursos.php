@@ -60,10 +60,13 @@ $_curso = new Cursos;
     }
     if($datos["opc"]==12){
         header('Content-Type: application/json');
-        $jala = $_curso->calificarCurso($postbody);
-        header('Content-Type: application/json');//le dices que devuelve un json
+        $jala = $_curso->getCursoVentas($postbody);
+        echo json_encode($jala);
+    }
+    if($datos["opc"]==13){
+        header('Content-Type: application/json');
+        $jala = $_curso->traerTodosLosAlumnosCurso($postbody);
         echo $jala;
-        json_encode($jala);
     }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
