@@ -1,6 +1,8 @@
 $(document).ready(function () {
     ocultarElNav();
     buscar();
+    MostrarDestacados();
+    MostrarMasVendidos();
     $("body").on("click", "#btnBus", function () {
         buscar();
     });
@@ -36,7 +38,6 @@ $(document).ready(function () {
                 
             })
     }
-   
     function buscar(){
         var buscando = document.getElementById("busqueda").value;
         var opc = 8;
@@ -90,7 +91,67 @@ $(document).ready(function () {
                 
             })
     }
-    
+    function MostrarDestacados() {
+        var opc = 13;
+        let Body = { opc }
+        let jsonBody = JSON.stringify(Body)
+        console.log(jsonBody);
+        debugger;
+        fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+        debugger;
+                
+            var Jason = data;
+            console.log(data);
+            
+            if(data=="NoHayCursos"){
+                $("#hayCursos").append("<p>No hay cursos destacados</p>");
+            }else{
+                for (var i in Jason) { 
+                   // $("#Destacados").append("<tr></tr><tr id='listacursos'><th id='cursos'><div class='cursos'><img src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+" alt='fotoCurso' height='130' width='215'><br><a id="+Jason[i]['id_curso']+"  class='titCursos'>"+Jason[i]['nombre']+"</a><br><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th></tr>");
+                   // $("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
+                     //$("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
+                     $("#Destacados").append("<tbody><tr id='listacursos'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='130' width='215'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><plass='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+" </p></td></tr></tbody>");
+                   
+                }
+            }
+        })
+          
+    }
+    function MostrarMasVendidos() {
+        var opc = 14;
+        let Body = { opc }
+        let jsonBody = JSON.stringify(Body)
+        console.log(jsonBody);
+        debugger;
+        fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+        debugger;
+                
+            var Jason = data;
+            console.log(data);
+            
+            if(data=="NoHayCursos"){
+                $("#hayCursos").append("<p>No hay cursos destacados</p>");
+            }else{
+                for (var i in Jason) { 
+                   // $("#Destacados").append("<tr></tr><tr id='listacursos'><th id='cursos'><div class='cursos'><img src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+" alt='fotoCurso' height='130' width='215'><br><a id="+Jason[i]['id_curso']+"  class='titCursos'>"+Jason[i]['nombre']+"</a><br><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th></tr>");
+                   // $("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
+                     //$("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
+                     $("#Vendidos").append("<tbody><tr id='listacursos'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='130' width='215'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><plass='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+" </p></td></tr></tbody>");
+                   
+                }
+            }
+        })
+          
+    }
+
 
 })
 

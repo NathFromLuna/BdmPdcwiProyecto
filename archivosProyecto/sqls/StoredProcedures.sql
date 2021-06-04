@@ -305,3 +305,20 @@ begin
 insert into calificarCurso
 set id_AlumnoCalif = p_ID_Alumno, id_cursoCalif = p_ID_Curso, calificacion = p_cal;
 end $$
+
+ DELIMITER $$
+CREATE PROCEDURE getCursosMejoresCalificados()
+BEGIN
+SELECT * FROM cursosCompletosVentas
+ORDER BY calificacion DESC 
+LIMIT 3;
+END$$
+
+
+ DELIMITER $$
+CREATE PROCEDURE getCursosMasVendidos()
+BEGIN
+SELECT * FROM cursosCompletosVentas
+ORDER BY cursosComprados DESC 
+LIMIT 3;
+END$$
