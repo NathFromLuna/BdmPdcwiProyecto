@@ -1,3 +1,6 @@
+
+
+
 function editarDatos() {
 
     var nombre = document.getElementById("Nombre").value;

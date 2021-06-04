@@ -66,6 +66,54 @@ $(document).ready(function () {
  
             })
     }
+
+    actualizarHistorial();
+    function actualizarHistorial(){
+        var idNivel = getQueryVariable("id");
+        var opc = 1;
+        let Body = { idNivel, opc  }
+        let jsonBody = JSON.stringify(Body);
+        fetch('../php/Historial.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
+        .then(response => {
+             return response.json();
+        })
+        .then(data => {
+            var Jason =data;
+            debugger;
+            console.log(Jason);
+            if(Jason==="success"){
+                alert("Se ha actualizado su historial");
+            }
+            else{
+    
+                alert(Jason.result)
+            }
+        })
+    }
+
+    verificacionFinal();
+    function verificacionFinal(){
+        var idNivel = getQueryVariable("id");
+        var opc = 2;
+        let Body = { idNivel, opc  }
+        let jsonBody = JSON.stringify(Body);
+        fetch('../php/Historial.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
+        .then(response => {
+             return response.json();
+        })
+        .then(data => {
+            var Jason =data;
+            debugger;
+            console.log(Jason);
+            if(Jason==="success"){
+                alert("Se ha actualizado su historial");
+            }
+            else{
+    
+                alert(Jason.result)
+            }
+        })
+    }
     
 
 })
