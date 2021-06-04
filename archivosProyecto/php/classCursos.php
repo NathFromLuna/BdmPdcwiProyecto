@@ -67,7 +67,6 @@
                 $categorias = $post[0]["Categorias"];
                 $costo = $post[0]["costo"];
                 $NombreProfesor = $post[0]["NombreProfesor"];
-                $Media = $post[0]["Media"];
               
                 $json = [
                     "idCurso" => $idCurso,
@@ -77,8 +76,48 @@
                     "trailerCurso"=> $trailerCur,
                     "categorias"=> $categorias,
                     "costo"=> $costo,
-                    "profeCurso"=> $NombreProfesor,
-                    "Media" => $Media
+                    "profeCurso"=> $NombreProfesor
+                ];
+                     
+                return $json;
+            }
+            else{
+                $success="CursoNoEncontrado";
+                return parent::Error();
+            }
+        }
+
+        public function getCursoVentas($json){
+    
+            header('Content-Type: application/json');
+            $datos = json_decode($json,true);
+            //son los datos del json
+            $id=$datos["idCurso"];
+            $query = "Call getCursoVentas($id);";
+            
+            $post = parent::obtenerDatos($query);
+            if(isset($post[0]["id_curso"])){
+                $idCurso =$post[0]["id_curso"];
+                $idProf =$post[0]["Id_Prof"];
+                $nameCurso = $post[0]["nombre"];
+                $descripcionCur = $post[0]["descripcion"];
+                $cantNvls = $post[0]["cantidadNivelesCurso"];
+                $trailerCur = $post[0]["videoTrailer"];
+                
+                $costo = $post[0]["costo"];
+                $cursosComprados = $post[0]["cursosComprados"];
+                $califPromedioCur = $post[0]["calificacion"];
+        
+                $json = [
+                    "idCurso" => $idCurso,
+                    "idProf" => $idProf,
+                    "nombre" => $nameCurso,
+                    "descripcionCur"=> $descripcionCur,
+                    "cantidadNiveles"=> $cantNvls,
+                    "trailerCurso"=> $trailerCur,
+                    "costo"=> $costo,
+                    "cursosComprados"=> $cursosComprados,
+                    "califPromedioCur"=> $califPromedioCur
                 ];
                      
                 return $json;
@@ -117,6 +156,39 @@
             }
             else{
                 $success="NoHayCursos";
+                return $success;
+            }
+        }
+
+        public function traerTodosLosCursosVentas(){
+            header('Content-Type: application/json');
+            $escuelaCur=$_SESSION["id"];
+            //son los datos del json
+            $query = "Call getCursosProfEspVentas($escuelaCur);";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
+        }
+
+        public function traerTodosLosAlumnosCurso($json){
+            header('Content-Type: application/json');
+            $datos = json_decode($json,true);
+            $curso=$datos["idCurso"];
+            //son los datos del json
+            $query = "Call getAlumnosCurso($curso);";
+            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["nombre"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayAlumnos";
                 return $success;
             }
         }
@@ -214,21 +286,7 @@
             }
         }
 
-        public function traerTodosLosCursosVentas(){
-            header('Content-Type: application/json');
-            $escuelaCur=$_SESSION["id"];
-            //son los datos del json
-            $query = "Call getCursosProfEspVentas($escuelaCur);";
-            
-            $cursos = parent::obtenerDatos($query);
-            if(isset($cursos[0]["id_curso"])){           
-                return json_encode($cursos);
-            }
-            else{
-                $success="NoHayCursos";
-                return $success;
-            }
-        }
+       
         public function buscarcurso($json){
             $datos = json_decode($json,true);
             //son los datos del json
@@ -266,24 +324,6 @@
                 return $success;
             }
         }
-        public function calificarCurso($json){
-            $datos = json_decode($json,true);
-            //son los datos del json
-            $idAl = $_SESSION["id"];
-            $idCurso = $datos["idCurso"];
-            $calCurso = $datos["cal"];
 
-            $query = "Call clificarCurso($idAl,$idCurso, $calCurso);";
-
-            $verificacion = parent::rowsAfectados($query);
-            if($verificacion == 1){
-                $success="success";
-                return $success;    
-            }else{
-                $success="fail";
-                return parent::Error(); 
-            }
-       
-    }
     }
 ?>
