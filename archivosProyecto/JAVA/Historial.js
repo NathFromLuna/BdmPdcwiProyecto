@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $("#historialCur").on("click", ".titCursos", function () {
+        cursoEsp(this.id);
+    });
     ocultarElNav();
     function ocultarElNav() {
         debugger;
@@ -59,7 +62,7 @@ $(document).ready(function () {
                     var total = Jason[i]['cantidadNivelesCurso'];
                     var avance = Jason[i]['avanceLvl'];
                     var prom = avance / total * 100;
-                    $("#historialCur").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><a class='titCursos' href='../Html's/VerCurso.html'>"+Jason[i]['nombre']+"</a><br><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='Categorias'>Categorias: "+Jason[i]['Categorias']+"</p><p id='Avance'>Avance: "+prom+"</p></td></tr>");
+                    $("#historialCur").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='Categorias'>Categorias: "+Jason[i]['Categorias']+"</p><p id='Avance'>Avance: "+prom+"</p></td></tr>");
                    
                    // $("#titulos").append("<div class='cursos'><img src ='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='165' width='240'><br><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><br><p class='niveles'>Lvls:"+Jason[i]['cantidadNivelesCurso']+" </p></div>");
                 }
@@ -67,6 +70,8 @@ $(document).ready(function () {
         })
           
     }
-
+    function cursoEsp(_postID) {
+        window.location.href = "VerCurso.html?id="+_postID;
+    }
 })
 

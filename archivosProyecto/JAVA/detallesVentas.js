@@ -48,9 +48,9 @@ $(document).ready(function () {
     mostrarUnCursoVentas();
     function mostrarUnCursoVentas() {
         var idCurso = getQueryVariable("id");
-        var opc = 12;
+        var opc = 2;
         let Body = { opc, idCurso}
-        console.log(idCurso);
+        console.log(_postID);
         let jsonBody = JSON.stringify(Body)
         fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
             .then(response => {
@@ -58,13 +58,14 @@ $(document).ready(function () {
             })
             .then(data => {
                var obj = data;
-               console.log(data);
-               debugger;
-                document.getElementById("titulo").innerHTML = obj['nombre'];
-                document.getElementById("imgCur").src = "../JAVA/fotos.php?id="+obj["idCurso"];                          
-                document.getElementById("titulo3").innerHTML ="Cursos comprados: "+ obj['cursosComprados'];
-                document.getElementById("califPromCurso").innerHTML ="Calificacion promedio: "+ obj['califPromedioCur'];
-                document.getElementById("descripcion").innerHTML = obj['descripcionCur'];
+               document.getElementById("titulo").innerHTML = obj['nombre'];
+               document.getElementById("titulo2").innerHTML = obj['profeCurso'];
+               document.getElementById("titulo3").innerHTML = obj['categorias'];
+               document.getElementById("verdaderaDescripcion").innerHTML = obj['descripcion'];
+               document.getElementById("costoCantlvls").innerHTML = "Costo del curso: $"+obj['costo']+"<br> Cantidad de niveles: "+obj['cantidadNiveles'];
+               document.getElementById("videoCursoAct").src = obj['trailerCurso'];
+
+                mostrarNiveles();
             })
     }
     mostrarAlumnosDelCurso();
