@@ -76,7 +76,7 @@ $(document).ready(function () {
         let jsonBody = JSON.stringify(Body)
         fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
             .then(response => {
-                return response.text();
+                return response.json();
             })
             .then(data => {
                 
@@ -85,11 +85,11 @@ $(document).ready(function () {
                 console.log(data);
                 debugger;
                 if(data=="NoHayAlumnos"){
-                    $("#todasCat").append("<p >No hay categorias disponibles</p>");
+                    $("#tablaAlumnos").append("<tr ><td >No hay alumnos disponibles</td></tr>");
                     //<p class="Categoria">Categoria 1</p>
                 }else{
                     for (var i in Jason) {
-                        $("#todasCat").append("<li id='" + Jason[i]['id_categorias'] + "'class='Categoria'>" + Jason[i]['nombre'] + "</li>");
+                        $("#tablaAlumnos").append("<tr ><td >"+Jason[i]['nombre']+" "+Jason[i]['apellidos']+"</td><td >"+Jason[i]['avanceLvl']+"</td></tr>");
                     }
                 }
             })
