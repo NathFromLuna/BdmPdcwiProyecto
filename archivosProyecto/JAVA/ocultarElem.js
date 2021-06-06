@@ -6,6 +6,10 @@ $(document).ready(function () {
     $("body").on("click", "#btnBus", function () {
         buscar();
     });
+    $(".tabla").on("click", ".titCursos", function () {
+        cursoEsp(this.id);
+        debugger;
+    });
     function ocultarElNav() {
         var opc = 3;
         let Body = { opc }
@@ -52,9 +56,7 @@ $(document).ready(function () {
             .then(data => {
 
                 var Jason = data;
-                console.log(Jason);
-        
-                   
+                console.log(Jason);       
                       $("#listacursos").empty();
                     var listacompleta = document.getElementById("listacursos");
                   for (var i in Jason) {
@@ -86,8 +88,6 @@ $(document).ready(function () {
                       listacompleta.appendChild(th1);
                       
                     }
-              
-                
             })
     }
     function MostrarDestacados() {
@@ -95,14 +95,11 @@ $(document).ready(function () {
         let Body = { opc }
         let jsonBody = JSON.stringify(Body)
         console.log(jsonBody);
-        debugger;
         fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
         .then(response => {
             return response.json();
         })
         .then(data => {
-        debugger;
-                
             var Jason = data;
             console.log(data);
             
@@ -122,14 +119,11 @@ $(document).ready(function () {
         let Body = { opc }
         let jsonBody = JSON.stringify(Body)
         console.log(jsonBody);
-        debugger;
         fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
         .then(response => {
             return response.json();
         })
-        .then(data => {
-        debugger;
-                
+        .then(data => {                
             var Jason = data;
             console.log(data);
             
@@ -144,7 +138,9 @@ $(document).ready(function () {
         })
           
     }
-
+    function cursoEsp(_postID) {
+        window.location.href = "VerCurso.html?id="+_postID;
+    }
 
 })
 

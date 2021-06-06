@@ -21,9 +21,11 @@
 
 .Catcur, .niveles, .titCursos:hover{
     color:rgb(214, 203, 240); 
+    
 }
 .titCursos{
-    color:rgb(214, 203, 240); 
+    color:rgb(214, 203, 240);   
+    cursor:pointer;
 }
 
 table{
@@ -53,6 +55,7 @@ td, th {
 }
 .contenedorCursos{
     margin-left: 0;
+    
 }
 .niveles{
     text-align: right;
