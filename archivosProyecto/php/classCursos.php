@@ -67,6 +67,7 @@
                 $categorias = $post[0]["Categorias"];
                 $costo = $post[0]["costo"];
                 $NombreProfesor = $post[0]["NombreProfesor"];
+                $Media = $post[0]["Media"];
               
                 $json = [
                     "idCurso" => $idCurso,
@@ -76,7 +77,8 @@
                     "trailerCurso"=> $trailerCur,
                     "categorias"=> $categorias,
                     "costo"=> $costo,
-                    "profeCurso"=> $NombreProfesor
+                    "profeCurso"=> $NombreProfesor,
+                    "Media" => $Media
                 ];
                      
                 return $json;
