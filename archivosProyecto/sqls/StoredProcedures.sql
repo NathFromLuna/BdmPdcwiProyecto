@@ -207,8 +207,8 @@ end $$
 delimiter $$
 create procedure getCurso(in idCurso int)
 begin
-	select *
-    from CursoCompleto 
+	select *,  ROUND( avg(calificarCurso.calificacion), 2) as "Media" 
+    from CursoCompleto left join calificarCurso on CursoCompleto.id_curso=calificarCurso.id_cursoCalif
     where CursoCompleto.id_curso = idCurso;
 end $$
 
@@ -314,3 +314,26 @@ on tablaAsociativaCursoCategoria.id_cat = Categorias.id_categorias
 where Usuarios.id_usuario = p_ID_Alumno
 group by Curso.id_curso order by Curso.id_curso desc;
 end $$
+
+delimiter $$
+create procedure clificarCurso(in p_ID_Alumno int, in p_ID_Curso int, in p_cal int)
+begin
+insert into calificarCurso
+set id_AlumnoCalif = p_ID_Alumno, id_cursoCalif = p_ID_Curso, calificacion = p_cal;
+end $$
+
+ DELIMITER $$
+CREATE PROCEDURE getCursosMejoresCalificados()
+BEGIN
+SELECT * FROM cursosCompletosVentas
+ORDER BY calificacion DESC 
+LIMIT 4;
+END$$
+
+ DELIMITER $$
+CREATE PROCEDURE getCursosMasVendidos()
+BEGIN
+SELECT * FROM cursosCompletosVentas
+ORDER BY cursosComprados DESC 
+LIMIT 4;
+END$$
