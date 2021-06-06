@@ -36,7 +36,7 @@ $(document).ready(function () {
     traerVentasCursos();
     function traerVentasCursos(){
         
-        var opc=11;
+        var opc=3;
         let Body = {opc }
             
         let jsonBody = JSON.stringify(Body);

@@ -25,21 +25,6 @@ $(document).ready(function () {
         var idCurso = getQueryVariable("id");
         CursoTerm(idCurso);
     });
-    $("#califCurso").on("click", ".S", function () {
-        calificarCurso(1);
-    });
-    $("#califCurso").on("click", ".S1", function () {
-        calificarCurso(2);
-    });
-    $("#califCurso").on("click", ".S2", function () {
-        calificarCurso(3);
-    });
-    $("#califCurso").on("click", ".S3", function () {
-        calificarCurso(4);
-    });
-    $("#califCurso").on("click", ".S4", function () {
-        calificarCurso(5);
-    });
     function ocultarVerCurso() {
         var opc = 3;
         let Body = { opc }
@@ -71,6 +56,7 @@ $(document).ready(function () {
                         cursoComprado();
                     }else{
                         document.getElementById("comprarCurso").style.display = 'inline';
+                        debugger;
                         document.getElementById("califCurso").style.display = 'none';
                         document.getElementById("nivelesCurso").style.display = 'none';
                         document.getElementById("progresoCur").style.display = 'none';
@@ -81,7 +67,6 @@ $(document).ready(function () {
     }
     ocultarVerCurso();
     function mostrarUnCurso() {
-        debugger;
         var _postID = getQueryVariable("id");
         var opc = 2;
         let Body = { opc, _postID}
@@ -92,7 +77,6 @@ $(document).ready(function () {
                 return response.json();
             })
             .then(data => {
-                debugger;
                var obj = data;
                document.getElementById("titulo").innerHTML = obj['nombre'];
                document.getElementById("titulo2").innerHTML = obj['profeCurso'];
@@ -137,6 +121,7 @@ $(document).ready(function () {
         var idCurso = getQueryVariable("id")
         var opc=6;
         let Body = { idCurso,opc }
+            debugger;
         let jsonBody = JSON.stringify(Body);
     
         fetch('../php/cursos.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
@@ -145,6 +130,7 @@ $(document).ready(function () {
         })
         .then(data => {
             var Jason =data;
+            debugger;
             console.log(Jason);
             if(Jason==="success"){
                 alert("Curso comprado con éxito");
@@ -163,6 +149,7 @@ $(document).ready(function () {
         var idCurso = getQueryVariable("id")
         var opc=7;
         let Body = { idCurso,opc }
+            debugger;
         let jsonBody = JSON.stringify(Body);
     
         fetch('../php/cursos.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
@@ -171,6 +158,7 @@ $(document).ready(function () {
         })
         .then(data => {
             var Jason =data;
+            debugger;
             console.log(Jason);
             
             if(Jason=="CursoNoReg"){

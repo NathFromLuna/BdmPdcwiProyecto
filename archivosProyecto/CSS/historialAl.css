@@ -28,16 +28,12 @@ table{
 }
 td, th {
     /*border: 1px solid #dddddd;*/
+    margin:3% ;
     padding: 10px;
     padding-bottom: 15px;
     text-align: left;
     font-size: 1.4vw;
     color:rgb(214, 203, 240); 
-}
-#Descripcion, #Categorias, #Avance{
-    padding: 0%;
-    margin: 0%;
-    margin-bottom: 0.5%;
 }
 
 .titCursos{
