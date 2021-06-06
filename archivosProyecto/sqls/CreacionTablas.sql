@@ -106,9 +106,10 @@ create table calificarCurso(
 	id_calificacion int not null unique auto_increment,
     id_AlumnoCalif int,
     id_cursoCalif int,
-    calificacion int default 0,
+    calificacion int,
     primary key (id_calificacion),
     foreign key (id_AlumnoCalif) references Usuarios(id_usuario),
 	foreign key (id_cursoCalif) references Curso(id_curso)
 )
+
 

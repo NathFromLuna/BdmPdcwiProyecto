@@ -5,7 +5,10 @@ body {
     background-size: cover;
 }
 
-
+#videoCursoAct{
+    max-width: 40vw;
+    max-height: 60vh;
+}
 #general {
     width: 100%;
     height: 100%;
@@ -99,6 +102,9 @@ p,h3{
     color: rgb(214, 203, 240);
     margin-right: 2%;
     margin-left: 5%;
+}
+.imagenesEstrellas{
+    display: inline-block;
 }
 
 .imagenes2 {
