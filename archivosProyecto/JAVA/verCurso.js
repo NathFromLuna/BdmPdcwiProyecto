@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+    var costo = 0.0;
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split("&");
@@ -100,6 +100,7 @@ $(document).ready(function () {
                document.getElementById("verdaderaDescripcion").innerHTML = obj['descripcion'];
                document.getElementById("costoCantlvls").innerHTML = "Costo del curso: $"+obj['costo']+"<br> Cantidad de niveles: "+obj['cantidadNiveles'];
                document.getElementById("videoCursoAct").src = obj['trailerCurso'];
+               costo = obj['costo'];
                if(obj['Media'] != null){
                 document.getElementById("Media").innerHTML = "Media del curso: " + obj['Media'];
                }
@@ -346,6 +347,32 @@ $(document).ready(function () {
         })
         
     }
+
+     // Render the PayPal button into #paypal-button-container
+     paypal.Buttons({
+
+        // Set up the transaction
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: costo
+                    }
+                }]
+            });
+        },
+
+        // Finalize the transaction
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Show a success message to the buyer
+                alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                comprarCurso();
+            });
+        }
+
+
+    }).render('#paypal-button-container');
 })
 
 
