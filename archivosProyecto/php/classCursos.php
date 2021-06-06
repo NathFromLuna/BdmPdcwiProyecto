@@ -325,5 +325,43 @@
             }
         }
 
+            $query = "Call clificarCurso($idAl,$idCurso, $calCurso);";
+
+            $verificacion = parent::rowsAfectados($query);
+            if($verificacion == 1){
+                $success="success";
+                return $success;    
+            }else{
+                $success="fail";
+                return parent::Error(); 
+            }
+       
+        }
+        public function Destacados(){
+            header('Content-Type: application/json');
+            $query = "Call getCursosMejoresCalificados();";            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
+       
+        }
+        public function Vendidos(){
+            header('Content-Type: application/json');
+            $query = "Call getCursosMasVendidos();";            
+            $cursos = parent::obtenerDatos($query);
+            if(isset($cursos[0]["id_curso"])){           
+                return json_encode($cursos);
+            }
+            else{
+                $success="NoHayCursos";
+                return $success;
+            }
+       
+        }
     }
 ?>

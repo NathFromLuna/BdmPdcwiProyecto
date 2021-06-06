@@ -269,8 +269,9 @@ create procedure buscarCursoFiltro (in cursoAbuscar varchar(200))
 begin
     select * from CursoCompleto where nombre like cursoAbuscar or 
     NombreProfesor like cursoAbuscar or
-    Categorias like cursoAbuscar limit 3;  -- concat(%, _NombreUsuario, %)
+    Categorias like cursoAbuscar limit 4;  -- concat(%, _NombreUsuario, %)
 end/
+-- drop procedure buscarCursoFiltro;
 
 delimiter $$
 create procedure RevisarFinalizacion (
@@ -314,3 +315,26 @@ on tablaAsociativaCursoCategoria.id_cat = Categorias.id_categorias
 where Usuarios.id_usuario = p_ID_Alumno
 group by Curso.id_curso order by Curso.id_curso desc;
 end $$
+
+delimiter $$
+create procedure clificarCurso(in p_ID_Alumno int, in p_ID_Curso int, in p_cal int)
+begin
+insert into calificarCurso
+set id_AlumnoCalif = p_ID_Alumno, id_cursoCalif = p_ID_Curso, calificacion = p_cal;
+end $$
+
+ DELIMITER $$
+CREATE PROCEDURE getCursosMejoresCalificados()
+BEGIN
+SELECT * FROM cursosCompletosVentas
+ORDER BY calificacion DESC 
+LIMIT 4;
+END$$
+
+ DELIMITER $$
+CREATE PROCEDURE getCursosMasVendidos()
+BEGIN
+SELECT * FROM cursosCompletosVentas
+ORDER BY cursosComprados DESC 
+LIMIT 4;
+END$$
