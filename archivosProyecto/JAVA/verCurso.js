@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var costo = 0.0;
+    
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split("&");
@@ -84,13 +84,6 @@ $(document).ready(function () {
                document.getElementById("verdaderaDescripcion").innerHTML = obj['descripcion'];
                document.getElementById("costoCantlvls").innerHTML = "Costo del curso: $"+obj['costo']+"<br> Cantidad de niveles: "+obj['cantidadNiveles'];
                document.getElementById("videoCursoAct").src = obj['trailerCurso'];
-               costo = obj['costo'];
-               if(obj['Media'] != null){
-                document.getElementById("Media").innerHTML = "Media del curso: " + obj['Media'];
-               }
-               else{
-               document.getElementById("Media").innerHTML = "Este curso no ha sido calificado";
-               }
 
                 mostrarNiveles();
             })
@@ -310,57 +303,6 @@ $(document).ready(function () {
     function CursoTerm(idNivel) {
         window.location.href = "recibeDiploma.html?id="+idNivel;
     }
-    function calificarCurso(numero){
-        var idCurso = getQueryVariable("id");
-        var opc=12;
-        var cal = numero;
-        let Body = { idCurso,opc,cal }
-        let jsonBody = JSON.stringify(Body);
-    
-        fetch('../php/cursos.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
-        .then(response => {
-             return response.text();
-        })
-        .then(data => {
-            var Jason =data;
-            console.log(Jason);
-            if(Jason==="success"){
-                alert("Curso caliicado con éxito");
-                ocultarVerCurso();
-            }
-            else{
-    
-                alert(Jason.result)
-            }
-        })
-        
-    }
-
-     // Render the PayPal button into #paypal-button-container
-     paypal.Buttons({
-
-        // Set up the transaction
-        createOrder: function(data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: costo
-                    }
-                }]
-            });
-        },
-
-        // Finalize the transaction
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-                // Show a success message to the buyer
-                alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                comprarCurso();
-            });
-        }
-
-
-    }).render('#paypal-button-container');
 })
 
 
