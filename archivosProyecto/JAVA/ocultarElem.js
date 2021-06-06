@@ -66,8 +66,7 @@ $(document).ready(function () {
                       var img1 = document.createElement("img");
                       img1.setAttribute("src","../JAVA/fotos.php?id="+Jason[i]['id_curso']);
                       img1.setAttribute("alt","fotoCurso");
-                      img1.setAttribute("height","130");
-                      img1.setAttribute("width","215");
+                      img1.setAttribute("class","IMG");
                       var br1 = document.createElement("br");
                       var a1 = document.createElement("a");
                       a1.setAttribute("class","titCursos");
@@ -111,11 +110,8 @@ $(document).ready(function () {
                 $("#hayCursos").append("<p>No hay cursos destacados</p>");
             }else{
                 for (var i in Jason) { 
-                   // $("#Destacados").append("<tr></tr><tr id='listacursos'><th id='cursos'><div class='cursos'><img src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+" alt='fotoCurso' height='130' width='215'><br><a id="+Jason[i]['id_curso']+"  class='titCursos'>"+Jason[i]['nombre']+"</a><br><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th></tr>");
-                   // $("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
-                     //$("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
-                     $("#Destacados").append("<tbody><tr id='listacursos'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='130' width='215'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><plass='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+" </p></td></tr></tbody>");
-                   
+                    $("#Destacados").append("<th id='cursos'><div class='cursos'><img class='IMG' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th>");
+ 
                 }
             }
         })
@@ -141,11 +137,8 @@ $(document).ready(function () {
                 $("#hayCursos").append("<p>No hay cursos destacados</p>");
             }else{
                 for (var i in Jason) { 
-                   // $("#Destacados").append("<tr></tr><tr id='listacursos'><th id='cursos'><div class='cursos'><img src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+" alt='fotoCurso' height='130' width='215'><br><a id="+Jason[i]['id_curso']+"  class='titCursos'>"+Jason[i]['nombre']+"</a><br><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th></tr>");
-                   // $("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
-                     //$("#Destacados").append("<tr id='Tarjeta'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><p id='nvl' class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></td></tr>");
-                     $("#Vendidos").append("<tbody><tr id='listacursos'><th id='thIm'><img id='Imagen' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='130' width='215'></th><td id='titulos'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p id='Descripcion'>Descripcion: "+Jason[i]['descripcion']+"</p><plass='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+" </p></td></tr></tbody>");
-                   
+                    $("#Vendidos").append("<th id='cursos'><div class='cursos'><img class='IMG' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='130' width='215'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th>");
+
                 }
             }
         })

@@ -32,7 +32,9 @@ table{
 td, th {
     margin:3% ;
     padding: 10px;
-    font-size: large;
+    font-size: 1.2vw;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .cursos{
     margin: 10px;
@@ -40,6 +42,9 @@ td, th {
     background-color:rgba(73, 68, 87, 0.788);
     border-radius: 4px;
     padding-bottom: 7px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 18vw;
 }
 
 .cursosBarraBus{
@@ -58,10 +63,21 @@ body{
     /*font-family: 'Nunito', sans-serif;*/
     background: url(../imagenesDef/Crashea3.jpg);
 }
-
+.IMG{
+    width: 15vw;
+    height: 10vw;
+}
+@media screen and (max-width: 1280px) {
+    .IMG{
+        margin-left: 0vw;
+    }
+}
 @media screen and (min-width: 1280px) {
     body{
     background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
     background-size: cover;
+    }
+    .IMG{
+        margin-left: .6vw;
     }
 }

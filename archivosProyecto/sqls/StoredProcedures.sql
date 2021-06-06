@@ -311,7 +311,7 @@ CREATE PROCEDURE getCursosMejoresCalificados()
 BEGIN
 SELECT * FROM cursosCompletosVentas
 ORDER BY calificacion DESC 
-LIMIT 3;
+LIMIT 4;
 END$$
 
 
@@ -320,5 +320,5 @@ CREATE PROCEDURE getCursosMasVendidos()
 BEGIN
 SELECT * FROM cursosCompletosVentas
 ORDER BY cursosComprados DESC 
-LIMIT 3;
+LIMIT 4;
 END$$
