@@ -207,9 +207,25 @@ end $$
 delimiter $$
 create procedure getCurso(in idCurso int)
 begin
-	select *,  ROUND( avg(calificarCurso.calificacion), 2) as "Media" 
-    from CursoCompleto left join calificarCurso on CursoCompleto.id_curso=calificarCurso.id_cursoCalif
+	select *
+    from CursoCompleto 
     where CursoCompleto.id_curso = idCurso;
+end $$
+
+delimiter $$
+create procedure getCursoVentas(in idCurso int)
+begin
+	select *
+    from cursosCompletosVentas 
+    where id_curso = idCurso;
+end $$
+
+delimiter $$
+create procedure getAlumnosCurso(in idCurso int)
+begin
+select Usuarios.nombre,Usuarios.apellidos, Historial.avanceLvl
+	from Usuarios join Historial on Usuarios.id_usuario=Historial.id_est
+    where Historial.id_curs=idCurso group by Usuarios.nombre;
 end $$
 
 delimiter $$
