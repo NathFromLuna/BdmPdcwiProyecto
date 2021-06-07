@@ -1,19 +1,19 @@
 @media screen and (max-width: 1279px) {
     #titulo {
-        font-size: 180%;
+        font-size: 2.2vw;
     }
     #titulo2 {
-        font-size: 140%;
+        font-size: 2.2vw;
         margin-left: 3%;
     }
     #titulo3 {
-        font-size: 120%;
+        font-size: 2vw;
     }
     #titulo4 {
-        font-size: 140%;
+        font-size: 1.5w;
     }
     p {
-        font-size: 80%;
+        font-size: 1vw;
         margin-left: 3%;
         margin-right: 3%;
     }
@@ -35,20 +35,20 @@
         float: left;
     }
     #titulo {
-        font-size: 4vh;
+        font-size: 2vw;
     }
     #titulo2 {
-        font-size: 3vh;
+        font-size: 2vw;
         margin-bottom: 2%;
     }
     #titulo3 {
-        font-size: 3vh;
+        font-size: 1.6vw;
     }
     #titulo4 {
-        font-size: 3.5vh;
+        font-size: 1.6vw;
     }
     p {
-        font-size: 2.3vh;
+        font-size: 1.2vw;
         margin-left: 2%;
         margin-right: 2%;
     }

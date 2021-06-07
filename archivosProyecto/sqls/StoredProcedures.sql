@@ -269,7 +269,7 @@ create procedure buscarCursoFiltro (in cursoAbuscar varchar(200))
 begin
     select * from CursoCompleto where nombre like cursoAbuscar or 
     NombreProfesor like cursoAbuscar or
-    Categorias like cursoAbuscar limit 3;  -- concat(%, _NombreUsuario, %)
+    Categorias like cursoAbuscar limit 4;  -- concat(%, _NombreUsuario, %)
 end/
 
 delimiter $$

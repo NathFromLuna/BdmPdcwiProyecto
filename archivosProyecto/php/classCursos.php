@@ -178,6 +178,7 @@
             }
         }
 
+       
         public function traerTodosLosAlumnosCurso($json){
             header('Content-Type: application/json');
             $datos = json_decode($json,true);

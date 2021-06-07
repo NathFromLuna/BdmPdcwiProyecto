@@ -75,6 +75,16 @@ $_curso = new Cursos;
         $jala = $_curso->Vendidos();
         echo $jala;
     }
+    if($datos["opc"]==15){
+        header('Content-Type: application/json');
+        $jala = $_curso->getCursoVentas($postbody);
+        echo json_encode($jala);
+    }
+    if($datos["opc"]==16){
+        header('Content-Type: application/json');
+        $jala = $_curso->traerTodosLosAlumnosCurso($postbody);
+        echo $jala;
+    }
     //header('Content-Type: application/json');//le dices que devuelve un json
     
     //echo $jala;
