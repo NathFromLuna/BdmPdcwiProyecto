@@ -43,7 +43,7 @@ body {
     border-radius: 6px;
     padding: 2%;
     color: rgb(44, 38, 59);
-    height: 8%;
+    height: 5vh;
 }
 
 @media screen and (min-width: 1280px) {

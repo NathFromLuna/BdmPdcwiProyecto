@@ -29,7 +29,12 @@
         <div id="desDiploma">
 
             <p id="dip">Descargue su diploma aqui:</p>
-            <button id="btnDiploma" onclick="obtenerDiploma();">Diploma</button>
+            <form name="datos"action="../ejemplo.php" method="POST">
+                <input type="hidden" id="IDC1" name="IDC1">
+                <input type="hidden" id="IDC2" name="IDC2">
+
+                <button id="btnDiploma" >Diploma</button>
+            </form>
         </div>
     </div>
 </body>

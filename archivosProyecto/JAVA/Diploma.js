@@ -32,24 +32,12 @@ $(document).ready(function () {
             curso = Jason["nombre"];
             document.getElementById("Sensei").innerHTML = Jason["nombreProfesor"];
             Alumno= Jason["nombreProfesor"];
+            document.datos.IDC1.value = Jason["nombreAlumno"];
+            document.datos.IDC2.value =  Jason["nombre"];
+
         })
     }
 
 
 
 })
-
-function obtenerDiploma(){
-    debugger;    
-        var opc = 1;
-        let Body = {  opc  }
-        let jsonBody = JSON.stringify(Body);
-        fetch('../ejemplo.php',{method:"POST",header:{'Content-Type':'application/json'},body:jsonBody})
-        .then(response => {
-             return response.json();
-        })
-        .then(data => {
-            console.log(data);
-           
-        })
-}

@@ -1,6 +1,6 @@
 <?php
-    $postbody = file_get_contents("php://input");
-    $datos = json_decode($postbody,true);
+ $nombreAlumno = $_POST['IDC1'];
+ $nombreCurso = $_POST['IDC2'];
 
     include_once('tbs_class.php'); 
     include_once('plugins/tbs_plugin_opentbs.php'); 
@@ -8,16 +8,19 @@
     $TBS = new clsTinyButStrong; 
     $TBS->Plugin(TBS_INSTALL, OPENTBS_PLUGIN); 
     //Parametros
-    $nomprofesor = 'Sarahi';
+    $nomprofesor = $nombreCurso;
     $fechaprofesor = '07/06/2021';
-    $firmadecano = 'ES5.png';
+     $firmadecano = 'ES5.png';
+    $firma = 'ES5.png';
     //Cargando template
     $template = 'Crashea.docx';
     $TBS->LoadTemplate($template, OPENTBS_ALREADY_UTF8);
     //Escribir Nuevos campos
-    $TBS->MergeField('pro.nomprofesor', $nomprofesor);
-    $TBS->MergeField('pro.fechaprofesor', $fechaprofesor);
+    $TBS->MergeField('pro.nomCurso', $nomprofesor);
+    $TBS->MergeField('pro.nomAlumn', $nombreAlumno);
+    //$TBS->MergeField('pro.fechaprofesor', $fechaprofesor);
     $TBS->VarRef['x'] = $firmadecano;
+    $TBS->VarRef['y'] = $firma;
 
     $TBS->PlugIn(OPENTBS_DELETE_COMMENTS);
 
@@ -40,5 +43,5 @@
         $success="fail";
         return $success;    
     }
-   
+  
 ?>
