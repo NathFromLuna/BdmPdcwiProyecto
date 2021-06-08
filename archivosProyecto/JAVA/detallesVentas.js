@@ -47,6 +47,7 @@ $(document).ready(function () {
     }
     mostrarUnCursoVentas();
     function mostrarUnCursoVentas() {
+        debugger;
         var idCurso = getQueryVariable("id");
         var opc = 15;
         let Body = { opc, idCurso}
