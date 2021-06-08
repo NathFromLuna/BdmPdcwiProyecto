@@ -35,15 +35,5 @@
         $TBS->Show(OPENTBS_FILE, $output_file_name);
         exit("File [$output_file_name] has been created.");
     }
-
-
-    if($datos["opc"]==1){
-        $success="success";
-        return $success;  
-    }
-    else{
-        $success="fail";
-        return $success;    
-    }
   
 ?>
