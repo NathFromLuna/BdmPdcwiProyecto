@@ -1,7 +1,7 @@
 <?php
     $postbody = file_get_contents("php://input");
     $datos = json_decode($postbody,true);
-    
+
     include_once('tbs_class.php'); 
     include_once('plugins/tbs_plugin_opentbs.php'); 
 
@@ -12,7 +12,7 @@
     $fechaprofesor = '07/06/2021';
     $firmadecano = 'ES5.png';
     //Cargando template
-    $template = 'Plantilla_Colegiado.docx';
+    $template = 'Crashea.docx';
     $TBS->LoadTemplate($template, OPENTBS_ALREADY_UTF8);
     //Escribir Nuevos campos
     $TBS->MergeField('pro.nomprofesor', $nomprofesor);
