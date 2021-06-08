@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="../CSS/recibeDiploma.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@400;411;437&display=swap"
         rel="stylesheet">
+        <link href="../php/Diploma.php">
         <script type="text/javascript" src="../JAVA/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="../JAVA/Diploma.js"></script>
+
 </head>
 
 <body>
@@ -25,8 +27,9 @@
             <p id="io" class="nombreCursoMaestro">Nombre del alumno</p>
         </div>
         <div id="desDiploma">
+
             <p id="dip">Descargue su diploma aqui:</p>
-            <button id="btnDiploma">Diploma</button>
+            <button id="btnDiploma" onclick="obtenerDiploma();">Diploma</button>
         </div>
     </div>
 </body>

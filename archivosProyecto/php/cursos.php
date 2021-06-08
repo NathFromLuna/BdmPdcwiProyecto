@@ -85,8 +85,5 @@ $_curso = new Cursos;
         $jala = $_curso->traerTodosLosAlumnosCurso($postbody);
         echo $jala;
     }
-    //header('Content-Type: application/json');//le dices que devuelve un json
-    
-    //echo $jala;
-    //json_encode($jala);
+
 ?>
