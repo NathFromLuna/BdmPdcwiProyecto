@@ -9,11 +9,7 @@ input, textarea{
 }
 
 
-label, input, p{
-    font-size: 120%;
-}
 h3{
-    font-size: 140%;
     margin-top: 1%;
 }
 .btn{
@@ -31,6 +27,8 @@ h3{
 }
 
 
+
+
 @media screen and (max-width: 1279px){
     body{
         font-family: 'Raleway', sans-serif;
@@ -38,12 +36,22 @@ h3{
         font-family: 'Raleway', sans-serif;
         background: url(../imagenesDef/Crashea3.jpg);
     }
-    #contenidoCentral{
-        
-        padding-left: 5%;
-        padding-top: 2%;
+    #contenidoCentral{        
+        padding-left: 15%;
+        padding-top: 5%;
     }   
-    
+    .Titulo{
+        font-size:2.2vw;
+    }
+    #crearCat, #regresar{
+        font-size: 1.5vw;
+        font-weight: bold;
+        width: 15vw;
+    }
+    #Nombre, #desCat{
+        font-size:2.1vw;
+        width: 50vw;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -54,7 +62,20 @@ h3{
         background-size: cover;
     }
     #contenidoCentral{
-    padding-left: 5%;
-    padding-top: 3%;
+      padding-left: 15%;
+      padding-top: 5%;
     }
+    .Titulo{
+        font-size: 1.62vw;
+    }
+    #crearCat, #regresar{
+        font-size: 1.1vw;
+        font-weight: bold;
+        width: 10vw;
+    }
+    #Nombre, #desCat {
+        font-size: 1.5vw;
+        width: 50vw;
+    }
+
 }

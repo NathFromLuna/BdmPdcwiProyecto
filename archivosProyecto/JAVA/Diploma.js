@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    
+    var nombre;
+    var curso;
+    var Alumno;
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split("&");
@@ -23,13 +25,19 @@ $(document).ready(function () {
         })
         .then(data => {
             var Jason =data;
-            debugger;
             console.log(Jason);
             document.getElementById("io").innerHTML = Jason["nombreAlumno"];
+            nombre = Jason["nombreAlumno"];
             document.getElementById("NomCurso").innerHTML = Jason["nombre"];
+            curso = Jason["nombre"];
             document.getElementById("Sensei").innerHTML = Jason["nombreProfesor"];
+            Alumno= Jason["nombreProfesor"];
+            document.datos.IDC1.value = Jason["nombreAlumno"];
+            document.datos.IDC2.value =  Jason["nombre"];
+
         })
     }
+
 
 
 })
