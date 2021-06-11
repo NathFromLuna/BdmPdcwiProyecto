@@ -1,7 +1,3 @@
-create database crashea;
-
-use crashea;
-
 create table Usuarios(
 	id_usuario int not null unique auto_increment,
     nombre varchar(50) not null,
@@ -97,6 +93,7 @@ create table Mensajes(
     id_de int,
     id_para int,
     mensaje varchar(250) not null,
+	fechaEnvio timestamp DEFAULT current_timestamp, 
     primary key (id_mensaje),
     foreign key (id_de) references Usuarios(id_usuario),
 	foreign key (id_para) references Usuarios(id_usuario)

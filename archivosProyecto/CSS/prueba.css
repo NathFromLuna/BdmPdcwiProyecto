@@ -1,0 +1,164 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    /*font-family: 'Nunito', sans-serif;*/
+}
+
+#mensajesGen {
+    background-color: darkolivegreen;
+    display: flex;
+    height: 90vh;
+}
+
+#tablaPersonas {
+    background-color: rgb(230, 224, 243);
+    width: 25%;
+    color: rgb(44, 38, 59);
+}
+
+.personas {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(230, 224, 243);
+    border: none;
+}
+
+.personas:hover {
+    background-color: rgb(218, 212, 235);
+}
+
+
+/*-------------------------------------------------------*/
+
+#chatAct {
+    background: url(../imagenesDef/Crashea3.jpg);
+    width: 74.9%;
+    height: 100%;
+    position: relative;
+}
+
+@media screen and (min-width: 1280px) {
+    #chatAct {
+        background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
+        background-size: cover;
+        width: 74.9%;
+        height: 100%;
+    }
+}
+
+#habloCon {
+    background-color: rgb(172, 156, 211);
+    color: rgb(238, 235, 245);
+    padding: 1%;
+    padding-left: 3%;
+    position: absolute;
+    width: 100%;
+}
+
+#mensajesActuales {
+    overflow-y:scroll;
+    position: absolute;
+    background-color: rgba(55, 17, 63, 0.253);
+    width: 100%;
+    top: 6%;
+    height: 85%;
+}
+
+
+#mensajesActuales::-webkit-scrollbar{
+    width: 7px;
+}
+
+#mensajesActuales::-webkit-scrollbar-thumb{
+    background-color: rgb(136, 118, 160);
+    border-radius: 2px;
+}
+#mensajesActuales ul{
+    list-style: none;
+    background-color: rgba(36, 195, 195, 0.137);
+    width: 50%;
+}
+
+#mensajesActuales ul li{
+    background-color: rgba(2, 179, 11, 0.281);
+    border-radius: 7px 7px 7px 0px;
+    display: block;
+}
+
+#mensajesActuales ul li p{
+    background-color: rgba(144, 2, 179, 0);
+    padding: 7px;
+    border-radius: 7px 7px 7px 0px;
+    color: white;
+    text-justify: distribute;
+}
+
+
+#barraAbajo {
+    padding-left: 3%;
+    bottom: 0%;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(60, 46, 65, 0.548);
+    align-items: center;
+    padding: 20px;
+}
+
+
+#barraMensaje {
+    width: 94%;
+    background-color: rgb(238, 235, 245);
+    border-radius: 4px;
+    margin-bottom: 0%;
+    padding: 5px;
+}
+
+#btnEnviar {
+    background-image: url(../imagenesDef/iconoEnviar.png);
+    background-size: 33px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.msg-izq{
+    display: block;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.msg-izq .mensaje{
+    margin-top: 5px;
+    background-color: rgba(0, 128, 128, 0);
+}
+
+.mensaje p{
+    margin-top: 5px;
+    padding: 10px;
+    text-justify: distribute;
+    color: rgb(44, 38, 59);
+}
+.mensaje p span{
+    margin-top: 5px;
+    text-justify: distribute;
+    background-color: rgb(186, 176, 207);
+    padding: 10px;
+    border-radius: 7px 7px 7px 0px;
+
+}
+
+.msg-der{
+    display: block;
+    margin-right: 2%;
+    text-align: right;
+}
+
+.msg-der .mensaje{
+    margin-top: 5px;
+    background-color: rgba(0, 128, 128, 0);
+}

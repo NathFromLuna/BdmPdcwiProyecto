@@ -64,7 +64,11 @@ $(document).ready(function () {
                 document.getElementById("titulo").innerHTML = obj['nombre'];
                 document.getElementById("imgCur").src = "../JAVA/fotos.php?id="+obj["idCurso"];                          
                 document.getElementById("titulo3").innerHTML ="Cursos comprados: "+ obj['cursosComprados'];
-                document.getElementById("califPromCurso").innerHTML ="Calificacion promedio: "+ obj['califPromedioCur'];
+                var comp = obj['califPromedioCur'];
+                if (comp == null)
+                 document.getElementById("califPromCurso").innerHTML ="Calificacion: "+ "No se a sido calificado";
+                 else
+                    document.getElementById("califPromCurso").innerHTML ="Calificacion: "+ obj['califPromedioCur'];
                 document.getElementById("descripcion").innerHTML = obj['descripcionCur'];
             })
     }

@@ -18,7 +18,7 @@ BEGIN
     where id_est = p_ID_Est and id_curs = numCurso;
 RETURN numNivel;
 END$$
-
+delimiter $$
 CREATE FUNCTION `RegCatCurs` (
 p_ID_cat int, 
 p_ID_cat2 int, 
@@ -39,6 +39,7 @@ CALL registrarCursoCategoria(p_ID_cat2, idDelCurso);
 RETURN 1;
 END$$
 
+delimiter $$
 CREATE FUNCTION `RegNivCurso` (
 nNombreNvl varchar(150),
  nVideoLvl varchar(500),

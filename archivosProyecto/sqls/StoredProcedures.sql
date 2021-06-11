@@ -101,6 +101,7 @@ begin
     where id_curs = Id_curso order by fechaPublicacion desc;
 end $$
 
+delimiter $$
 create procedure nuevaCategoria (
 	in  p_nombre varchar(50),
     in p_descripcion varchar(200),
@@ -111,12 +112,14 @@ begin
     values(p_nombre, p_descripcion, 1, p_DeQuien);
 end $$
 
+delimiter $$
 create procedure obtenerCategorias ()
 begin
 	select id_categorias, nombre
     from categorias;
 end $$
 
+delimiter $$
 create procedure registrarHistorial (
 	in  p_ID_Est int,
     in p_ID_Curso int
@@ -125,6 +128,7 @@ begin
     insert into historial(id_est, id_curs, avanceLvl)
     values(p_ID_Est, p_ID_Curso, 0);
 end $$
+
 delimiter $$
 create procedure actualizarHistorial (
 	in  p_ID_Est int,
@@ -148,6 +152,7 @@ begin
     END IF;
 end $$
 
+delimiter $$
 create procedure registrarCursoCategoria (
 	in  p_ID_Cat int,
     in p_ID_Curso int
@@ -337,3 +342,64 @@ SELECT * FROM cursosCompletosVentas
 ORDER BY cursosComprados DESC 
 LIMIT 4;
 END$$
+
+ -- *******************************************************
+ delimiter $$
+create procedure escribirMensaje(
+in deQuien int, 
+in paraQuien int,
+in mensaje varchar(250))
+begin
+	insert into Mensajes(id_de, id_para,mensaje)
+    values(deQuien, paraQuien,mensaje);
+end $$
+call escribirMensaje(5,2,"asi es, hoy es jueves")
+
+delimiter $$
+create procedure obtenerPersonasAmensajear (
+in alumnoInscrito int)
+begin
+	select distinct Usuarios.id_usuario as "idProfesor", Usuarios.nombre as "nombreProfe"
+    from inscripcionCurso join Curso on 
+    inscripcionCurso.idCurso=Curso.id_curso 
+    join Usuarios on Curso.id_profesor=Usuarios.id_usuario
+    where inscripcionCurso.id_alumno=alumnoInscrito ; 
+end $$
+
+call obtenerPersonasAmensajear(2)
+
+delimiter $$
+create procedure obtenerPersonasAmensajearProf (
+in ProfeCurso int)
+begin
+	select distinct Usuarios.id_usuario as "idAlumno", Usuarios.nombre as "nombreAl"
+    from inscripcionCurso join Curso on 
+    inscripcionCurso.idCurso=Curso.id_curso 
+    join Usuarios on inscripcionCurso.id_alumno=Usuarios.id_usuario
+    where Curso.id_profesor=ProfeCurso; 
+end $$
+
+call obtenerPersonasAmensajearProf(3)
+
+delimiter $$
+create procedure obtenerMensajes (
+in deQuien int, 
+in paraQuien int)
+begin
+	select Usuarios.id_usuario, Usuarios.nombre,Usuarios.apellidos, 
+    Usuarios.nickname, Mensajes.id_de, Mensajes.id_para, Mensajes.mensaje,
+    Mensajes.fechaEnvio
+    from Usuarios join Mensajes on Usuarios.id_usuario=Mensajes.id_de
+    where (Mensajes.id_de=deQuien and Mensajes.id_para=paraQuien) or
+    (Mensajes.id_de=paraQuien and Mensajes.id_para=deQuien)
+    order by Mensajes.fechaEnvio; 
+end $$
+
+call obtenerMensajes(2,5)
+
+delimiter $$
+create procedure profesCurReg (in idProf int)
+begin
+	select id_usuario, nombre, apellidos
+    from Usuarios where id_usuario=idProf;
+end $$
