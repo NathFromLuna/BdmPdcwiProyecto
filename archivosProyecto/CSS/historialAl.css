@@ -1,0 +1,75 @@
+#contenidoCentral{
+    padding: 3%;
+    width: 100vw;
+    height: max-content;
+}
+h3{ 
+    margin: 3%;
+    margin-left: 10%;
+    font-size: xx-large;
+    color:rgb(214, 203, 240); 
+}
+#busqueda{
+    font-size: large;
+    margin-left: 60%;
+    color:rgb(214, 203, 240); 
+}
+#busquedaTipos{
+    border-radius: 3px;
+}
+select{
+    background-color: rgb(238, 235, 245);
+    color:rgb(44, 38, 59);
+}
+table{
+    border-collapse: collapse;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+td, th {
+    /*border: 1px solid #dddddd;*/
+    margin:3% ;
+    padding: 10px;
+    padding-bottom: 15px;
+    text-align: left;
+    font-size: 1.4vw;
+    color:rgb(214, 203, 240); 
+}
+
+.titCursos{
+    margin-top: 0%;
+    font-size: 1.6vw;
+    color:rgb(214, 203, 240); 
+    font-weight: bold;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+    background: url(../imagenesDef/Crashea3.jpg);
+}
+#titulos{
+    margin-top: 0%;
+    text-align: left;
+    color:rgb(214, 203, 240); 
+}
+#barraAbajo{
+    background-color: rgb(238, 235, 245);
+}
+
+#Tarjeta{
+    width: 100%;
+    display: inline-block;
+}
+#thIm{
+    width: 20%;
+}
+#Imagen{
+    width: 14vw;
+    max-height: 25vh;
+}
+@media screen and (min-width: 1280px) {
+    body{
+    background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
+    background-size: cover;
+    }
+}
