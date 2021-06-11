@@ -1,14 +1,8 @@
 $(document).ready(function () {
     ocultarElNav();
     buscar();
-    MostrarDestacados();
-    MostrarMasVendidos();
     $("body").on("click", "#btnBus", function () {
         buscar();
-    });
-    $(".tabla").on("click", ".titCursos", function () {
-        cursoEsp(this.id);
-        debugger;
     });
     function ocultarElNav() {
         var opc = 3;
@@ -71,7 +65,8 @@ $(document).ready(function () {
                       var img1 = document.createElement("img");
                       img1.setAttribute("src","../JAVA/fotos.php?id="+Jason[i]['id_curso']);
                       img1.setAttribute("alt","fotoCurso");
-                      img1.setAttribute("class","IMG");
+                      img1.setAttribute("height","130");
+                      img1.setAttribute("width","215");
                       var br1 = document.createElement("br");
                       var a1 = document.createElement("a");
                       a1.setAttribute("class","titCursos");
@@ -95,57 +90,7 @@ $(document).ready(function () {
                 
             })
     }
-    function MostrarDestacados() {
-        var opc = 13;
-        let Body = { opc }
-        let jsonBody = JSON.stringify(Body)
-        console.log(jsonBody);
-        fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            var Jason = data;
-            console.log(data);
-            
-            if(data=="NoHayCursos"){
-                $("#hayCursos").append("<p>No hay cursos destacados</p>");
-            }else{
-                for (var i in Jason) { 
-                    $("#Destacados").append("<th id='cursos'><div class='cursos'><img class='IMG' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th>");
- 
-                }
-            }
-        })
-          
-    }
-    function MostrarMasVendidos() {
-        var opc = 14;
-        let Body = { opc }
-        let jsonBody = JSON.stringify(Body)
-        console.log(jsonBody);
-        fetch('../php/cursos.php', { method: "POST", header: { 'Content-Type': 'application/json' }, body: jsonBody })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {                
-            var Jason = data;
-            console.log(data);
-            
-            if(data=="NoHayCursos"){
-                $("#hayCursos").append("<p>No hay cursos destacados</p>");
-            }else{
-                for (var i in Jason) { 
-                    $("#Vendidos").append("<th id='cursos'><div class='cursos'><img class='IMG' src='../JAVA/fotos.php?id="+Jason[i]['id_curso']+"' alt='fotoCurso' height='130' width='215'><p id="+Jason[i]['id_curso']+" class='titCursos' >"+Jason[i]['nombre']+"</p><p class='niveles'>Lvls: "+Jason[i]['cantidadNivelesCurso']+"</p></div></th>");
-
-                }
-            }
-        })
-          
-    }
-    function cursoEsp(_postID) {
-        window.location.href = "VerCurso.html?id="+_postID;
-    }
+    
 
 })
 

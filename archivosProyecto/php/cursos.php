@@ -60,30 +60,16 @@ $_curso = new Cursos;
     }
     if($datos["opc"]==12){
         header('Content-Type: application/json');
-        $jala = $_curso->calificarCurso($postbody);
-        header('Content-Type: application/json');//le dices que devuelve un json
-        echo $jala;
-        json_encode($jala);
-    }
-    if($datos["opc"]==13){
-        header('Content-Type: application/json');
-        $jala = $_curso->Destacados();
-        echo $jala;
-    }
-    if($datos["opc"]==14){
-        header('Content-Type: application/json');
-        $jala = $_curso->Vendidos();
-        echo $jala;
-    }
-    if($datos["opc"]==15){
-        header('Content-Type: application/json');
         $jala = $_curso->getCursoVentas($postbody);
         echo json_encode($jala);
     }
-    if($datos["opc"]==16){
+    if($datos["opc"]==13){
         header('Content-Type: application/json');
         $jala = $_curso->traerTodosLosAlumnosCurso($postbody);
         echo $jala;
     }
-
+    //header('Content-Type: application/json');//le dices que devuelve un json
+    
+    //echo $jala;
+    //json_encode($jala);
 ?>

@@ -47,9 +47,8 @@ $(document).ready(function () {
     }
     mostrarUnCursoVentas();
     function mostrarUnCursoVentas() {
-        debugger;
         var idCurso = getQueryVariable("id");
-        var opc = 15;
+        var opc = 12;
         let Body = { opc, idCurso}
         console.log(idCurso);
         let jsonBody = JSON.stringify(Body)
@@ -71,7 +70,7 @@ $(document).ready(function () {
     mostrarAlumnosDelCurso();
     function mostrarAlumnosDelCurso() {
         var idCurso = getQueryVariable("id");
-        var opc = 16;
+        var opc = 13;
         let Body = { opc, idCurso}
         console.log(Body);
         let jsonBody = JSON.stringify(Body)

@@ -4,8 +4,6 @@
 }
 #avatarUsuario{
     border-radius: 50%;
-    width: 20vw;
-    height: 20vw;
 }
 #datosPerfil{
     display: flex;
@@ -16,16 +14,19 @@
 #btnEnviar{
     background-color: rgb(238, 235, 245);
     border-radius: 4px;
+    font-size: large;
     padding: 1%;
     color:rgb(44, 38, 59);
 }
 label{
     width: 100%;
 }
+
+
 #datosUs{
+    font-size: x-large;
     color:rgb(214, 203, 240); 
     margin: 3%;
-    width: 50vw;
 }
 body{
     font-family: 'Raleway', sans-serif;
@@ -33,30 +34,9 @@ body{
     background: url(../imagenesDef/Crashea3.jpg);
 }
 
-input{
-    width: 100%;
-}
-
 @media screen and (min-width: 1280px) {
     body{
     background: url(../imagenesDef/Crashea3.jpg) no-repeat center top;
     background-size: cover;
     }
-    #datosUs{
-        font-size: 1.4vw;
-    }
-    #btnEnviar{
-        font-size: 1vw;
-    }
-
-}
-
-@media screen and (max-width: 1279px) {
-    #datosUs{
-        font-size: 1.8vw;
-    }
-    #btnEnviar{
-        font-size: 1.8vw;
-    }
-
 }

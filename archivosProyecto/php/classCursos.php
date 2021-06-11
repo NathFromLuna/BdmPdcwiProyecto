@@ -67,7 +67,6 @@
                 $categorias = $post[0]["Categorias"];
                 $costo = $post[0]["costo"];
                 $NombreProfesor = $post[0]["NombreProfesor"];
-                $Media = $post[0]["Media"];
               
                 $json = [
                     "idCurso" => $idCurso,
@@ -77,8 +76,7 @@
                     "trailerCurso"=> $trailerCur,
                     "categorias"=> $categorias,
                     "costo"=> $costo,
-                    "profeCurso"=> $NombreProfesor,
-                    "Media" => $Media
+                    "profeCurso"=> $NombreProfesor
                 ];
                      
                 return $json;
@@ -178,7 +176,6 @@
             }
         }
 
-       
         public function traerTodosLosAlumnosCurso($json){
             header('Content-Type: application/json');
             $datos = json_decode($json,true);
@@ -327,50 +324,6 @@
                 return $success;
             }
         }
-        public function calificarCurso($json){
-            $datos = json_decode($json,true);
-            //son los datos del json
-            $idAl = $_SESSION["id"];
-            $idCurso = $datos["idCurso"];
-            $calCurso = $datos["cal"];
 
-            $query = "Call clificarCurso($idAl,$idCurso, $calCurso);";
-
-            $verificacion = parent::rowsAfectados($query);
-            if($verificacion == 1){
-                $success="success";
-                return $success;    
-            }else{
-                $success="fail";
-                return parent::Error(); 
-            }
-       
-        }
-        public function Destacados(){
-            header('Content-Type: application/json');
-            $query = "Call getCursosMejoresCalificados();";            
-            $cursos = parent::obtenerDatos($query);
-            if(isset($cursos[0]["id_curso"])){           
-                return json_encode($cursos);
-            }
-            else{
-                $success="NoHayCursos";
-                return $success;
-            }
-       
-        }
-        public function Vendidos(){
-            header('Content-Type: application/json');
-            $query = "Call getCursosMasVendidos();";            
-            $cursos = parent::obtenerDatos($query);
-            if(isset($cursos[0]["id_curso"])){           
-                return json_encode($cursos);
-            }
-            else{
-                $success="NoHayCursos";
-                return $success;
-            }
-       
-        }
     }
 ?>
